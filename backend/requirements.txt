@@ -1,0 +1,32 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.5
+pydantic-settings==2.7.1
+sqlalchemy==2.0.36
+alembic==1.14.1
+asyncpg==0.30.0
+psycopg2-binary==2.9.10
+pgvector==0.3.6
+redis==5.2.1
+arq==0.26.3
+anthropic==0.42.0
+httpx==0.28.1
+websockets==14.1
+python-jose[cryptography]==3.3.0
+structlog==24.4.0
+sentry-sdk[fastapi]==2.19.2
+python-multipart==0.0.20
+tenacity==9.0.0
+# NOTE: spaced repetition uses a self-contained FSRS-4.5 implementation
+# (app/core/fsrs.py) instead of the `fsrs` PyPI package. The public package's
+# API has changed incompatibly across major versions (1.x -> 6.x) while we
+# were building this; pinning to a moving target we can't fully verify here
+# was judged riskier than a small, well-tested, dependency-free port of the
+# published FSRS-4.5 weights/formulas. See README "Technical decisions".
+
+pytest==8.3.4
+pytest-asyncio==0.25.2
+pytest-mock==3.14.0
+pytest-cov==6.0.0
+aiosqlite==0.20.0
+respx==0.22.0
