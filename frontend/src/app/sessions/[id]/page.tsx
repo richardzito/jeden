@@ -12,26 +12,11 @@ import {
   type SessionCreateResponse,
   type SessionTurn,
 } from "@/lib/api";
-
-type TranscriptEntry = {
-  id: string;
-  role: "agent" | "user";
-  text: string;
-  turnType: string;
-};
+import { deriveSessionUiState, turnsToEntries, type TranscriptEntry } from "@/lib/session-turns";
 
 type Speaker = "agent" | "user" | "idle";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
-
-function turnsToEntries(turns: SessionTurn[], role: "agent" | "user"): TranscriptEntry[] {
-  return turns.map((t, i) => ({
-    id: `${role}-${Date.now()}-${i}`,
-    role,
-    text: t.content_text,
-    turnType: t.turn_type,
-  }));
-}
 
 export default function SessionPage() {
   const params = useParams<{ id: string }>();
@@ -101,9 +86,9 @@ export default function SessionPage() {
     (turns: SessionTurn[]) => {
       if (turns.length === 0) return;
       setTranscript((prev) => [...prev, ...turnsToEntries(turns, "agent")]);
-      const last = turns[turns.length - 1];
-      setSessionComplete(last.session_complete);
-      setAwaitingInput(!last.session_complete && (last.turn_type === "question" || last.turn_type === "checkin"));
+      const { awaitingInput: nextAwaiting, sessionComplete: nextComplete } = deriveSessionUiState(turns);
+      setSessionComplete(nextComplete);
+      setAwaitingInput(nextAwaiting);
       setSpeaker("agent");
       void speakTurns(turns);
     },
