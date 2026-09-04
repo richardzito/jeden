@@ -1,6 +1,7 @@
 import uuid
 
-from fastapi import APIRouter, Depends, HTTPException, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, Depends, HTTPException, Query, WebSocket, WebSocketDisconnect
+from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.deps import get_current_user, get_db
@@ -8,6 +9,7 @@ from app.core.logging import get_logger
 from app.core.security import get_current_user as get_current_user_ws
 from app.integrations.anthropic_client import AnthropicClient
 from app.integrations.deepgram import create_temporary_token
+from app.integrations.elevenlabs import stream_speech
 from app.integrations.exceptions import ExternalServiceError
 from app.models.models import Session as SessionRow, User
 from app.schemas.api import (
@@ -112,6 +114,30 @@ async def get_stt_token(user: User = Depends(get_current_user)) -> DeepgramToken
     return DeepgramTokenResponse(access_token=token.access_token, expires_in=token.expires_in)
 
 
+@router.get("/tts")
+async def text_to_speech(
+    text: str = Query(min_length=1, max_length=2000),
+    user: User = Depends(get_current_user),
+) -> StreamingResponse:
+    """Proxies ElevenLabs streaming TTS so the API key stays server-side.
+    The frontend points an <audio> element (or fetches manually) at this
+    endpoint for each tutor utterance -- see frontend/src/app/sessions/[id]/page.tsx.
+    """
+    try:
+        first_chunk_iter = stream_speech(text)
+        first_chunk = await anext(first_chunk_iter, None)
+    except ExternalServiceError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    async def _generator():
+        if first_chunk is not None:
+            yield first_chunk
+        async for chunk in first_chunk_iter:
+            yield chunk
+
+    return StreamingResponse(_generator(), media_type="audio/mpeg")
+
+
 @router.websocket("/{session_id}/stream")
 async def session_stream(websocket: WebSocket, session_id: uuid.UUID, db: AsyncSession = Depends(get_db)) -> None:
     """Bidirectional live-session stream. Client sends
@@ -126,8 +152,15 @@ async def session_stream(websocket: WebSocket, session_id: uuid.UUID, db: AsyncS
     is wired through app/integrations/{deepgram,elevenlabs}.py ready for a
     real key.
     """
-    x_dev_user_id = websocket.headers.get("x-dev-user-id")
+    # Browsers cannot set custom headers on a WebSocket handshake, so the
+    # dev-bypass user id and (for a real Supabase session) the JWT are also
+    # accepted as query params -- the header path is kept for non-browser
+    # clients (tests, other services).
+    x_dev_user_id = websocket.headers.get("x-dev-user-id") or websocket.query_params.get("dev_user_id")
     authorization = websocket.headers.get("authorization")
+    token_param = websocket.query_params.get("token")
+    if not authorization and token_param:
+        authorization = f"Bearer {token_param}"
     try:
         user = await get_current_user_ws(authorization=authorization, x_dev_user_id=x_dev_user_id, db=db)
     except Exception:
