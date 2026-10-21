@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Guciodach — dachy, pokrycia, obróbki · Warszawa</title>
+  <meta name="description" content="Nowe dachy, dachówka, blachodachówka, obróbki kominów, remonty. Warszawa i okolice. Zadzwoń: 500 634 188.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+<!-- Ikony -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.6 4.2-2.1 1.4a11 11 0 0 0 6.4 6.4l1.4-2.1L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.8 20 7.3v9.4L12 21.2l-8-4.5V7.3l8-4.5Zm0 0v0M4 7.3l8 4.5 8-4.5M12 11.8v9.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.6 2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8L12 2.6Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.3 28.8l6.6-1.7A12.7 12.7 0 1 0 16 3.2Zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.5 10.5 0 1 1 16 26.3Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5 0-.2-.2-.2-.5-.4Z"/></symbol>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a href="index.html" class="logo-slot" aria-label="Guciodach — strona główna">TWOJE LOGO</a>
+    <nav class="nav" aria-label="Główna nawigacja">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#uslugi">Usługi</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#faq">FAQ</a>
+      <a href="konfigurator-3d.html" class="is-new">Dach w 3D</a>
+    </nav>
+    <div class="header__cta">
+      <a href="konfigurator-3d.html" class="btn btn--ghost btn--sm"><svg><use href="#i-cube"/></svg>Dach w 3D</a>
+      <a href="tel:+48500634188" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg><span>500 634 188</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#realizacje">Realizacje</a>
+  <a href="#uslugi">Usługi i proces</a>
+  <a href="#opinie">Opinie</a>
+  <a href="#faq">FAQ</a>
+  <a href="o-firmie.html">O firmie</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="konfigurator-3d.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Zbuduj dach w 3D</a>
+</div>
+
+<main>
+
+  <!-- ============ 1. Hero ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero__top">
+        <div>
+          <p class="eyebrow" data-hero style="--i:0"><span class="dot"></span>Usługi dekarskie · Warszawa i okolice</p>
+          <h1 class="display" id="hero-title">
+            <span class="line-mask"><span style="--i:0">Twój dach.</span></span>
+            <span class="line-mask"><span style="--i:1">Od więźby</span></span>
+            <span class="line-mask"><span style="--i:2">po kalenicę.</span></span>
+          </h1>
+        </div>
+        <div class="hero__side">
+          <p class="lead" data-hero style="--i:1">Nowe dachy, dachówka, blachodachówka, obróbki kominów. Własna ekipa.</p>
+          <div class="cta-pair" data-hero style="--i:2">
+            <a href="tel:+48500634188" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń: 500 634 188</a>
+            <a href="konfigurator-3d.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Dach w 3D<svg class="arrow"><use href="#i-arrow"/></svg></a>
+          </div>
+          <span class="rating-chip" data-hero style="--i:3">
+            <svg class="chip-ic" aria-hidden="true"><use href="#i-shield"/></svg>
+            <span><strong>Bezpłatny</strong> pomiar i wycena</span>
+          </span>
+        </div>
+      </div>
+
+      <figure class="hero__media" style="margin-inline:0">
+        <img src="assets/img/hero.webp" alt="Nowy dach z grafitowej dachówki z kominem z klinkieru" width="1600" height="820" fetchpriority="high" style="object-position:62% 50%">
+        <figcaption class="hero__chips">
+          <span class="glass-chip"><svg><use href="#i-shield"/></svg>Obróbka komina w komplecie</span>
+          <span class="glass-chip">Dachówka · grafit</span>
+        </figcaption>
+      </figure>
+
+      <div class="trust">
+        <div class="trust__item" data-reveal style="--i:0"><strong>0 zł</strong><span>pomiar i wycena</span></div>
+        <div class="trust__item" data-reveal style="--i:1"><strong>Własna</strong><span>ekipa dekarzy</span></div>
+        <div class="trust__item" data-reveal style="--i:2"><strong>Gwarancja</strong><span>na wykonawstwo</span></div>
+        <div class="trust__item" data-reveal style="--i:3"><strong>1 telefon</strong><span>od pomiaru do odbioru</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Ukończone realizacje ============ -->
+  <section class="section" id="realizacje" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Realizacje</p>
+          <h2 class="h2" id="works-title" data-reveal style="--i:1">Dachy, które<br>robimy na co dzień.</h2>
+        </div>
+        <a href="realizacje.html" class="link-arrow" data-reveal style="--i:2">Wszystkie realizacje<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="works works--gucio">
+        <figure class="work work--a" data-reveal="clip" style="margin:0">
+          <img src="assets/img/real-ekipa.webp" alt="Ekipa układa grafitową dachówkę na domu jednorodzinnym" loading="lazy" width="1600" height="1200">
+          <figcaption class="work__meta"><span class="work__tag">W trakcie</span><div class="work__title">Dom jednorodzinny · montaż dachówki</div></figcaption>
+        </figure>
+        <figure class="work work--b" data-reveal="clip" style="--i:1;margin:0">
+          <img src="assets/img/real-blacha.webp" alt="Brązowa blachodachówka i komin obłożony blachą" loading="lazy" width="780" height="1200">
+          <figcaption class="work__meta"><span class="work__tag">Blachodachówka</span><div class="work__title">Brązowa blachodachówka · komin w blasze</div></figcaption>
+        </figure>
+        <figure class="work work--c" data-reveal="clip" style="--i:1;margin:0">
+          <img src="assets/img/real-komin.webp" alt="Komin z klinkieru z obróbką blacharską na dachu z dachówki" loading="lazy" width="800" height="720">
+          <figcaption class="work__meta"><span class="work__tag">Obróbki</span><div class="work__title">Komin z klinkieru · obróbka blacharska</div></figcaption>
+        </figure>
+        <figure class="work work--d" data-reveal="clip" style="--i:2;margin:0">
+          <img src="assets/img/real-bus.webp" alt="Bus firmy z napisem Dachy i ekipa na dachu" loading="lazy" width="1600" height="1200" style="object-position:30% 50%">
+          <figcaption class="work__meta"><span class="work__tag">Nasza ekipa</span><div class="work__title">Własny transport i sprzęt</div></figcaption>
+        </figure>
+      </div>
+
+      <div class="inline-cta" data-reveal>
+        <p>Twój dach może być następny.<span>Pomiar i wycena za darmo.</span></p>
+        <div class="cta-pair">
+          <a href="tel:+48500634188" class="btn btn--primary"><svg><use href="#i-phone"/></svg>500 634 188</a>
+          <a href="konfigurator-3d.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Zbuduj swój dach w 3D</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Efekt WOW — „Zobacz, jak powstaje Twój dach” ============ -->
+  <section class="wow" id="dach-3d" aria-labelledby="wow-title">
+    <div class="container wow__intro">
+      <div>
+        <p class="eyebrow" data-reveal><span class="dot"></span>Nowość · Dach 3D krok po kroku</p>
+        <h2 class="h2" id="wow-title" data-reveal style="--i:1">Zobacz, jak powstaje<br>Twój dach.</h2>
+      </div>
+      <p class="lead" data-reveal style="--i:2">Więźba, membrana, łaty, pokrycie. Przewiń i&nbsp;zbuduj dach w&nbsp;3D. Na końcu wybierz kolor i&nbsp;poznaj cenę.</p>
+    </div>
+
+    <div class="wow__track" id="wow-track">
+      <div class="container wow__sticky">
+        <div class="wow__steps" id="wow-steps" role="list">
+          <span class="wow__rail" aria-hidden="true"><i id="wow-rail"></i></span>
+          <div role="listitem" class="wow__step is-active" data-step="0">
+            <span class="wow__step-num">01</span>
+            <h3>Więźba.</h3>
+            <p>Szkielet dachu. Liczymy go pod Twoje pokrycie.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="1">
+            <span class="wow__step-num">02</span>
+            <h3>Membrana i łaty.</h3>
+            <p>Druga warstwa ochrony przed wodą. Wentylacja pod pokryciem.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="2">
+            <span class="wow__step-num">03</span>
+            <h3>Pokrycie.</h3>
+            <p>Od okapu do kalenicy. Rząd po rzędzie.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="3">
+            <span class="wow__step-num">04</span>
+            <h3>Kolor i cena.</h3>
+            <p>Dachówka czy blacha. Widełki ceny od ręki.</p>
+          </div>
+        </div>
+
+        <div class="wow__stage" id="wow-stage">
+          <img class="wow__fallback" src="assets/img/hero.webp" alt="" aria-hidden="true">
+          <canvas class="wow__canvas" id="wow-canvas" aria-label="Model 3D domu, na którym dach powstaje warstwa po warstwie"></canvas>
+
+          <!-- Krok 1 -->
+          <div class="hud hud--top is-visible" data-hud="0">
+            <div class="hud-card"><span class="scan-dot"></span>Więźba · drewno C24<strong><span id="hud-rafters">0</span> krokwi</strong></div>
+          </div>
+          <!-- Krok 2 -->
+          <div class="hud hud--top" data-hud="1">
+            <div class="hud-card"><span class="scan-dot"></span>Membrana · kontrłaty · łaty<strong><span id="hud-battens">0</span> rzędów łat</strong></div>
+          </div>
+          <!-- Krok 3 -->
+          <div class="hud hud--top" data-hud="2">
+            <div class="hud-card"><span class="scan-dot"></span>Pokrycie<strong><span id="hud-cover">0</span>% dachu</strong></div>
+          </div>
+          <!-- Krok 4 -->
+          <div class="hud hud--sw" data-hud="3">
+            <div class="swatches" id="mat-switch">
+              <button type="button" class="swatch" data-mat="0" aria-pressed="true" style="--c:#3b4045"><i></i><span>Dachówka grafit</span></button>
+              <button type="button" class="swatch" data-mat="1" aria-pressed="false" style="--c:#5a3326"><i></i><span>Blachodachówka brąz</span></button>
+              <button type="button" class="swatch" data-mat="2" aria-pressed="false" style="--c:#a44a2c"><i></i><span>Dachówka ceglasta</span></button>
+            </div>
+          </div>
+          <div class="hud hud--right" data-hud="3">
+            <div class="hud-card price-card">
+              Szacunkowy koszt
+              <span class="price" id="hud-price">0 zł</span>
+              <div class="row"><span>Montaż</span><b id="hud-days">ok. 9 dni</b></div>
+              <a href="konfigurator-3d.html" class="btn btn--primary btn--sm price-card__cta"><svg><use href="#i-cube"/></svg>Otwórz konfigurator</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container wow__outro">
+      <div class="wow__outro-inner">
+        <p data-reveal>Podoba się? Zadzwoń. Resztę ustalimy na pomiarze.</p>
+        <div class="cta-pair" data-reveal style="--i:1">
+          <a href="konfigurator-3d.html" class="btn btn--primary"><svg><use href="#i-cube"/></svg>Skonfiguruj swój dach</a>
+          <a href="tel:+48500634188" class="btn btn--ghost"><svg><use href="#i-phone"/></svg>500 634 188</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. Usługi + proces ============ -->
+  <section class="section" id="uslugi" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Usługi</p>
+          <h2 class="h2" id="services-title" data-reveal style="--i:1">Od więźby<br>po rynnę.</h2>
+        </div>
+        <a href="uslugi.html" class="link-arrow" data-reveal style="--i:2">Pełna oferta<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="services">
+        <article class="service" data-reveal style="--i:0">
+          <div class="service__media"><img src="assets/img/usl-nowe.webp" alt="" loading="lazy"></div>
+          <div class="service__body"><h3 class="h3">Nowe dachy</h3><p>Więźba, membrana, dachówka. Komplet z&nbsp;jednej ręki.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:1">
+          <div class="service__media"><img src="assets/img/usl-blacha.webp" alt="" loading="lazy"></div>
+          <div class="service__body"><h3 class="h3">Blachodachówka</h3><p>Lekka, szybka w montażu, w&nbsp;wielu kolorach.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:2">
+          <div class="service__media"><img src="assets/img/usl-komin.webp" alt="" loading="lazy"></div>
+          <div class="service__body"><h3 class="h3">Obróbki i kominy</h3><p>Obróbki blacharskie, obłożenie kominów, rynny.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:3">
+          <div class="service__media"><img src="assets/img/usl-remont.webp" alt="" loading="lazy"></div>
+          <div class="service__body"><h3 class="h3">Remonty i naprawy</h3><p>Przecieki, wymiana pokrycia, przeglądy dachu.</p></div>
+        </article>
+      </div>
+
+      <div class="process">
+        <div class="process__head">
+          <p class="eyebrow" data-reveal><span class="dot"></span>Jak działamy</p>
+          <h2 class="h2" data-reveal style="--i:1">Cztery kroki. Zero niespodzianek.</h2>
+        </div>
+        <div class="steps" data-reveal-group role="list">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <div role="listitem" class="step" style="--i:0"><span class="step__num">01</span><h3 class="h3">Telefon</h3><p>Opisz dach. Wystarczy 5 minut.</p></div>
+          <div role="listitem" class="step" style="--i:1"><span class="step__num">02</span><h3 class="h3">Pomiar</h3><p>Przyjeżdżamy i mierzymy. Bez opłat.</p></div>
+          <div role="listitem" class="step" style="--i:2"><span class="step__num">03</span><h3 class="h3">Wycena</h3><p>Konkretna kwota i termin.</p></div>
+          <div role="listitem" class="step" style="--i:3"><span class="step__num">04</span><h3 class="h3">Montaż</h3><p>Własna ekipa. Sprzątamy po sobie.</p></div>
+        </div>
+        <div class="inline-cta" data-reveal>
+          <p>Krok pierwszy zajmuje 5 minut.<span>Warszawa i okolice.</span></p>
+          <div class="cta-pair">
+            <a href="tel:+48500634188" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń teraz</a>
+            <a href="konfigurator-3d.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Najpierw zobacz w 3D</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. Opinie ============ -->
+  <section class="section section--surface" id="opinie" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="reviews-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Opinie klientów</p>
+          <h2 class="h2" id="reviews-title" data-reveal style="--i:1">Mówią<br>klienci.</h2>
+        </div>
+      </div>
+
+      <!-- Opinie przykładowe (firma nie ma opinii w Google). Do podmiany na prawdziwe przed publikacją. -->
+      <div class="reviews">
+        <figure class="review" data-reveal style="--i:0;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Dach na nowym domu w 10 dni. Ekipa punktualna, porządek na budowie.”</blockquote>
+          <footer><span class="avatar">PK</span><div><b>Paweł K.</b><span>Wesoła · nowy dach</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:1;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Komin obłożony blachą w kolorze dachu. Wygląda jak z katalogu.”</blockquote>
+          <footer><span class="avatar">AM</span><div><b>Anna M.</b><span>Sulejówek · obróbki</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:2;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Konkretna wycena po jednym telefonie. Bez dopłat na końcu.”</blockquote>
+          <footer><span class="avatar">TR</span><div><b>Tomasz R.</b><span>Halinów · blachodachówka</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:3;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Przeciekało przy kominie od lat. Naprawione w&nbsp;jeden dzień.”</blockquote>
+          <footer><span class="avatar">ES</span><div><b>Ewa S.</b><span>Józefów · naprawa</span></div></footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal><span class="dot"></span>FAQ</p>
+        <h2 class="h2" id="faq-title" data-reveal style="--i:1">Krótko<br>i na temat.</h2>
+        <div class="cta-pair" data-reveal style="--i:2">
+          <a href="tel:+48500634188" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg>Inne pytanie? Zadzwoń</a>
+        </div>
+      </div>
+
+      <div class="faq" id="faq-list">
+        <div class="faq__item" data-reveal style="--i:0">
+          <button class="faq__q" aria-expanded="false">Ile kosztuje nowy dach?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Zwykle 200–320 zł za m² z materiałem i robocizną. Dokładną kwotę podajemy po bezpłatnym pomiarze.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:1">
+          <button class="faq__q" aria-expanded="false">Dachówka czy blachodachówka?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Dachówka: cisza i trwałość na pokolenia. Blachodachówka: lżejsza, tańsza, szybsza w montażu. Porównasz obie w 3D.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:2">
+          <button class="faq__q" aria-expanded="false">Ile trwa wymiana dachu?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Na domu jednorodzinnym zwykle 1–2 tygodnie, zależnie od pogody i stanu więźby.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:3">
+          <button class="faq__q" aria-expanded="false">Robicie obróbki kominów?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Obróbki blacharskie, obłożenie komina blachą, rynny i&nbsp;wiatrownice.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:4">
+          <button class="faq__q" aria-expanded="false">Gdzie pracujecie?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Warszawa i okolice: Wesoła, Sulejówek, Halinów, Józefów, Zielonka i dalej.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:5">
+          <button class="faq__q" aria-expanded="false">Sprzątacie po pracy?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Wywozimy stare pokrycie i zostawiamy czysty teren. To część wyceny, nie dopłata.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Mocne zakończenie ============ -->
+  <section class="section" style="padding-top:0" aria-labelledby="final-title">
+    <div class="container">
+      <div class="final" data-reveal>
+        <img class="final__bg" src="assets/img/cta-bg.webp" alt="" loading="lazy">
+        <p class="eyebrow"><span class="dot"></span>Bezpłatny pomiar i wycena</p>
+        <h2 class="h2" id="final-title">Jeden telefon. Nowy dach.</h2>
+        <div class="final__phone">
+          <a href="tel:+48500634188">500 634 188</a>
+          <button class="copy-btn" id="copy-phone" type="button" aria-label="Kopiuj numer telefonu" data-phone="500 634 188">
+            <svg class="ic-copy"><use href="#i-copy"/></svg>
+            <svg class="ic-check"><use href="#i-check"/></svg>
+          </button>
+        </div>
+        <div class="cta-pair">
+          <a href="tel:+48500634188" class="btn btn--light"><svg><use href="#i-phone"/></svg>Zadzwoń teraz</a>
+          <a href="konfigurator-3d.html" class="btn btn--outline-light"><svg><use href="#i-cube"/></svg>Zbuduj dach w 3D</a>
+        </div>
+        <p class="final__note">Warszawa i okolice · ul. Krokusów 52, Warszawa-Wesoła</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 8. Stopka ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <span class="logo-slot">TWOJE LOGO</span>
+        <p>Guciodach. Dachy, pokrycia, obróbki blacharskie. Warszawa i okolice.</p>
+      </div>
+      <div>
+        <h4>Strona</h4>
+        <ul>
+          <li><a href="realizacje.html">Realizacje</a></li>
+          <li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="konfigurator-3d.html">Dach w 3D</a></li>
+          <li><a href="o-firmie.html">O firmie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48500634188">500 634 188</a></li>
+          <li><a href="https://wa.me/48500634188" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="kontakt.html">Formularz kontaktowy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Adres</h4>
+        <ul>
+          <li>ul. Krokusów 52</li>
+          <li>05-077 Warszawa</li>
+          <li>Warszawa i okolice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Guciodach</span>
+      <span>Wersja demonstracyjna strony</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Pasek CTA na telefonie -->
+<div class="mbar" id="mbar" aria-hidden="true">
+  <a href="tel:+48500634188" class="btn btn--primary" tabindex="-1"><svg><use href="#i-phone"/></svg>Zadzwoń</a>
+  <a href="konfigurator-3d.html" class="btn btn--ghost" tabindex="-1"><svg><use href="#i-cube"/></svg>Dach w 3D</a>
+</div>
+
+<!-- WhatsApp -->
+<div class="wa" id="wa">
+  <div class="wa__bubble" id="wa-bubble" role="status">
+    <b>Masz zdjęcie dachu?</b>
+    <span>Wyślij na WhatsApp — odpiszemy z wyceną.</span>
+    <button class="wa__close" id="wa-close" type="button" aria-label="Zamknij"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <a class="wa__btn" href="https://wa.me/48500634188?text=Dzie%C5%84%20dobry%2C%20chc%C4%99%20zapyta%C4%87%20o%20dach." target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">
+    <svg><use href="#i-wa"/></svg>
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/roofbuild3d.js" defer></script>
+</body>
+</html>
