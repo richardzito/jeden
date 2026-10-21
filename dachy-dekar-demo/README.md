@@ -13,10 +13,18 @@ Pokazowa wersja strony dla firmy Dekar Robert Szymański (dachy płaskie, Warsza
 | --- | --- |
 | `index.html` | Strona główna: hero, realizacje, zajawka „Przekrój Dachu 3D”, usługi + proces, opinie, FAQ, CTA, stopka |
 | `realizacje.html`, `uslugi.html`, `kalkulator-3d.html`, `o-firmie.html`, `kontakt.html` | Podstrony-zaślepki („realizowana przy rozpoczęciu współpracy”) |
-| `assets/css/style.css` | Ten sam system co w poprzednim demo (biel + brąz `#7b4b2a`) + dodatki dla Dekar |
+| `assets/css/style.css` | System z poprzedniego demo + dodatki dla Dekar + motyw w kolorach firmy (na końcu pliku) |
 | `assets/js/main.js` | Pojawianie się sekcji, header, menu, FAQ, pasek CTA na telefonie, WhatsApp, kopiowanie numeru |
 | `assets/js/flatroof3d.js` | Scena Three.js sterowana scrollem (sekcja 3) |
 | `assets/img/` | Zdjęcia i logo z dachydekar.pl |
+
+## Kolory
+
+Kolorystyka obecnej strony dachydekar.pl: czerń `#161922` i żółty `#ffd266`, na białej bazie z dużą ilością oddechu.
+
+- Żółty to tylko wypełnienie (przyciski, kropki, linie postępu). Nigdy nie jest tekstem na białym, bo byłby nieczytelny.
+- Czarne bloki: sekcja 3D i stopka. Nad nimi nagłówek sam przełącza się na ciemny, a logo zamienia się na jasne.
+- Mocne zakończenie (sekcja 7) jest na żółtym tle z czarnym tekstem.
 
 ## Skąd są dane
 

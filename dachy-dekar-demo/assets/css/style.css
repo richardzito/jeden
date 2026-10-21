@@ -2493,3 +2493,402 @@ button {
     left: 12px;
   }
 }
+
+/* ==========================================================================
+   MOTYW DEKAR — czerń + żółty z obecnej strony dachydekar.pl
+   Biała baza, czarne bloki (sekcja 3D, stopka), żółte CTA i akcenty.
+   Żółty nigdy nie jest kolorem tekstu na białym — tylko wypełnieniem.
+   ========================================================================== */
+
+:root {
+  --ink: #161922;
+  --ink-2: #4f535c;
+  --ink-3: #868a92;
+  --line: #e7e7e4;
+  --surface: #f6f6f3;
+  --surface-2: #ececea;
+
+  --accent: #ffd266;
+  --accent-600: #f5c043;
+  --accent-50: #fff8e2;
+  --accent-100: #ffeab0;
+  --night: #161922;
+  --night-2: #1f232d;
+
+  /* stare nazwy tokenów wskazują teraz na paletę Dekar */
+  --brown: var(--accent);
+  --brown-600: var(--accent-600);
+  --brown-700: var(--night);
+  --brown-50: var(--accent-50);
+  --brown-100: var(--accent-100);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline-color: var(--ink);
+}
+
+.eyebrow {
+  color: var(--ink);
+}
+
+.eyebrow .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-50);
+}
+
+/* Przyciski: żółty z czarnym tekstem jak na ich stronie */
+.btn--primary {
+  background: var(--accent);
+  color: var(--ink);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5), 0 6px 18px -6px rgb(222 168 30 / 0.65);
+}
+
+.btn--dark {
+  background: var(--night);
+  color: #fff;
+  box-shadow: 0 6px 18px -8px rgb(22 25 34 / 0.6);
+}
+
+.btn--dark svg {
+  color: var(--accent);
+}
+
+.btn--outline-dark {
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px rgb(22 25 34 / 0.35);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover {
+    background: var(--accent-600);
+  }
+  .btn--dark:hover {
+    background: #262a35;
+  }
+  .btn--outline-dark:hover {
+    box-shadow: inset 0 0 0 1.5px var(--ink);
+  }
+}
+
+.link-arrow {
+  color: var(--ink);
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 3px no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 300ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link-arrow:hover {
+    background-size: 100% 3px;
+  }
+}
+
+.glass-chip svg {
+  color: var(--ink);
+}
+
+.stars {
+  color: #f0b429;
+}
+
+.nav a.is-new::after {
+  box-shadow: 0 0 0 2px var(--accent-50);
+}
+
+.header__cta .btn--primary svg,
+.mbar .btn--primary svg {
+  color: var(--ink);
+}
+
+/* Realizacje i usługi */
+.work__tag {
+  background: var(--accent);
+  color: var(--ink);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.service__media--layers {
+  background: linear-gradient(180deg, #f6f6f3, #ebebe8);
+}
+
+.layers-art i:nth-child(3) {
+  background: var(--accent);
+}
+
+/* Pasek awaryjny: czarny, żółta kropka */
+.alert-strip {
+  background: var(--night);
+  color: #fff;
+  box-shadow: none;
+}
+
+.alert-strip p span {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.alert-strip p span b {
+  color: #fff !important;
+}
+
+/* Proces */
+.steps.is-in .step__num {
+  color: var(--ink);
+  box-shadow: 0 0 0 6px var(--accent-50);
+}
+
+/* Opinie, FAQ, podstrony */
+.avatar {
+  background: var(--accent-50);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--accent-100);
+}
+
+.faq__item.is-open .faq__icon {
+  background: var(--accent);
+}
+
+.faq__item.is-open .faq__icon::before,
+.faq__item.is-open .faq__icon::after {
+  background: var(--ink);
+}
+
+.placeholder-card__icon {
+  background: var(--accent-50);
+  color: var(--ink);
+}
+
+/* ---------- Sekcja 3D na czarnym tle ---------- */
+.wow {
+  background: var(--night);
+  color: #fff;
+}
+
+.wow .eyebrow,
+.wow__step-num {
+  color: var(--accent);
+}
+
+.wow .eyebrow .dot {
+  box-shadow: 0 0 0 3px rgb(255 210 102 / 0.18);
+}
+
+.wow .lead,
+.wow__step p {
+  color: rgb(255 255 255 / 0.62);
+}
+
+.wow__step {
+  opacity: 0.38;
+}
+
+.wow__step.is-active {
+  opacity: 1;
+}
+
+.wow__rail {
+  background: rgb(255 255 255 / 0.12);
+}
+
+.wow__step::before {
+  background: var(--night);
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.22);
+}
+
+.wow__step.is-done::before,
+.wow__step.is-active::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgb(255 210 102 / 0.2);
+}
+
+.wow__stage {
+  background:
+    radial-gradient(90% 70% at 50% 45%, #2a2f3b 0%, #1b1e27 55%, #121419 100%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
+.segmented button[aria-pressed="true"] {
+  color: var(--ink);
+}
+
+.layer-tag {
+  color: #fff;
+}
+
+.layer-tag::before {
+  background: rgb(255 255 255 / 0.45);
+}
+
+.layer-tag small {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.layer-tag b {
+  color: var(--ink);
+}
+
+.wow__outro p {
+  color: #fff;
+}
+
+/* ---------- Finał na żółtym ---------- */
+.final {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.final::before {
+  background:
+    radial-gradient(70% 120% at 100% 0%, rgb(255 255 255 / 0.35), transparent 60%),
+    linear-gradient(180deg, rgb(255 210 102 / 0.2), rgb(245 192 67 / 0.55));
+}
+
+.final__bg {
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  filter: grayscale(1);
+}
+
+.final .eyebrow {
+  color: var(--ink);
+}
+
+.final .eyebrow .dot {
+  background: var(--ink);
+  box-shadow: none;
+}
+
+.final__note {
+  color: rgb(22 25 34 / 0.65);
+}
+
+.copy-btn {
+  background: rgb(22 25 34 / 0.08);
+  box-shadow: inset 0 0 0 1px rgb(22 25 34 / 0.2);
+}
+
+/* ---------- Stopka na czarnym ---------- */
+.footer--dark {
+  background: var(--night);
+  color: #fff;
+}
+
+.footer--dark h4 {
+  color: var(--accent);
+}
+
+.footer--dark li,
+.footer--dark li a,
+.footer--dark .footer__about p {
+  color: rgb(255 255 255 / 0.7);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer--dark li a:hover {
+    color: #fff;
+  }
+}
+
+.footer--dark .footer__bottom {
+  border-top-color: rgb(255 255 255 / 0.12);
+  color: rgb(255 255 255 / 0.45);
+}
+
+@media (max-width: 760px) {
+  .footer--dark {
+    padding-bottom: 110px;
+  }
+}
+
+/* ---------- Nagłówek nad czarnymi sekcjami ---------- */
+.header {
+  transition: box-shadow 300ms ease, background-color 300ms ease;
+}
+
+.logo--swap {
+  display: inline-grid;
+}
+
+.logo--swap img {
+  grid-area: 1 / 1;
+  transition: opacity 250ms ease;
+}
+
+.logo__light {
+  opacity: 0;
+}
+
+.header.is-dark {
+  background: rgb(22 25 34 / 0.72);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.06);
+}
+
+.header.is-dark .logo__dark {
+  opacity: 0;
+}
+
+.header.is-dark .logo__light {
+  opacity: 1;
+}
+
+.header .nav a,
+.header .btn--ghost {
+  transition: color 250ms ease, background-color 250ms ease, box-shadow 250ms ease, transform 160ms var(--ease-out);
+}
+
+.header.is-dark .nav a {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.header.is-dark .btn--ghost {
+  background: rgb(255 255 255 / 0.08);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.18);
+}
+
+.header.is-dark .menu-btn {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25);
+}
+
+.header.is-dark .menu-btn span,
+.header.is-dark .menu-btn span::before,
+.header.is-dark .menu-btn span::after {
+  background: #fff;
+}
+
+.menu-open .header.is-dark .menu-btn span,
+.header.is-dark.menu-open .menu-btn span {
+  background: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header.is-dark .nav a:hover {
+    color: #fff;
+    background: rgb(255 255 255 / 0.08);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .header.is-dark {
+    background: var(--night);
+  }
+}
+
+.logo--swap img {
+  height: 34px;
+  width: auto;
+  max-width: none;
+}
+
+/* Nakładki na ciemnej scenie: prawie nieprzezroczyste, żeby nie szarzały */
+.wow .hud-card,
+.wow .segmented {
+  background: rgb(255 255 255 / 0.94);
+}

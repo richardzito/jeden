@@ -194,7 +194,7 @@ function init() {
   const camera = new THREE.PerspectiveCamera(28, 1, 0.5, 300);
   const target = new THREE.Vector3(0, 4, 0);
 
-  scene.add(new THREE.HemisphereLight('#ffffff', '#cdbfb0', 0.55));
+  scene.add(new THREE.HemisphereLight('#ffffff', '#3a3f4a', 0.6));
   const sun = new THREE.DirectionalLight('#fff1dc', 2.4);
   sun.position.set(-12, 22, 14);
   sun.castShadow = true;
@@ -393,7 +393,7 @@ function init() {
       new THREE.Vector3(-B.L / 2, yM, -B.W / 2),
       new THREE.Vector3(-B.L / 2, yM, B.W / 2),
     ]),
-    new THREE.LineDashedMaterial({ color: '#7b4b2a', dashSize: 0.4, gapSize: 0.25, transparent: true, depthTest: false })
+    new THREE.LineDashedMaterial({ color: '#ffd266', dashSize: 0.4, gapSize: 0.25, transparent: true, depthTest: false })
   );
   outline.computeLineDistances();
   outline.renderOrder = 10;
@@ -402,35 +402,37 @@ function init() {
   groundOutline.position.y = -yM + 0.02;
   measure.add(groundOutline);
   const scanH = yM + 1.2;
-  const scanMat = new THREE.MeshBasicMaterial({ color: '#b07a4f', transparent: true, opacity: 0.16, side: THREE.DoubleSide, depthWrite: false });
+  const scanMat = new THREE.MeshBasicMaterial({ color: '#ffd266', transparent: true, opacity: 0.16, side: THREE.DoubleSide, depthWrite: false });
   const scan = new THREE.Mesh(new THREE.PlaneGeometry(B.W + 1, scanH), scanMat);
   scan.rotation.y = Math.PI / 2;
   scan.position.y = scanH / 2;
   const scanEdge = new THREE.Mesh(
     new THREE.BoxGeometry(0.04, scanH, B.W + 1),
-    new THREE.MeshBasicMaterial({ color: '#7b4b2a', transparent: true, opacity: 0.55, depthWrite: false })
+    new THREE.MeshBasicMaterial({ color: '#ffd266', transparent: true, opacity: 0.55, depthWrite: false })
   );
   scanEdge.position.y = scanH / 2;
   measure.add(scan, scanEdge);
 
   // ---------- Podłoże ----------
-  const ground = new THREE.Mesh(new THREE.PlaneGeometry(120, 120), new THREE.ShadowMaterial({ opacity: 0.16 }));
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(120, 120), new THREE.ShadowMaterial({ opacity: 0.5 }));
   ground.rotation.x = -Math.PI / 2;
   ground.receiveShadow = true;
+  ground.position.y = 0.01;
+  ground.renderOrder = 2;
   scene.add(ground);
   const cc = document.createElement('canvas');
   cc.width = cc.height = 256;
   {
     const g = cc.getContext('2d');
     const grad = g.createRadialGradient(128, 128, 10, 128, 128, 128);
-    grad.addColorStop(0, 'rgba(60,40,25,0.5)');
-    grad.addColorStop(0.6, 'rgba(60,40,25,0.1)');
-    grad.addColorStop(1, 'rgba(60,40,25,0)');
+    grad.addColorStop(0, 'rgba(255,255,255,0.13)');
+    grad.addColorStop(0.6, 'rgba(255,255,255,0.04)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
     g.fillStyle = grad;
     g.fillRect(0, 0, 256, 256);
   }
   const contact = new THREE.Mesh(
-    new THREE.PlaneGeometry(B.L * 1.7, B.W * 1.9),
+    new THREE.PlaneGeometry(B.L * 2.6, B.W * 3),
     new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(cc), transparent: true, depthWrite: false })
   );
   contact.rotation.x = -Math.PI / 2;
@@ -580,7 +582,7 @@ function init() {
     measure.visible = anim.measure > 0.01 && b >= 1;
     outline.material.opacity = anim.measure;
     groundOutline.material = outline.material;
-    scanMat.opacity = 0.14 * anim.measure;
+    scanMat.opacity = 0.12 * anim.measure;
     scanEdge.material.opacity = 0.5 * anim.measure;
     scan.position.x = scanEdge.position.x = ((now / 2800) % 1) * (B.L + 3) - B.L / 2 - 1.5;
 

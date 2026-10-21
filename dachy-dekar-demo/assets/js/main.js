@@ -35,12 +35,23 @@
   const heroImg = document.querySelector('.hero__media img');
   const heroMedia = document.querySelector('.hero__media');
   const mbar = document.getElementById('mbar');
+  const darkZones = [...document.querySelectorAll('[data-header-dark]')];
   let ticking = false;
 
   const onScroll = () => {
     ticking = false;
     const y = window.scrollY;
     header && header.classList.toggle('is-scrolled', y > 8);
+
+    // Nad czarnymi sekcjami nagłówek też ciemnieje (bez szarego pasa)
+    if (header && darkZones.length) {
+      const mid = header.offsetHeight / 2;
+      const dark = darkZones.some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top <= mid && r.bottom >= mid;
+      });
+      header.classList.toggle('is-dark', dark);
+    }
 
     if (heroImg && !reduceMotion && root.classList.contains('hero-settled')) {
       const r = heroMedia.getBoundingClientRect();
