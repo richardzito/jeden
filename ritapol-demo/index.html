@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ritapol — dachy, tarasy, hydroizolacje · Warszawa od 1990</title>
+  <meta name="description" content="Dachy płaskie, skośne i zielone, miedź i tytan-cynk, tarasy, hydroizolacje, badania szczelności, elewacje. Ponad 1000 inwestycji od 1990 r. Tel. 600 242 109.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+<!-- Ikony -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.6 4.2-2.1 1.4a11 11 0 0 0 6.4 6.4l1.4-2.1L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.8 20 7.3v9.4L12 21.2l-8-4.5V7.3l8-4.5Zm0 0v0M4 7.3l8 4.5 8-4.5M12 11.8v9.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.6 2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8L12 2.6Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.3 28.8l6.6-1.7A12.7 12.7 0 1 0 16 3.2Zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.5 10.5 0 1 1 16 26.3Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5 0-.2-.2-.2-.5-.4Z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 19c0-8 5.5-13.5 15-14-.4 9.6-6 15-14 15H5v-1Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M5 20c3-5 6-8 10-10.5"/></symbol>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a href="index.html" class="logo logo--swap" aria-label="Ritapol — strona główna"><img class="logo__dark" src="assets/img/logo-ritapol.png" alt="Ritapol" width="197" height="47"><img class="logo__light" src="assets/img/logo-ritapol-light.png" alt="" width="197" height="47"></a>
+    <nav class="nav" aria-label="Główna nawigacja">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#uslugi">Usługi</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#faq">FAQ</a>
+      <a href="dach-zielony-3d.html" class="is-new">Dach zielony 3D</a>
+    </nav>
+    <div class="header__cta">
+      <a href="dach-zielony-3d.html" class="btn btn--ghost btn--sm"><svg><use href="#i-leaf"/></svg>Dach zielony 3D</a>
+      <a href="tel:+48600242109" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg><span>600 242 109</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#realizacje">Realizacje</a>
+  <a href="#uslugi">Usługi i proces</a>
+  <a href="#opinie">Opinie</a>
+  <a href="#faq">FAQ</a>
+  <a href="o-firmie.html">O firmie</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="dach-zielony-3d.html" class="btn btn--ghost"><svg><use href="#i-leaf"/></svg>Zamień dach w ogród 3D</a>
+</div>
+
+<main>
+
+  <!-- ============ 1. Hero ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero__top">
+        <div>
+          <p class="eyebrow" data-hero style="--i:0"><span class="dot"></span>Specjaliści w budownictwie · od 1990 r.</p>
+          <h1 class="display" id="hero-title">
+            <span class="line-mask"><span style="--i:0">Dachy,</span></span>
+            <span class="line-mask"><span style="--i:1">które bronią</span></span>
+            <span class="line-mask"><span style="--i:2">budynku.</span></span>
+          </h1>
+        </div>
+        <div class="hero__side">
+          <p class="lead" data-hero style="--i:1">Dachy, tarasy, hydroizolacje, elewacje. Od domu po dworzec kolejowy.</p>
+          <div class="cta-pair" data-hero style="--i:2">
+            <a href="tel:+48600242109" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń: 600 242 109</a>
+            <a href="dach-zielony-3d.html" class="btn btn--ghost"><svg><use href="#i-leaf"/></svg>Dach zielony 3D<svg class="arrow"><use href="#i-arrow"/></svg></a>
+          </div>
+          <span class="rating-chip" data-hero style="--i:3">
+            <svg class="chip-ic" aria-hidden="true"><use href="#i-shield"/></svg>
+            <span><strong>1000+</strong> inwestycji · własny sprzęt i&nbsp;inżynierowie</span>
+          </span>
+        </div>
+      </div>
+
+      <figure class="hero__media" style="margin-inline:0">
+        <img src="assets/img/hero.webp" alt="Dekarze Ritapol przy wymianie pokrycia dachu kościoła z dachówki karpiówki" width="1920" height="500" fetchpriority="high">
+        <figcaption class="hero__chips">
+          <span class="glass-chip"><svg><use href="#i-shield"/></svg>Obiekty zabytkowe</span>
+          <span class="glass-chip">Karpiówka · miedź · tytan-cynk</span>
+        </figcaption>
+      </figure>
+
+      <div class="trust">
+        <div class="trust__item" data-reveal style="--i:0"><strong>Od 1990</strong><span>trzy rodzinne firmy w jednej</span></div>
+        <div class="trust__item" data-reveal style="--i:1"><strong>1000+</strong><span>wykonanych inwestycji</span></div>
+        <div class="trust__item" data-reveal style="--i:2"><strong>2500 m²</strong><span>miedzi na dworcu PKP w Łodzi</span></div>
+        <div class="trust__item" data-reveal style="--i:3"><strong>3 metody</strong><span>badania szczelności</span></div>
+      </div>
+
+      <div class="partners" data-reveal>
+        <span class="partners__label">Pracujemy na materiałach</span>
+        <div class="partners__row">
+          <img src="assets/img/materialy/rheinzink.png" alt="Rheinzink" loading="lazy">
+          <img src="assets/img/materialy/vmzinc.png" alt="VMZinc" loading="lazy">
+          <img src="assets/img/materialy/kghm.png" alt="KGHM Polska Miedź" loading="lazy" class="sq">
+          <img src="assets/img/materialy/prefa.png" alt="Prefa" loading="lazy" class="sq">
+          <img src="assets/img/materialy/roben.png" alt="Röben" loading="lazy" class="sq">
+          <img src="assets/img/materialy/wienerberger.png" alt="Wienerberger" loading="lazy" class="sq">
+          <img src="assets/img/materialy/braas.png" alt="Braas" loading="lazy" class="sq">
+          <img src="assets/img/materialy/bauder.png" alt="Bauder" loading="lazy">
+          <img src="assets/img/materialy/icopal.png" alt="Icopal" loading="lazy" class="sq">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Ukończone realizacje ============ -->
+  <section class="section" id="realizacje" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Realizacje</p>
+          <h2 class="h2" id="works-title" data-reveal style="--i:1">Od kamienicy<br>po dworzec.</h2>
+        </div>
+        <a href="realizacje.html" class="link-arrow" data-reveal style="--i:2">Wszystkie realizacje<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="works works--rita">
+        <figure class="work work--a" data-reveal="clip" style="margin:0">
+          <img src="assets/img/real-miedz.webp" alt="Dekarze Ritapol montują miedzianą lukarnę na dachu z dachówki" loading="lazy" width="800" height="599">
+          <figcaption class="work__meta"><span class="work__tag">Miedź + dachówka</span><div class="work__title">Kamienica, ul. Profesorska · 400 m²</div></figcaption>
+        </figure>
+        <figure class="work work--b" data-reveal="clip" style="--i:1;margin:0">
+          <img src="assets/img/real-dworzec.webp" alt="Zabytkowy dworzec kolejowy w Łodzi z dachem z miedzi" loading="lazy" width="470" height="544">
+          <figcaption class="work__meta"><span class="work__tag">Obiekt zabytkowy</span><div class="work__title">Dworzec PKP i PKS, Łódź · 2500 m² miedzi</div></figcaption>
+        </figure>
+        <figure class="work work--c" data-reveal="clip" style="--i:1;margin:0">
+          <img src="assets/img/real-tytan.webp" alt="Dekarze na dachu z blachy tytan-cynk, w tle dźwig" loading="lazy" width="800" height="600">
+          <figcaption class="work__meta"><span class="work__tag">Tytan-cynk</span><div class="work__title">ul. Senatorska · 2500 m²</div></figcaption>
+        </figure>
+        <figure class="work work--d" data-reveal="clip" style="--i:2;margin:0">
+          <img src="assets/img/real-pvc.webp" alt="Zgrzewanie membrany PVC na dachu płaskim" loading="lazy" width="800" height="599">
+          <figcaption class="work__meta"><span class="work__tag">Membrana PVC</span><div class="work__title">Zakład przetwórczy · 400 m²</div></figcaption>
+        </figure>
+        <figure class="work work--e" data-reveal="clip" style="--i:3;margin:0">
+          <img src="assets/img/real-ostrobramska.webp" alt="Krycie dachu płaskiego papą na osiedlu Park Ostrobramska" loading="lazy" width="1220" height="500">
+          <figcaption class="work__meta"><span class="work__tag">Dach + tarasy</span><div class="work__title">Park Ostrobramska · 2500 m²</div></figcaption>
+        </figure>
+      </div>
+
+      <div class="inline-cta" data-reveal>
+        <p>Masz budynek do zabezpieczenia?<span>Zaczynamy od audytu dachu.</span></p>
+        <div class="cta-pair">
+          <a href="tel:+48600242109" class="btn btn--primary"><svg><use href="#i-phone"/></svg>600 242 109</a>
+          <a href="dach-zielony-3d.html" class="btn btn--ghost"><svg><use href="#i-leaf"/></svg>Zobacz dach zielony 3D</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Efekt WOW — „Zamień dach w ogród” ============ -->
+  <section class="wow" id="dach-zielony" aria-labelledby="wow-title">
+    <div class="container wow__intro">
+      <div>
+        <p class="eyebrow" data-reveal><span class="dot"></span>Nowość · Kreator dachu zielonego 3D</p>
+        <h2 class="h2" id="wow-title" data-reveal style="--i:1">Zamień dach<br>w ogród.</h2>
+      </div>
+      <p class="lead" data-reveal style="--i:2">Mniej upału, mniej wody w kanalizacji, więcej życia. Przewiń i&nbsp;zobacz swój dach za rok.</p>
+    </div>
+
+    <div class="wow__track" id="wow-track">
+      <div class="container wow__sticky">
+        <div class="wow__steps" id="wow-steps" role="list">
+          <span class="wow__rail" aria-hidden="true"><i id="wow-rail"></i></span>
+          <div role="listitem" class="wow__step is-active" data-step="0">
+            <span class="wow__step-num">01</span>
+            <h3>Twój dach dziś.</h3>
+            <p>Czarna papa. Latem nagrzewa się do 70°C.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="1">
+            <span class="wow__step-num">02</span>
+            <h3>Warstwy pod zieleń.</h3>
+            <p>Hydroizolacja, drenaż, filtr, substrat. Nic nie przecieknie.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="2">
+            <span class="wow__step-num">03</span>
+            <h3>Wybierz ogród.</h3>
+            <p>Rozchodniki, taras do odpoczynku albo pełny ogród.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="3">
+            <span class="wow__step-num">04</span>
+            <h3>Policz korzyści.</h3>
+            <p>Woda zatrzymana na dachu, chłodniej pod dachem, cena.</p>
+          </div>
+        </div>
+
+        <div class="wow__stage" id="wow-stage">
+          <img class="wow__fallback" src="assets/img/real-ostrobramska.webp" alt="" aria-hidden="true">
+          <canvas class="wow__canvas" id="wow-canvas" aria-label="Model 3D budynku, na którego dachu powstaje dach zielony"></canvas>
+
+          <!-- Etykiety warstw (pozycja liczona z modelu 3D) -->
+          <div class="layer-tags" id="layer-tags" aria-hidden="true">
+            <span class="layer-tag" data-layer="3"><b>Substrat</b><small>gleba dla roślin</small></span>
+            <span class="layer-tag" data-layer="2"><b>Geowłóknina</b><small>filtr</small></span>
+            <span class="layer-tag" data-layer="1"><b>Mata drenażowa</b><small>magazyn wody</small></span>
+            <span class="layer-tag" data-layer="0"><b>Membrana antykorzenna</b><small>hydroizolacja</small></span>
+          </div>
+
+          <!-- Krok 1 -->
+          <div class="hud hud--top is-visible" data-hud="0">
+            <div class="hud-card"><span class="scan-dot"></span>Dach płaski · <span id="hud-area">600</span> m²<strong>Papa latem: 70°C</strong><span class="heat">Nagrzewa mieszkania</span></div>
+          </div>
+          <!-- Krok 2 -->
+          <div class="hud hud--top" data-hud="1">
+            <div class="hud-card"><span class="scan-dot"></span>Układanie warstw<strong><span id="hud-layers">0</span> z 4 warstw</strong></div>
+          </div>
+          <!-- Krok 3 -->
+          <div class="hud hud--bottom" data-hud="2">
+            <div class="segmented" id="type-switch" style="--n:3">
+              <span class="segmented__thumb"></span>
+              <button type="button" data-type="0" aria-pressed="true">Ekstensywny</button>
+              <button type="button" data-type="1" aria-pressed="false">Taras</button>
+              <button type="button" data-type="2" aria-pressed="false">Intensywny</button>
+            </div>
+          </div>
+          <div class="hud hud--top" data-hud="2">
+            <div class="hud-card"><span class="scan-dot"></span>Roślinność<strong id="hud-type">Rozchodniki · 8–12 cm</strong></div>
+          </div>
+          <!-- Krok 4 -->
+          <div class="hud hud--u" data-hud="3">
+            <div class="hud-card price-card metric-card">
+              Szacunkowy koszt
+              <span class="price" id="hud-price">0 zł</span>
+              <div class="row"><span>Woda na dachu</span><b><span id="hud-water">0</span> m³/rok</b></div>
+              <div class="row"><span>Dach latem</span><b>~<span id="hud-temp">70</span>°C</b></div>
+              <a href="dach-zielony-3d.html" class="btn btn--primary btn--sm price-card__cta"><svg><use href="#i-leaf"/></svg>Otwórz kreator</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container wow__outro">
+      <div class="wow__outro-inner">
+        <p data-reveal>Wspólnota albo biurowiec? Zadzwoń, sprawdzimy, czy dach udźwignie ogród.</p>
+        <div class="cta-pair" data-reveal style="--i:1">
+          <a href="dach-zielony-3d.html" class="btn btn--primary"><svg><use href="#i-leaf"/></svg>Zaprojektuj dach zielony</a>
+          <a href="tel:+48600242109" class="btn btn--ghost"><svg><use href="#i-phone"/></svg>600 242 109</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. Usługi + proces ============ -->
+  <section class="section" id="uslugi" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Usługi</p>
+          <h2 class="h2" id="services-title" data-reveal style="--i:1">Cały budynek<br>w jednych rękach.</h2>
+        </div>
+        <a href="uslugi.html" class="link-arrow" data-reveal style="--i:2">Pełna oferta<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="services">
+        <article class="service" data-reveal style="--i:0">
+          <div class="service__media"><img src="assets/img/usl-dachy.webp" alt="" loading="lazy"></div>
+          <div class="service__body"><h3 class="h3">Dachy</h3><p>Płaskie i skośne. Miedź, tytan-cynk, karpiówka.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:1">
+          <div class="service__media service__media--green" aria-hidden="true">
+            <div class="green-art"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="service__body"><h3 class="h3">Dachy zielone</h3><p>Ekstensywne, intensywne i&nbsp;tarasy na dachu.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:2">
+          <div class="service__media"><img src="assets/img/usl-tarasy.webp" alt="" loading="lazy"></div>
+          <div class="service__body"><h3 class="h3">Tarasy i balkony</h3><p>Hydroizolacja, gres, kamień, deska.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:3">
+          <div class="service__media"><img src="assets/img/usl-szczelnosc.webp" alt="" loading="lazy"></div>
+          <div class="service__body"><h3 class="h3">Badanie szczelności</h3><p>Metoda dymowa, elektryczna i&nbsp;wodna.</p></div>
+        </article>
+      </div>
+
+      <div class="alert-strip" data-reveal>
+        <p><span class="pulse" aria-hidden="true"></span><span><b style="font-weight:600;display:block;font-size:1.0625rem">Cieknie dach albo taras?</b>Badanie szczelności wskaże miejsce. Potem naprawa.</span></p>
+        <a href="tel:+48600242109" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg>Specjalista: 600 242 109</a>
+      </div>
+
+      <div class="process">
+        <div class="process__head">
+          <p class="eyebrow" data-reveal><span class="dot"></span>Jak działamy</p>
+          <h2 class="h2" data-reveal style="--i:1">Od audytu do serwisu.</h2>
+        </div>
+        <div class="steps" data-reveal-group role="list">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <div role="listitem" class="step" style="--i:0"><span class="step__num">01</span><h3 class="h3">Audyt dachu</h3><p>Obmiary, zdjęcia, stan techniczny, wycena.</p></div>
+          <div role="listitem" class="step" style="--i:1"><span class="step__num">02</span><h3 class="h3">Plan remontu</h3><p>Prace dzielimy na etapy według pilności.</p></div>
+          <div role="listitem" class="step" style="--i:2"><span class="step__num">03</span><h3 class="h3">Realizacja</h3><p>Własna ekipa, własny sprzęt, inżynier na budowie.</p></div>
+          <div role="listitem" class="step" style="--i:3"><span class="step__num">04</span><h3 class="h3">Serwis</h3><p>Także awaryjnie. I odśnieżanie zimą.</p></div>
+        </div>
+        <div class="inline-cta" data-reveal>
+          <p>Krok pierwszy to audyt.<span>Warszawa i cała Polska.</span></p>
+          <div class="cta-pair">
+            <a href="tel:+48600242109" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zamów audyt</a>
+            <a href="dach-zielony-3d.html" class="btn btn--ghost"><svg><use href="#i-leaf"/></svg>Najpierw zobacz w 3D</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. Opinie ============ -->
+  <section class="section section--surface" id="opinie" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="reviews-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Opinie</p>
+          <h2 class="h2" id="reviews-title" data-reveal style="--i:1">Mówią<br>inwestorzy.</h2>
+        </div>
+      </div>
+
+      <!-- Opinie przykładowe (firma nie ma opinii w Google) — do podmiany na fragmenty referencji. -->
+      <div class="reviews">
+        <figure class="review" data-reveal style="--i:0;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Tarasy na całym osiedlu w jednym sezonie. Mieszkańcy nie zgłosili ani jednego przecieku.”</blockquote>
+          <footer><span class="avatar">JK</span><div><b>Jan K.</b><span>Zarząd wspólnoty</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:1;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Miedź na zabytku zrobiona tak, że konserwator nie miał uwag.”</blockquote>
+          <footer><span class="avatar">MS</span><div><b>Marta S.</b><span>Inwestor, obiekt zabytkowy</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:2;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Audyt dachu z planem na trzy lata. Wiemy, co naprawiać najpierw i ile to kosztuje.”</blockquote>
+          <footer><span class="avatar">PW</span><div><b>Piotr W.</b><span>Zarządca nieruchomości</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:3;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Przeciek szukany od lat. Badanie dymowe znalazło go w godzinę.”</blockquote>
+          <footer><span class="avatar">AN</span><div><b>Agata N.</b><span>Administrator biurowca</span></div></footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal><span class="dot"></span>FAQ</p>
+        <h2 class="h2" id="faq-title" data-reveal style="--i:1">Krótko<br>i na temat.</h2>
+        <div class="cta-pair" data-reveal style="--i:2">
+          <a href="tel:+48600242109" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg>Inne pytanie? Zadzwoń</a>
+        </div>
+      </div>
+
+      <div class="faq" id="faq-list">
+        <div class="faq__item" data-reveal style="--i:0">
+          <button class="faq__q" aria-expanded="false">Czy mój dach udźwignie dach zielony?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Sprawdzamy to w audycie. Lekki dach ekstensywny waży zwykle 80–150 kg/m² i pasuje do większości stropodachów.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:1">
+          <button class="faq__q" aria-expanded="false">Co daje audyt dachu?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Obmiary, dokumentację zdjęciową, opis stanu, zalecenia z pilnością i wycenę. Na tej podstawie planujemy remont etapami.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:2">
+          <button class="faq__q" aria-expanded="false">Jak wykrywacie przecieki?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Metodą dymową, elektryczną lub wodną. Bez zrywania warstw, a po badaniu oddajemy dokumentację z miejscem nieszczelności.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:3">
+          <button class="faq__q" aria-expanded="false">Pracujecie na zabytkach?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Miedź i tytan-cynk na rąbek stojący, karpiówka, renowacja elewacji. Między innymi dworzec w Łodzi i pałac w Kobylinie.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:4">
+          <button class="faq__q" aria-expanded="false">Obsługujecie wspólnoty mieszkaniowe?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Dachy, tarasy, balkony i elewacje na osiedlach, z planem prac dopasowanym do budżetu wspólnoty.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:5">
+          <button class="faq__q" aria-expanded="false">Gdzie działacie?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Siedziba w Warszawie. Większe inwestycje realizujemy w całej Polsce.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Mocne zakończenie ============ -->
+  <section class="section" style="padding-top:0" aria-labelledby="final-title">
+    <div class="container">
+      <div class="final" data-reveal>
+        <img class="final__bg" src="assets/img/cta-bg.webp" alt="" loading="lazy">
+        <p class="eyebrow"><span class="dot"></span>Audyt dachu z wyceną</p>
+        <h2 class="h2" id="final-title">Jeden telefon. Spokój na lata.</h2>
+        <div class="final__phone">
+          <a href="tel:+48600242109">600 242 109</a>
+          <button class="copy-btn" id="copy-phone" type="button" aria-label="Kopiuj numer telefonu" data-phone="600 242 109">
+            <svg class="ic-copy"><use href="#i-copy"/></svg>
+            <svg class="ic-check"><use href="#i-check"/></svg>
+          </button>
+        </div>
+        <div class="cta-pair">
+          <a href="tel:+48600242109" class="btn btn--light"><svg><use href="#i-phone"/></svg>Zadzwoń teraz</a>
+          <a href="dach-zielony-3d.html" class="btn btn--outline-light"><svg><use href="#i-leaf"/></svg>Zamień dach w ogród</a>
+        </div>
+        <p class="final__note">Biuro: +48 22 354 67 74 · biuro@ritapol.pl</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 8. Stopka ============ -->
+<footer class="footer footer--dark" data-header-dark>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a href="index.html" class="logo" aria-label="Ritapol"><img src="assets/img/logo-ritapol-light.png" alt="Ritapol" width="197" height="47"></a>
+        <p>Ritapol Sp. z o.o. Dachy, hydroizolacje, elewacje i budownictwo. Od 1990 roku.</p>
+      </div>
+      <div>
+        <h4>Strona</h4>
+        <ul>
+          <li><a href="realizacje.html">Realizacje</a></li>
+          <li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="dach-zielony-3d.html">Dach zielony 3D</a></li>
+          <li><a href="o-firmie.html">O firmie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48600242109">600 242 109</a></li>
+          <li><a href="tel:+48223546774">22 354 67 74</a></li>
+          <li><a href="https://wa.me/48600242109" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:biuro@ritapol.pl">biuro@ritapol.pl</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Adres</h4>
+        <ul>
+          <li>ul. Sarmacka 22a lok. 35</li>
+          <li>02-972 Warszawa</li>
+          <li>Inwestycje w całej Polsce</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Ritapol Sp. z o.o.</span>
+      <span>Wersja demonstracyjna strony</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Pasek CTA na telefonie -->
+<div class="mbar" id="mbar" aria-hidden="true">
+  <a href="tel:+48600242109" class="btn btn--primary" tabindex="-1"><svg><use href="#i-phone"/></svg>Zadzwoń</a>
+  <a href="dach-zielony-3d.html" class="btn btn--ghost" tabindex="-1"><svg><use href="#i-leaf"/></svg>Dach 3D</a>
+</div>
+
+<!-- WhatsApp -->
+<div class="wa" id="wa">
+  <div class="wa__bubble" id="wa-bubble" role="status">
+    <b>Masz zdjęcie dachu lub tarasu?</b>
+    <span>Wyślij na WhatsApp — oddzwonimy z terminem audytu.</span>
+    <button class="wa__close" id="wa-close" type="button" aria-label="Zamknij"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <a class="wa__btn" href="https://wa.me/48600242109?text=Dzie%C5%84%20dobry%2C%20chc%C4%99%20zapyta%C4%87%20o%20dach." target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">
+    <svg><use href="#i-wa"/></svg>
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/greenroof3d.js" defer></script>
+</body>
+</html>
