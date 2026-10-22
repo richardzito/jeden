@@ -1557,6 +1557,7 @@ button {
 }
 
 .gallery__thumbs button {
+  position: relative;
   aspect-ratio: 1;
   border-radius: 12px;
   background: var(--surface);
@@ -1572,6 +1573,25 @@ button {
 
 .gallery__thumbs img {
   width: 80%;
+}
+
+.gallery__thumbs span {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  translate: -50% 0;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.gallery__thumbs button[aria-pressed="true"] span {
+  background: var(--ink);
+  color: #fff;
 }
 
 .gallery__main {
