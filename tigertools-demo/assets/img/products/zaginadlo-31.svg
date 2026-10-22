@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img"><defs>
+<linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef1f4"/><stop offset=".45" stop-color="#b9c0c7"/><stop offset=".55" stop-color="#9aa2ab"/><stop offset="1" stop-color="#d6dbe0"/></linearGradient>
+<linearGradient id="steel2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9cfd5"/><stop offset="1" stop-color="#7f8891"/></linearGradient>
+<linearGradient id="grip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb04d"/><stop offset=".5" stop-color="#ff8a00"/><stop offset="1" stop-color="#e86f00"/></linearGradient>
+<linearGradient id="alu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6f7f8"/><stop offset=".5" stop-color="#c8ced4"/><stop offset="1" stop-color="#e3e7ea"/></linearGradient>
+<linearGradient id="case" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2a2a"/><stop offset="1" stop-color="#0f0f0f"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".18"/></filter>
+</defs><g filter="url(#sh)" transform="rotate(-24 240 240) translate(60.0 0)">
+<path d="M194 218 H342 q10 0 10 9 v2 H194 Z" fill="url(#steel)" stroke="#6d757d" stroke-width="1.2"/>
+<path d="M194 236 H350 v2 q0 9 -10 9 H194 Z" fill="url(#steel)" stroke="#6d757d" stroke-width="1.2"/>
+<line x1="208" y1="232.5" x2="346" y2="232.5" stroke="#5e666e" stroke-width="1.5"/>
+<text x="222" y="228" font-family="Arial Black,Arial,sans-serif" font-size="9" font-weight="900" fill="#59616a" letter-spacing="2">TIGER TOOLS</text>
+<text x="304" y="245" font-family="Arial,sans-serif" font-size="8" fill="#59616a">BDZ 20/40/310</text>
+<path d="M204 214 L160 196 L152 214 L196 236 Z" fill="url(#steel2)"/>
+<path d="M204 252 L160 272 L152 254 L196 236 Z" fill="url(#steel2)"/>
+<path d="M160 196 L60 150 L52 168 L152 214 Z" fill="#59616a"/>
+<path d="M160 272 L60 316 L52 298 L152 254 Z" fill="#59616a"/>
+<path d="M142 188 L28 132 q-12 -2 -14 14 L138 214 Z" fill="url(#grip)" stroke="#e86f00" stroke-width="1"/>
+<path d="M142 280 L28 336 q-12 2 -14 -14 L138 254 Z" fill="url(#grip)" stroke="#e86f00" stroke-width="1"/>
+<path d="M30 132 q-14 -3 -17 13 l8 3 q2 -10 11 -9 Z" fill="#161616"/>
+<path d="M30 336 q-14 3 -17 -13 l8 -3 q2 10 11 9 Z" fill="#161616"/>
+<g stroke="#161616" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"><path d="M70 160 l14 22"/><path d="M100 170 l10 18"/><path d="M70 308 l14 -22"/><path d="M100 298 l10 -18"/></g>
+<circle cx="188" cy="234" r="13" fill="url(#steel2)" stroke="#4b525a" stroke-width="2"/><circle cx="188" cy="234" r="4.5" fill="#3a4047"/>
+</g></svg>
