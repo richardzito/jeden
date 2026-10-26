@@ -3121,3 +3121,25 @@ button {
   transform: translateY(6px) scale(0.92);
   pointer-events: none;
 }
+
+/* Wąskie telefony: szerokie logo + numer + menu muszą się zmieścić */
+@media (max-width: 420px) {
+  .logo,
+  .logo--swap img {
+    height: 16px;
+  }
+  .header__cta {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 389px) {
+  .header__cta .btn--primary {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+  .header__cta .btn--primary span {
+    display: none;
+  }
+}
