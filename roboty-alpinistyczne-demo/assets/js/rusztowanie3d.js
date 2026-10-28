@@ -642,7 +642,7 @@ function init() {
     facade: { steps: [0], pos: () => v(4.6, 27, 0.05), a: () => 1 },
     scaffold: { steps: [1], side: 'left', pos: (p) => v(-7.6, 2 + LV * 2 * growAt(p), ZO), a: (p) => smoothstep(0.3, 0.6, growAt(p)) },
     sidewalk: { steps: [1], pos: () => v(9.9, 1.2, SW - 0.6), a: (p) => fenceAt(p) },
-    anchor: { steps: [2], pos: () => v(LANES[3] + 0.3, BH + 1.2, -0.2), a: (p) => anchorAt(p) * (1 - smoothstep(0.62, 0.66, p)) },
+    anchor: { steps: [2], side: 'left', pos: () => v(LANES[0] - 0.3, BH + 1.2, -0.2), a: (p) => anchorAt(p) * (1 - smoothstep(0.62, 0.66, p)) },
     ropes: { steps: [2], side: 'left', pos: (p) => v(LANES[0] - 0.2, lerp(BH, climberY(p, 0), 0.5), 0.62), a: (p) => smoothstep(0.58, 0.6, p) },
     climber: { steps: [2], pos: (p) => v(LANES[2] + 0.5, climberY(p, 2) + 0.6, 0.7), a: (p) => smoothstep(0.59, 0.61, p) },
     clean: { steps: [3], pos: () => v(3.6, 23, 0.05), a: (p) => smoothstep(0.82, 0.88, p) },
