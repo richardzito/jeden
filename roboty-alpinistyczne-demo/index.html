@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Techniczne Roboty Alpinistyczne — prace na wysokości Warszawa · bez rusztowania</title>
+  <meta name="description" content="Prace alpinistyczne w Warszawie: mycie okien i elewacji, naprawy elewacji i dachów, montaż reklam i siatek, odśnieżanie. Bez rusztowania, całą dobę. Tel. 513 017 509.">
+  <meta name="theme-color" content="#0f1b26">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero-kopula.webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+<!-- Ikony -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.6 4.2-2.1 1.4a11 11 0 0 0 6.4 6.4l1.4-2.1L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-rope" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 3.5h14M9 3.5v9.5M15 3.5v6"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6.8 13h4.4v3.2a2.2 2.2 0 0 1-4.4 0V13Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M15 9.5v5.5M13 20.5h4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.6 2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8L12 2.6Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8.5 7.5h7M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 16h.01M12 16h.01M15.5 16h.01"/></symbol>
+  <symbol id="i-google" viewBox="0 0 24 24"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3Z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2L6.4 14Z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10c.8-2.3 3-4.1 5.6-4.1Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.3 28.8l6.6-1.7A12.7 12.7 0 1 0 16 3.2Zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.5 10.5 0 1 1 16 26.3Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5 0-.2-.2-.2-.5-.4Z"/></symbol>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a href="index.html" class="logo-slot" aria-label="Techniczne Roboty Alpinistyczne — strona główna">TWOJE LOGO</a>
+    <nav class="nav" aria-label="Główna nawigacja">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#uslugi">Usługi</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#faq">FAQ</a>
+      <a href="bez-rusztowania.html" class="is-new">Liny czy rusztowanie?</a>
+    </nav>
+    <div class="header__cta">
+      <a href="bez-rusztowania.html" class="btn btn--ghost btn--sm"><svg><use href="#i-calc"/></svg>Policz w 3D</a>
+      <a href="tel:+48513017509" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg><span>513 017 509</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#realizacje">Realizacje</a>
+  <a href="#uslugi">Usługi i proces</a>
+  <a href="#opinie">Opinie</a>
+  <a href="#faq">FAQ</a>
+  <a href="o-firmie.html">O firmie</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="bez-rusztowania.html" class="btn btn--ghost"><svg><use href="#i-calc"/></svg>Liny czy rusztowanie? Policz w 3D</a>
+</div>
+
+<main>
+
+  <!-- ============ 1. Hero — zdjęcie z wizytówki Google na całą szerokość ============ -->
+  <section class="hero vhero" data-header-dark aria-labelledby="hero-title">
+    <div class="vhero__media">
+      <img src="assets/img/hero-kopula.webp" alt="Dwóch alpinistów na linach naprawia poszycie kopuły wysoko nad Warszawą" width="2400" height="1350" fetchpriority="high">
+    </div>
+
+    <div class="container vhero__inner">
+      <div class="vhero__copy">
+        <p class="eyebrow" data-hero style="--i:0"><span class="dot"></span>Prace na wysokości · Warszawa · 24/7</p>
+        <h1 class="display" id="hero-title">
+          <span class="line-mask"><span style="--i:0">Wysoko.</span></span>
+          <span class="line-mask"><span style="--i:1">Bez</span></span>
+          <span class="line-mask"><span style="--i:2">rusztowania.</span></span>
+        </h1>
+        <p class="lead" data-hero style="--i:1">Elewacje, okna, dachy i&nbsp;reklamy. Zjeżdżamy na linach, więc zaczynamy szybciej i&nbsp;taniej.</p>
+        <div class="cta-pair" data-hero style="--i:2">
+          <a href="tel:+48513017509" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń: 513 017 509</a>
+          <a href="bez-rusztowania.html" class="btn btn--glass"><svg><use href="#i-calc"/></svg>Liny czy rusztowanie?<svg class="arrow"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <figure class="vhero__quote" data-hero style="--i:4">
+        <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>„Konkretna wycena realizacji prac bez owijania w&nbsp;bawełnę, szybki termin realizacji (już na drugi dzień). (…) Cenowo rewelacja!”</blockquote>
+        <figcaption><svg aria-hidden="true"><use href="#i-google"/></svg>Yankeessks · opinia z Google</figcaption>
+      </figure>
+    </div>
+
+    <div class="container vhero__bar" data-hero style="--i:5">
+      <a href="#opinie" class="rating-chip">
+        <svg class="chip-ic" aria-hidden="true"><use href="#i-google"/></svg>
+        <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <span><strong>5,0</strong> · 3 opinie w Google</span>
+      </a>
+      <span class="vhero__place"><svg aria-hidden="true"><use href="#i-clock"/></svg>Czynne całą dobę</span>
+      <span class="vhero__caption">Zdjęcie z realizacji: naprawa poszycia kopuły</span>
+    </div>
+  </section>
+
+  <!-- ============ Pasek zaufania ============ -->
+  <section class="trust-band" aria-label="W skrócie">
+    <div class="container trust">
+      <div class="trust__item" data-reveal style="--i:0"><strong>Bez rusztowania</strong><span>i bez zajmowania chodnika</span></div>
+      <div class="trust__item" data-reveal style="--i:1"><strong>Start jutro</strong><span>często już następnego dnia</span></div>
+      <div class="trust__item" data-reveal style="--i:2"><strong>24/7</strong><span>sople, luźna blacha, awarie</span></div>
+      <div class="trust__item" data-reveal style="--i:3"><strong>5,0 ★</strong><span>średnia z opinii w Google</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Ukończone realizacje ============ -->
+  <section class="section" id="realizacje" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Realizacje</p>
+          <h2 class="h2" id="works-title" data-reveal style="--i:1">Nasze biuro<br>jest na linie.</h2>
+        </div>
+        <a href="realizacje.html" class="link-arrow" data-reveal style="--i:2">Wszystkie realizacje<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="works works--tra">
+        <figure class="work" data-reveal="clip" style="margin:0">
+          <img src="assets/img/real-antares.webp" alt="Alpiniści na szklanej elewacji biurowca" loading="lazy" width="616" height="816">
+          <figcaption class="work__meta"><span class="work__tag">Elewacja szklana</span><div class="work__title">Mycie przeszkleń biurowca</div></figcaption>
+        </figure>
+        <figure class="work" data-reveal="clip" style="--i:1;margin:0">
+          <img src="assets/img/real-wiezowiec.webp" alt="Dwóch alpinistów na linach na łukowej szklanej elewacji wieżowca" loading="lazy" width="616" height="816">
+          <figcaption class="work__meta"><span class="work__tag">Wieżowiec</span><div class="work__title">Prace na łukowej elewacji</div></figcaption>
+        </figure>
+        <figure class="work" data-reveal="clip" style="--i:2;margin:0">
+          <img src="assets/img/real-kamienica.webp" alt="Alpinista w żółtej kurtce przy oknie zabytkowej kamienicy" loading="lazy" width="900" height="1200">
+          <figcaption class="work__meta"><span class="work__tag">Kamienica</span><div class="work__title">Naprawy elewacji i okien</div></figcaption>
+        </figure>
+      </div>
+
+      <div class="inline-cta" data-reveal>
+        <p>Masz coś do zrobienia wysoko?<span>Wyślij zdjęcie, podamy konkretną cenę.</span></p>
+        <div class="cta-pair">
+          <a href="tel:+48513017509" class="btn btn--primary"><svg><use href="#i-phone"/></svg>513 017 509</a>
+          <a href="bez-rusztowania.html" class="btn btn--ghost"><svg><use href="#i-calc"/></svg>Porównaj z rusztowaniem</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Efekt WOW — „Liny czy rusztowanie?” ============ -->
+  <section class="wow" id="bez-rusztowania" aria-labelledby="wow-title">
+    <div class="container wow__intro">
+      <div>
+        <p class="eyebrow" data-reveal><span class="dot"></span>Nowość · Kalkulator 3D</p>
+        <h2 class="h2" id="wow-title" data-reveal style="--i:1">Liny czy<br>rusztowanie?</h2>
+      </div>
+      <p class="lead" data-reveal style="--i:2">Ta sama elewacja, dwa sposoby. Przewiń i&nbsp;porównaj czas, koszt i&nbsp;chodnik.</p>
+    </div>
+
+    <div class="wow__track" id="wow-track">
+      <div class="container wow__sticky">
+        <div class="wow__steps" id="wow-steps" role="list">
+          <span class="wow__rail" aria-hidden="true"><i id="wow-rail"></i></span>
+          <div role="listitem" class="wow__step is-active" data-step="0">
+            <span class="wow__step-num">Zlecenie</span>
+            <h3>Elewacja, 36&nbsp;m w&nbsp;górę.</h3>
+            <p>Brudne szkło na dziesięciu piętrach.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="1">
+            <span class="wow__step-num">Z rusztowania</span>
+            <h3>Tydzień, zanim ktoś zacznie.</h3>
+            <p>Montaż, zajęty chodnik, pozwolenia.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="2">
+            <span class="wow__step-num">Na linach</span>
+            <h3>Start następnego dnia.</h3>
+            <p>Kotwy na dachu, dwie liny, ekipa zjeżdża pas po pasie.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="3">
+            <span class="wow__step-num">Wynik</span>
+            <h3>Szybciej i&nbsp;taniej.</h3>
+            <p>Bez rusztowania. Chodnik przez cały czas wolny.</p>
+          </div>
+        </div>
+
+        <div class="wow__stage" id="wow-stage">
+          <img class="wow__fallback" src="assets/img/real-wiezowiec.webp" alt="" aria-hidden="true">
+          <canvas class="wow__canvas" id="wow-canvas" aria-label="Model 3D biurowca: najpierw rośnie rusztowanie i zamyka chodnik, potem alpiniści zjeżdżają na linach i myją elewację pas po pasie"></canvas>
+
+          <!-- Etykiety (pozycja liczona z modelu 3D) -->
+          <div class="layer-tags" id="scene-tags" aria-hidden="true">
+            <span class="layer-tag info-tag" data-tag="facade"><b>Elewacja szklana</b><small>1 900 m²</small></span>
+            <span class="layer-tag dmg-tag layer-tag--left" data-tag="scaffold"><b>Rusztowanie 36 m</b><small>montaż ok. 6 dni</small></span>
+            <span class="layer-tag dmg-tag" data-tag="sidewalk"><b>Zajęty chodnik</b><small>piesi idą jezdnią</small></span>
+            <span class="layer-tag part-tag" data-tag="anchor"><b>Punkty kotwiczenia</b><small>na dachu</small></span>
+            <span class="layer-tag part-tag layer-tag--left" data-tag="ropes"><b>Dwie liny</b><small>robocza i asekuracyjna</small></span>
+            <span class="layer-tag part-tag" data-tag="climber"><b>Alpinista</b><small>myje pas po pasie</small></span>
+            <span class="layer-tag ok-tag" data-tag="clean"><b>Czysta elewacja</b><small>chodnik wolny</small></span>
+          </div>
+
+          <!-- Krok 1: zlecenie -->
+          <div class="hud hud--top is-visible" data-hud="0">
+            <div class="hud-card job-card">
+              <span class="job-card__row"><span class="scan-dot"></span>Zlecenie</span>
+              <strong>Mycie elewacji</strong>
+              <div class="job-card__grid">
+                <span><b>36 m</b>wysokość</span>
+                <span><b>10</b>pięter</span>
+                <span><b>1 900 m²</b>szkła</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kroki 2–4: porównanie -->
+          <div class="hud hud--u" data-hud="1,2,3">
+            <div class="hud-card vs-card" id="vs-card">
+              <div class="vs-row vs-head"><span></span><span class="vs-s">Rusztowanie</span><span class="vs-r">Liny</span></div>
+              <div class="vs-row"><span>Start pracy</span><b data-vs="s-start">—</b><b data-vs="r-start">—</b></div>
+              <div class="vs-row"><span>Cała robota</span><b data-vs="s-days">—</b><b data-vs="r-days">—</b></div>
+              <div class="vs-row"><span>Chodnik</span><b data-vs="s-walk">—</b><b data-vs="r-walk">—</b></div>
+              <div class="vs-row"><span>Koszt</span><b data-vs="s-cost">—</b><b data-vs="r-cost">—</b></div>
+              <a href="tel:+48513017509" class="btn btn--primary btn--sm vs-cta"><svg><use href="#i-phone"/></svg>Wycena w 24 h</a>
+            </div>
+          </div>
+          <p class="wow__note">Wartości poglądowe · przeciągnij, aby obrócić</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container wow__outro">
+      <div class="wow__outro-inner">
+        <p data-reveal>W pełnej wersji wpiszesz wysokość i&nbsp;rodzaj pracy, a&nbsp;kalkulator porówna liny z&nbsp;rusztowaniem i&nbsp;podnośnikiem.</p>
+        <div class="cta-pair" data-reveal style="--i:1">
+          <a href="bez-rusztowania.html" class="btn btn--primary"><svg><use href="#i-calc"/></svg>Policz swój budynek</a>
+          <a href="tel:+48513017509" class="btn btn--ghost"><svg><use href="#i-phone"/></svg>513 017 509</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. Usługi + proces ============ -->
+  <section class="section" id="uslugi" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Usługi</p>
+          <h2 class="h2" id="services-title" data-reveal style="--i:1">Wszystko,<br>co wysoko.</h2>
+        </div>
+        <a href="uslugi.html" class="link-arrow" data-reveal style="--i:2">Pełna oferta<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="services">
+        <article class="service" data-reveal style="--i:0">
+          <div class="service__media service__media--art" aria-hidden="true">
+            <svg class="art wash-art" viewBox="0 0 200 150">
+              <line class="a-rope" x1="58" y1="0" x2="58" y2="58"/>
+              <g class="wa-glass"><rect x="24" y="22" width="48" height="52"/><rect x="76" y="22" width="48" height="52"/><rect x="128" y="22" width="48" height="52"/><rect x="24" y="78" width="48" height="52"/><rect x="76" y="78" width="48" height="52"/><rect x="128" y="78" width="48" height="52"/></g>
+              <rect class="wa-dirt" x="24" y="22" width="152" height="108"/>
+              <g class="wa-squeegee"><rect class="a-accent" x="20" y="56" width="6" height="40" rx="2"/><rect class="a-dark" x="8" y="72" width="14" height="5" rx="2"/></g>
+            </svg>
+          </div>
+          <div class="service__body"><h3 class="h3">Mycie okien i elewacji</h3><p>Przeszklenia biurowców, okna, elewacje. Bez podnośnika.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:1">
+          <div class="service__media service__media--art" aria-hidden="true">
+            <svg class="art crack-art" viewBox="0 0 200 150">
+              <rect class="ca-wall" x="0" y="0" width="200" height="150"/>
+              <g class="ca-bricks"><path d="M0 38h200M0 76h200M0 114h200M50 0v38M130 0v38M90 38v38M170 38v38M30 76v38M110 76v38M70 114v36M150 114v36"/></g>
+              <path class="ca-crack" d="M96 8 L104 30 L92 52 L108 74 L98 98 L112 124 L104 146"/>
+              <path class="ca-fix" d="M96 8 L104 30 L92 52 L108 74 L98 98 L112 124 L104 146"/>
+              <rect class="ca-chunk" x="116" y="80" width="12" height="9" rx="2"/>
+            </svg>
+          </div>
+          <div class="service__body"><h3 class="h3">Naprawy elewacji i dachów</h3><p>Rysy, odpadający tynk, obróbki, poszycia kopuł i&nbsp;wież.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:2">
+          <div class="service__media service__media--art" aria-hidden="true">
+            <svg class="art banner-art" viewBox="0 0 200 150">
+              <rect class="ba-wall" x="30" y="0" width="140" height="150"/>
+              <line class="a-rope" x1="44" y1="0" x2="44" y2="150"/>
+              <line class="a-rope" x1="156" y1="0" x2="156" y2="150"/>
+              <g class="ba-banner"><rect class="a-accent" x="50" y="14" width="100" height="112" rx="3"/><rect class="ba-line" x="64" y="40" width="72" height="9" rx="4"/><rect class="ba-line" x="64" y="58" width="50" height="9" rx="4"/><rect class="ba-line" x="64" y="94" width="40" height="14" rx="7"/></g>
+              <rect class="ba-roll" x="46" y="8" width="108" height="10" rx="5"/>
+            </svg>
+          </div>
+          <div class="service__body"><h3 class="h3">Reklamy, siatki, montaże</h3><p>Banery wielkoformatowe, siatki na ptaki, anteny, oświetlenie.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:3">
+          <div class="service__media service__media--art" aria-hidden="true">
+            <svg class="art ice-art" viewBox="0 0 200 150">
+              <path class="ia-roof" d="M0 30 L200 30 L200 46 L0 46 Z"/>
+              <path class="ia-snow" d="M0 30 C30 18 60 22 90 20 C120 18 160 24 200 20 L200 30 L0 30 Z"/>
+              <g class="ia-icicles"><path d="M22 46 L28 86 L34 46Z"/><path d="M52 46 L56 72 L60 46Z"/><path d="M82 46 L89 100 L96 46Z"/><path d="M118 46 L122 76 L126 46Z"/><path d="M146 46 L152 92 L158 46Z"/><path d="M176 46 L179 66 L182 46Z"/></g>
+              <rect class="ia-ground" x="0" y="140" width="200" height="10"/>
+            </svg>
+          </div>
+          <div class="service__body"><h3 class="h3">Sople i odśnieżanie</h3><p>Usuwamy sople i&nbsp;śnieg z&nbsp;dachów. Całą dobę.</p></div>
+        </article>
+      </div>
+
+      <div class="alert-strip" data-reveal>
+        <p><span class="pulse" aria-hidden="true"></span><span><b style="font-weight:600;display:block;font-size:1.0625rem">Sople, luźna blacha, odpadający tynk?</b>Pracujemy całą dobę. Zabezpieczamy od ręki.</span></p>
+        <a href="tel:+48513017509" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg>Pilne: 513 017 509</a>
+      </div>
+
+      <div class="process">
+        <div class="process__head">
+          <p class="eyebrow" data-reveal><span class="dot"></span>Jak działamy</p>
+          <h2 class="h2" data-reveal style="--i:1">Od telefonu do zrobionej roboty.</h2>
+        </div>
+        <div class="steps" data-reveal-group role="list">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <div role="listitem" class="step" style="--i:0"><span class="step__num">01</span><h3 class="h3">Telefon albo zdjęcie</h3><p>Dzwonisz lub wysyłasz zdjęcie na WhatsApp.</p></div>
+          <div role="listitem" class="step" style="--i:1"><span class="step__num">02</span><h3 class="h3">Konkretna wycena</h3><p>Bez owijania w&nbsp;bawełnę. Jedna kwota.</p></div>
+          <div role="listitem" class="step" style="--i:2"><span class="step__num">03</span><h3 class="h3">Start nawet jutro</h3><p>Nie czekamy na rusztowanie ani podnośnik.</p></div>
+          <div role="listitem" class="step" style="--i:3"><span class="step__num">04</span><h3 class="h3">Porządek po nas</h3><p>Zabezpieczamy teren i&nbsp;zostawiamy go czystym.</p></div>
+        </div>
+        <div class="inline-cta" data-reveal>
+          <p>Pierwszy krok to telefon.<span>Warszawa i okolice, całą dobę.</span></p>
+          <div class="cta-pair">
+            <a href="tel:+48513017509" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń teraz</a>
+            <a href="bez-rusztowania.html" class="btn btn--ghost"><svg><use href="#i-calc"/></svg>Najpierw policz w 3D</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. Opinie ============ -->
+  <section class="section section--surface" id="opinie" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="reviews-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Opinie</p>
+          <h2 class="h2" id="reviews-title" data-reveal style="--i:1">Na drugi dzień<br>i z porządkiem.</h2>
+        </div>
+        <div class="score" data-reveal style="--i:2">
+          <span class="score__num" data-count="5.0">5,0</span>
+          <div class="score__meta">
+            <span class="stars" aria-label="Ocena 5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <span class="g-line"><svg class="g-ic" aria-hidden="true"><use href="#i-google"/></svg>3 opinie w Google</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trzy pierwsze opinie pochodzą z Google. Czwarta jest przykładowa — do podmiany na prawdziwą. -->
+      <div class="reviews">
+        <figure class="review" data-reveal style="--i:0;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Jestem mega zadowolony. Panowie wykonali zlecenie dokładnie tak, jak sobie życzyłem.”</blockquote>
+          <footer><span class="avatar">Y</span><div><b>Yankeessks</b><span>Opinia z Google</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:1;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Profesjonalna ekipa, punktualna, kulturalni Panowie, a&nbsp;najważniejsze to, że zostawiają po sobie porządek na miejscu pracy. Polecam!”</blockquote>
+          <footer><span class="avatar">AP</span><div><b>Anna Płaza</b><span>Opinia z Google</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:2;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Doskonały.”</blockquote>
+          <footer><span class="avatar">JM</span><div><b>Jocelyn M.</b><span>Opinia z Google</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:3;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Mycie przeszkleń biurowca bez zamykania wejścia. Najemcy prawie nie zauważyli ekipy.”</blockquote>
+          <footer><span class="avatar">MK</span><div><b>Marta K.</b><span>Zarządca budynku, Mokotów</span></div></footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal><span class="dot"></span>FAQ</p>
+        <h2 class="h2" id="faq-title" data-reveal style="--i:1">Krótko<br>i na temat.</h2>
+        <div class="cta-pair" data-reveal style="--i:2">
+          <a href="tel:+48513017509" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg>Inne pytanie? Zadzwoń</a>
+        </div>
+      </div>
+
+      <div class="faq" id="faq-list">
+        <div class="faq__item" data-reveal style="--i:0">
+          <button class="faq__q" aria-expanded="false">Czy praca na linach jest bezpieczna?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Każdy z nas wisi na dwóch niezależnych linach: roboczej i asekuracyjnej. Teren pod nami odgradzamy.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:1">
+          <button class="faq__q" aria-expanded="false">Dlaczego taniej niż z rusztowania?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Nie płacisz za wynajem, montaż i demontaż rusztowania ani za zajęcie chodnika. Zaczynamy od razu.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:2">
+          <button class="faq__q" aria-expanded="false">Jak szybko możecie zacząć?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Często już następnego dnia. W pilnych sprawach, jak sople czy luźna blacha, nawet tego samego.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:3">
+          <button class="faq__q" aria-expanded="false">Jakie prace wykonujecie?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Mycie okien i elewacji, naprawy elewacji i dachów, montaż reklam i siatek, odśnieżanie, usuwanie sopli.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:4">
+          <button class="faq__q" aria-expanded="false">Ile to kosztuje?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Zależy od wysokości i zakresu. Często wyceniamy ze zdjęć, jedną konkretną kwotą.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:5">
+          <button class="faq__q" aria-expanded="false">Pracujecie dla wspólnot i firm?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Dla wspólnot, zarządców budynków, firm i&nbsp;osób prywatnych w&nbsp;Warszawie i okolicach.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Mocne zakończenie ============ -->
+  <section class="section" style="padding-top:0" aria-labelledby="final-title">
+    <div class="container">
+      <div class="final" data-reveal>
+        <img class="final__bg" src="assets/img/cta-bg.webp" alt="" loading="lazy">
+        <p class="eyebrow"><span class="dot"></span>Elewacje · okna · dachy · reklamy · sople</p>
+        <h2 class="h2" id="final-title">Jeden telefon. Zero rusztowań.</h2>
+        <div class="final__phone">
+          <a href="tel:+48513017509">513 017 509</a>
+          <button class="copy-btn" id="copy-phone" type="button" aria-label="Kopiuj numer telefonu" data-phone="513 017 509">
+            <svg class="ic-copy"><use href="#i-copy"/></svg>
+            <svg class="ic-check"><use href="#i-check"/></svg>
+          </button>
+        </div>
+        <div class="cta-pair">
+          <a href="tel:+48513017509" class="btn btn--light"><svg><use href="#i-phone"/></svg>Zadzwoń teraz</a>
+          <a href="bez-rusztowania.html" class="btn btn--outline-light"><svg><use href="#i-calc"/></svg>Liny czy rusztowanie?</a>
+        </div>
+        <p class="final__note">Piękna 68, Warszawa · czynne całą dobę</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 8. Stopka ============ -->
+<footer class="footer footer--dark" data-header-dark>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <span class="logo-slot logo-slot--light">TWOJE LOGO</span>
+        <p>Techniczne Roboty Alpinistyczne. Prace na wysokości w&nbsp;Warszawie, bez rusztowania.</p>
+      </div>
+      <div>
+        <h4>Strona</h4>
+        <ul>
+          <li><a href="realizacje.html">Realizacje</a></li>
+          <li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="bez-rusztowania.html">Liny czy rusztowanie?</a></li>
+          <li><a href="o-firmie.html">O firmie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48513017509">513 017 509</a></li>
+          <li><a href="https://wa.me/48513017509" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://maps.google.com/?cid=9042597526396999752" target="_blank" rel="noopener">Mapa Google</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Adres</h4>
+        <ul>
+          <li>Piękna 68</li>
+          <li>00-672 Warszawa</li>
+          <li>Czynne całą dobę</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Techniczne Roboty Alpinistyczne</span>
+      <span>Wersja demonstracyjna strony</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Pasek CTA na telefonie -->
+<div class="mbar" id="mbar" aria-hidden="true">
+  <a href="tel:+48513017509" class="btn btn--primary" tabindex="-1"><svg><use href="#i-phone"/></svg>Zadzwoń</a>
+  <a href="bez-rusztowania.html" class="btn btn--ghost" tabindex="-1"><svg><use href="#i-calc"/></svg>Policz w 3D</a>
+</div>
+
+<!-- WhatsApp -->
+<div class="wa" id="wa">
+  <div class="wa__bubble" id="wa-bubble" role="status">
+    <b>Coś wysoko do zrobienia?</b>
+    <span>Wyślij zdjęcie na WhatsApp — podamy cenę.</span>
+    <button class="wa__close" id="wa-close" type="button" aria-label="Zamknij"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <a class="wa__btn" href="https://wa.me/48513017509?text=Dzie%C5%84%20dobry%2C%20mam%20zlecenie%20na%20wysoko%C5%9Bci." target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">
+    <svg><use href="#i-wa"/></svg>
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/rusztowanie3d.js" defer></script>
+</body>
+</html>
