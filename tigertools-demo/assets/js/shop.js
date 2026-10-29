@@ -124,6 +124,7 @@
     renderPrices(animate);
     renderCart();
     renderCheckout();
+    dispatchEvent(new CustomEvent('tt:b2b', { detail: { b2b } }));
   };
 
   const setB2B = (on, msg = true) => {
@@ -177,40 +178,56 @@
     return anim.finished.then(() => dot.remove()).catch(() => dot.remove());
   };
 
+  // price = cena bazowa za sztukę; rabat firmowy nalicza koszyk
+  const addToCart = ({ price, qty = 1, name = 'Produkt', from }) => {
+    cart.count += qty;
+    cart.total += price * (from && from.id === 'pdp-add' ? qty : 1);
+    store.set('tt-cart', cart);
+    const bump = () => {
+      renderCart();
+      if (badge) {
+        badge.classList.remove('is-bump');
+        void badge.offsetWidth;
+        badge.classList.add('is-bump');
+      }
+    };
+    if (from) flyToCart(from).then(bump);
+    if (reduceMotion || !from) bump();
+    toast(`Dodano do koszyka: ${name}`);
+  };
+
   $$('.js-add').forEach((btn) =>
     btn.addEventListener('click', () => {
       const qty = btn.id === 'pdp-add' ? parseInt($('#qty')?.value || $('#qty')?.textContent || '1', 10) : 1;
-      const price = parseFloat(btn.dataset.price);
-      cart.count += qty;
-      cart.total += price * qty;
-      store.set('tt-cart', cart);
+      const name = btn.getAttribute('aria-label')?.replace('Dodaj do koszyka: ', '') || $('.pdp__title')?.textContent.trim() || 'Produkt';
       btn.classList.add('is-added');
       const icon = btn.querySelector('use');
       const prev = icon && icon.getAttribute('href');
-      if (icon && !btn.id) icon.setAttribute('href', '#i-check');
-      flyToCart(btn).then(() => {
-        renderCart();
-        if (badge) {
-          badge.classList.remove('is-bump');
-          void badge.offsetWidth;
-          badge.classList.add('is-bump');
-        }
-      });
-      if (reduceMotion) renderCart();
-      const name = btn.getAttribute('aria-label')?.replace('Dodaj do koszyka: ', '') || $('.pdp__title')?.textContent.trim() || 'Produkt';
-      toast(`Dodano do koszyka: ${name}`);
+      const iconOnly = !btn.id && !btn.classList.contains('js-h-add');
+      if (icon && iconOnly) icon.setAttribute('href', '#i-check');
+      addToCart({ price: parseFloat(btn.dataset.price), qty, name, from: btn });
       setTimeout(() => {
         btn.classList.remove('is-added');
-        if (icon && prev && !btn.id) icon.setAttribute('href', prev);
+        if (icon && prev && iconOnly) icon.setAttribute('href', prev);
       }, 1400);
     })
   );
 
+  // Wspólne API dla modułów 3D (zaginadło w hero, „Dach w 3D”)
+  window.TT = {
+    fmt,
+    toast,
+    rate: B2B_RATE,
+    isB2B: () => b2b,
+    renderPrices: () => renderPrices(true),
+    addToCart,
+  };
+
   // ---------- Karta produktu: warianty i ilość ----------
   const VARIANTS = {
-    31: { len: '31 cm', mm: '310 mm', model: 'BDZ 20/40/310', idx: 'BDZ-20-40-310', price: 189, stock: 3, img: 'zaginadlo-31.svg', id: 'z31' },
-    46: { len: '46 cm', mm: '460 mm', model: 'BDZ 20/40/460', idx: 'BDZ-20-40-460', price: 220, stock: 14, img: 'zaginadlo-46.svg', id: 'z46' },
-    61: { len: '61 cm', mm: '610 mm', model: 'BDZ 20/40/610', idx: 'BDZ-20-40-610', price: 259, old: 285, low: 279, stock: 6, img: 'zaginadlo-61.svg', id: 'z61' },
+    31: { len: '31 cm', mm: '310 mm', model: 'BDZ 20/40/310', idx: 'BDZ-20-40-310', price: 189, stock: 3, img: 'zaginadlo-31.webp', id: 'z31' },
+    46: { len: '46 cm', mm: '460 mm', model: 'BDZ 20/40/460', idx: 'BDZ-20-40-460', price: 220, stock: 14, img: 'zaginadlo-46.webp', id: 'z46' },
+    61: { len: '61 cm', mm: '610 mm', model: 'BDZ 20/40/610', idx: 'BDZ-20-40-610', price: 259, old: 285, low: 279, stock: 6, img: 'zaginadlo-61.webp', id: 'z61' },
   };
   const pdpImg = $('#pdp-img');
   const setVariant = (v, animate = true) => {
@@ -243,6 +260,10 @@
     add.dataset.price = d.price;
     add.dataset.id = d.id;
     renderPrices(animate);
+    // model 3D w galerii trzyma ten sam wariant
+    const g3d = $('#pdp3d');
+    if (g3d) g3d.dataset.variant = v;
+    if (window.TigerTool3D) window.TigerTool3D.setVariant(v);
   };
   $$('.js-variant').forEach((b) => b.addEventListener('click', () => setVariant(b.dataset.v)));
   if (pdpImg) {
