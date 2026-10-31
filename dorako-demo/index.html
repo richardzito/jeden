@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DORAKO — producent saun i SPA · sauny ogrodowe, jacuzzi, kominki · Warszawa</title>
+  <meta name="description" content="Producent saun na wymiar i saun ogrodowych. Jacuzzi, wanny lodowe, domki saunowe i kominki. Projekt z wizualizacją, produkcja i montaż. Warszawa, Legionowo, cała Polska. Tel. 784 874 875.">
+  <meta name="theme-color" content="#1c1918">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.webp">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+<!-- Ikony -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.6 4.2-2.1 1.4a11 11 0 0 0 6.4 6.4l1.4-2.1L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.6 2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8L12 2.6Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21a6.5 6.5 0 0 0 6.5-6.5c0-4.3-3.6-6.6-4.3-11-2.4 1.6-3.7 3.8-3.6 6.4-1.3-.6-2-1.9-2.1-3.1C6.6 8.6 5.5 11 5.5 14.5A6.5 6.5 0 0 0 12 21Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21a2.8 2.8 0 0 1-2.8-2.8c0-1.7 1.6-2.7 2.8-4.7 1.2 2 2.8 3 2.8 4.7A2.8 2.8 0 0 1 12 21Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.3 28.8l6.6-1.7A12.7 12.7 0 1 0 16 3.2Zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.5 10.5 0 1 1 16 26.3Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5 0-.2-.2-.2-.5-.4Z"/></symbol>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a href="index.html" class="brand" aria-label="DORAKO Kominki &amp; SPA — strona główna">
+      <img class="brand__img brand__img--color" src="assets/img/logo/dorako.png" alt="DORAKO Kominki &amp; SPA" width="835" height="230">
+      <img class="brand__img brand__img--light" src="assets/img/logo/dorako-light.png" alt="" width="835" height="230" aria-hidden="true">
+    </a>
+    <nav class="nav" aria-label="Główna nawigacja">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#faq">FAQ</a>
+      <a href="konfigurator-spa.html" class="is-new">SPA w 3D</a>
+    </nav>
+    <div class="header__cta">
+      <a href="konfigurator-spa.html" class="btn btn--ghost btn--sm"><svg><use href="#i-cube"/></svg>Zaprojektuj SPA</a>
+      <a href="tel:+48784874875" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg><span>784 874 875</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#realizacje">Realizacje</a>
+  <a href="#oferta">Oferta i proces</a>
+  <a href="#opinie">Opinie</a>
+  <a href="#faq">FAQ</a>
+  <a href="o-firmie.html">O firmie</a>
+  <a href="kontakt.html">Kontakt i showroom</a>
+  <a href="konfigurator-spa.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Zaprojektuj ogrodowe SPA w 3D</a>
+</div>
+
+<main>
+
+  <!-- ============ 1. Hero — zdjęcie z realizacji na całą szerokość + para ============ -->
+  <section class="hero vhero" data-header-dark aria-labelledby="hero-title">
+    <div class="vhero__media">
+      <img src="assets/img/hero.webp" alt="Sauna na wymiar z podświetlonymi ławami z jasnego drewna" width="1600" height="1200" fetchpriority="high">
+    </div>
+    <canvas class="vhero__steam" id="hero-steam" aria-hidden="true"></canvas>
+
+    <div class="container vhero__inner">
+      <div class="vhero__copy">
+        <p class="eyebrow" data-hero style="--i:0"><span class="dot"></span>Producent saun i SPA · od ponad 30 lat</p>
+        <h1 class="display" id="hero-title">
+          <span class="line-mask"><span style="--i:0">Twoje SPA.</span></span>
+          <span class="line-mask"><span style="--i:1">W domu</span></span>
+          <span class="line-mask"><span style="--i:2">i w ogrodzie.</span></span>
+        </h1>
+        <p class="lead" data-hero style="--i:1">Sauny na wymiar, sauny ogrodowe, jacuzzi i&nbsp;wanny lodowe. Projektujemy, produkujemy i&nbsp;montujemy.</p>
+        <div class="cta-pair" data-hero style="--i:2">
+          <a href="tel:+48784874875" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń: 784 874 875</a>
+          <a href="konfigurator-spa.html" class="btn btn--glass"><svg><use href="#i-cube"/></svg>Zaprojektuj SPA w 3D<svg class="arrow"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <figure class="vhero__quote" data-hero style="--i:4">
+        <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>„Sauna zrobiona co do centymetra pod nasz skos. Wieczorem z&nbsp;podświetleniem wygląda jak w&nbsp;hotelu.”</blockquote>
+        <figcaption><svg aria-hidden="true"><use href="#i-flame"/></svg>Katarzyna i Marek · sauna na poddaszu, Legionowo</figcaption>
+      </figure>
+    </div>
+
+    <div class="container vhero__bar" data-hero style="--i:5">
+      <span class="vhero__badge"><svg aria-hidden="true"><use href="#i-star"/></svg>Oferteo · Najlepsi 2025</span>
+      <span class="vhero__place"><svg aria-hidden="true"><use href="#i-pin"/></svg>Showroom: Warszawa, Białołęka · montaż w całej Polsce</span>
+      <span class="vhero__caption">Na zdjęciu: sauna na wymiar wykonana przez DORAKO</span>
+    </div>
+  </section>
+
+  <!-- ============ Pasek zaufania ============ -->
+  <section class="trust-band" aria-label="W skrócie">
+    <div class="container trust">
+      <div class="trust__item" data-reveal style="--i:0"><strong><span data-count-to="30">30</span>+ lat</strong><span>doświadczenia w&nbsp;branży</span></div>
+      <div class="trust__item" data-reveal style="--i:1"><strong>Na wymiar</strong><span>sauna pod Twoje wnętrze i&nbsp;skos</span></div>
+      <div class="trust__item" data-reveal style="--i:2"><strong>Tylö · D1 Spas</strong><span>marki premium, dealer Jacuzzi®</span></div>
+      <div class="trust__item" data-reveal style="--i:3"><strong>Cała Polska</strong><span>projekt z&nbsp;wizualizacją i&nbsp;montaż</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Ukończone realizacje ============ -->
+  <section class="section" id="realizacje" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Realizacje</p>
+          <h2 class="h2" id="works-title" data-reveal style="--i:1">Ciepło, które<br>widać na zdjęciach.</h2>
+        </div>
+        <a href="realizacje.html" class="link-arrow" data-reveal style="--i:2">Wszystkie realizacje<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="works works--dk">
+        <figure class="work work--a" data-reveal="clip" style="margin:0">
+          <img src="assets/img/real-tylo.webp" alt="Sauna na wymiar z dwoma rzędami ław, piecem Tylö i ścianą z kamienia" loading="lazy" width="1400" height="1050">
+          <figcaption class="work__meta"><span class="work__tag">Sauna na wymiar</span><div class="work__title">Dwie ławy, piec Tylö, kamień</div></figcaption>
+        </figure>
+        <figure class="work work--b" data-reveal="clip" style="--i:1;margin:0">
+          <img src="assets/img/real-ogrodowa.webp" alt="Ogrodowa sauna z przeszklonym narożnikiem o zmierzchu" loading="lazy" width="900" height="1200">
+          <figcaption class="work__meta"><span class="work__tag">Sauna ogrodowa</span><div class="work__title">Przeszklony narożnik</div></figcaption>
+        </figure>
+        <figure class="work work--d" data-reveal="clip" style="--i:2;margin:0">
+          <img src="assets/img/real-jacuzzi-noc.webp" alt="Jacuzzi w drewnianym tarasie z podświetleniem LED nocą" loading="lazy" width="1289" height="967">
+          <figcaption class="work__meta"><span class="work__tag">Jacuzzi</span><div class="work__title">W&nbsp;tarasie, z&nbsp;LED-em</div></figcaption>
+        </figure>
+        <figure class="work work--d" data-reveal="clip" style="--i:3;margin:0">
+          <img src="assets/img/real-sol.webp" alt="Sauna z podświetloną ścianą z soli himalajskiej i niebieskim LED-em" loading="lazy" width="1100" height="825">
+          <figcaption class="work__meta"><span class="work__tag">Sauna domowa</span><div class="work__title">Ściana z&nbsp;soli himalajskiej</div></figcaption>
+        </figure>
+        <figure class="work work--d" data-reveal="clip" style="--i:4;margin:0">
+          <img src="assets/img/real-laznia.webp" alt="Łaźnia parowa wyłożona kolorową mozaiką" loading="lazy" width="1000" height="750">
+          <figcaption class="work__meta"><span class="work__tag">Łaźnia parowa</span><div class="work__title">Mozaika i&nbsp;ławy z&nbsp;podgrzewaniem</div></figcaption>
+        </figure>
+        <figure class="work work--d" data-reveal="clip" style="--i:5;margin:0">
+          <img src="assets/img/real-spa-taras.webp" alt="Okrągła wanna SPA wpuszczona w drewniany taras" loading="lazy" width="1000" height="750">
+          <figcaption class="work__meta"><span class="work__tag">Wanna SPA</span><div class="work__title">Wpuszczona w&nbsp;taras</div></figcaption>
+        </figure>
+      </div>
+
+      <div class="inline-cta" data-reveal>
+        <p>Masz miejsce na saunę?<span>Wyślij zdjęcie lub wymiary. Przygotujemy projekt z&nbsp;wizualizacją.</span></p>
+        <div class="cta-pair">
+          <a href="tel:+48784874875" class="btn btn--primary"><svg><use href="#i-phone"/></svg>784 874 875</a>
+          <a href="konfigurator-spa.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Zobacz SPA w 3D</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Efekt WOW — Ogrodowe SPA w 3D (zajawka) ============ -->
+  <section class="wow" id="spa-3d" aria-labelledby="wow-title">
+    <div class="container wow__intro">
+      <div>
+        <p class="eyebrow" data-reveal><span class="dot"></span>Nowość · Konfigurator SPA 3D</p>
+        <h2 class="h2" id="wow-title" data-reveal style="--i:1">Gorąco, zimno,<br>gorąco. W ogrodzie.</h2>
+      </div>
+      <p class="lead" data-reveal style="--i:2">Przewiń i&nbsp;zbuduj swoje ogrodowe SPA: saunę, jacuzzi i&nbsp;wannę lodową.</p>
+    </div>
+
+    <div class="wow__track" id="wow-track">
+      <div class="container wow__sticky">
+        <div class="wow__steps" id="wow-steps" role="list">
+          <span class="wow__rail" aria-hidden="true"><i id="wow-rail"></i></span>
+          <div role="listitem" class="wow__step is-active" data-step="0">
+            <span class="wow__step-num">Sauna</span>
+            <h3>Deska po desce. Do 90&nbsp;°C.</h3>
+            <p>Sauna ogrodowa z&nbsp;naszej produkcji. Bez ciężkich fundamentów.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="1">
+            <span class="wow__step-num">Jacuzzi</span>
+            <h3>Taras i&nbsp;gorąca woda.</h3>
+            <p>Wanna SPA w&nbsp;deskach tarasu. 38&nbsp;°C przez cały rok.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="2">
+            <span class="wow__step-num">Wanna lodowa</span>
+            <h3>Kontrast, który budzi.</h3>
+            <p>4&nbsp;°C po saunie. Morsowanie bez wyjazdu nad jezioro.</p>
+          </div>
+          <div role="listitem" class="wow__step" data-step="3">
+            <span class="wow__step-num">Rytuał</span>
+            <h3>Twoje SPA o&nbsp;zmierzchu.</h3>
+            <p>Sauna, lód, jacuzzi i&nbsp;ogień w&nbsp;kominku. Od jednego producenta.</p>
+          </div>
+        </div>
+
+        <div class="wow__stage" id="wow-stage">
+          <img class="wow__fallback" src="assets/img/wow-fallback.webp" alt="" aria-hidden="true">
+          <canvas class="wow__canvas" id="wow-canvas" aria-label="Model 3D ogrodu: sauna ogrodowa składa się deska po desce i nagrzewa do 90 stopni, obok powstaje taras z jacuzzi o temperaturze 38 stopni i wanna lodowa o temperaturze 4 stopni. Na końcu ogród o zmierzchu z zapalonym kominkiem ogrodowym."></canvas>
+
+          <!-- Etykiety (pozycja liczona z modelu 3D) -->
+          <div class="layer-tags" id="scene-tags" aria-hidden="true">
+            <span class="layer-tag hot-tag" data-tag="heater"><b>Piec z&nbsp;kamieniami</b><small>do 90 °C w&nbsp;40 min</small></span>
+            <span class="layer-tag info-tag" data-tag="front"><b id="tag-front-b">Przeszklony front</b><small id="tag-front-s">widok na ogród z&nbsp;ławy</small></span>
+            <span class="layer-tag info-tag" data-tag="deck"><b>Taras z&nbsp;desek</b><small>wanna w&nbsp;zabudowie</small></span>
+            <span class="layer-tag hot-tag" data-tag="tub"><b>Wanna SPA</b><small>hydromasaż, 38 °C</small></span>
+            <span class="layer-tag cold-tag" data-tag="ice"><b>Wanna lodowa</b><small>agregat chłodzący, 4 °C</small></span>
+            <span class="layer-tag hot-tag" data-tag="fire"><b>Kominek ogrodowy</b><small>DORAKO to też kominki</small></span>
+          </div>
+
+          <!-- Model sauny -->
+          <div class="hud hud--top is-visible" data-hud="0,1,2,3">
+            <div class="segmented" id="sauna-model" role="group" aria-label="Model sauny" style="--n:3">
+              <span class="segmented__thumb" aria-hidden="true"></span>
+              <button type="button" aria-pressed="true" data-model="0">Kopenhaga</button>
+              <button type="button" aria-pressed="false" data-model="1">Hanko</button>
+              <button type="button" aria-pressed="false" data-model="2">Bergen</button>
+            </div>
+          </div>
+
+          <!-- Termometr: temperatura bieżącej strefy + cała strefa SPA -->
+          <div class="hud hud--spec is-visible" data-hud="0,1,2,3">
+            <div class="hud-card temp-card" id="temp-card">
+              <span class="spec-card__row"><span class="scan-dot"></span><span data-t="label">Sauna Kopenhaga</span></span>
+              <strong class="temp-card__num"><span data-t="num">20</span><small>°C</small></strong>
+              <div class="temp-gauge" aria-hidden="true"><i id="temp-mark"></i></div>
+              <div class="spec-rows">
+                <div class="spec" data-zone="0"><span>Sauna</span><b>90 °C</b></div>
+                <div class="spec is-locked" data-zone="1"><span>Jacuzzi</span><b>—</b></div>
+                <div class="spec is-locked" data-zone="2"><span>Wanna lodowa</span><b>—</b></div>
+                <div class="spec" data-zone="size"><span>Wymiar sauny</span><b data-t="size">2,2 × 2,0 m</b></div>
+              </div>
+            </div>
+          </div>
+          <a href="konfigurator-spa.html" class="btn btn--primary btn--sm wow__cta"><svg><use href="#i-cube"/></svg>Zaprojektuj swoje SPA<svg class="arrow"><use href="#i-arrow"/></svg></a>
+          <p class="wow__note">Dane poglądowe · przeciągnij, aby obrócić</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container wow__outro">
+      <div class="wow__outro-inner">
+        <p data-reveal>W pełnej wersji wybierzesz model sauny, drewno, piec i&nbsp;dodatki, ustawisz je na planie ogrodu i&nbsp;dostaniesz wstępną wycenę.</p>
+        <div class="cta-pair" data-reveal style="--i:1">
+          <a href="konfigurator-spa.html" class="btn btn--primary"><svg><use href="#i-cube"/></svg>Zaprojektuj swoje SPA</a>
+          <a href="tel:+48784874875" class="btn btn--ghost"><svg><use href="#i-phone"/></svg>784 874 875</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. Oferta + proces ============ -->
+  <section class="section" id="oferta" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Oferta</p>
+          <h2 class="h2" id="services-title" data-reveal style="--i:1">Kominki &amp; SPA.<br>Od jednego producenta.</h2>
+        </div>
+        <a href="oferta.html" class="link-arrow" data-reveal style="--i:2">Pełna oferta<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="services services--ap">
+        <article class="service" data-reveal style="--i:0">
+          <div class="service__media"><img src="assets/img/usl-wymiar.webp" alt="Jasna sauna z ławami w kształcie litery L i podświetleniem" loading="lazy" width="900" height="675"></div>
+          <div class="service__body"><h3 class="h3">Sauny na wymiar</h3><p>Fińskie, infrared, łaźnie parowe. Pod każdy skos.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:1">
+          <div class="service__media"><img src="assets/img/usl-ogrodowe.webp" alt="Ogrodowa sauna Kopenhaga z przeszklonym frontem o zachodzie słońca" loading="lazy" width="900" height="506"></div>
+          <div class="service__body"><h3 class="h3">Sauny ogrodowe</h3><p>Kopenhaga, Hanko, Bergen. Szybki montaż.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:2">
+          <div class="service__media"><img src="assets/img/usl-domki.webp" alt="Drewniany domek saunowy z tarasem w ogrodzie" loading="lazy" width="900" height="663"></div>
+          <div class="service__body"><h3 class="h3">Domki saunowe</h3><p>Z&nbsp;przebieralnią, prysznicem i&nbsp;werandą.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:3">
+          <div class="service__media"><img src="assets/img/usl-jacuzzi.webp" alt="Wanna SPA ze schodkami na tarasie na dachu" loading="lazy" width="900" height="675"></div>
+          <div class="service__body"><h3 class="h3">Jacuzzi i&nbsp;wanny SPA</h3><p>Dimension One Spas, Jacuzzi®. Montaż w&nbsp;tarasie.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:4">
+          <div class="service__media service__media--white"><img src="assets/img/usl-lodowe.webp" alt="Trzy wanny lodowe z agregatem chłodzącym" loading="lazy" width="900" height="600"></div>
+          <div class="service__body"><h3 class="h3">Wanny lodowe</h3><p>Do morsowania w&nbsp;domu, na tarasie i&nbsp;balkonie.</p></div>
+        </article>
+        <article class="service" data-reveal style="--i:5">
+          <div class="service__media"><img src="assets/img/usl-kominki.webp" alt="Wiszący kominek na tarasie przy basenie wieczorem" loading="lazy" width="900" height="675"></div>
+          <div class="service__body"><h3 class="h3">Kominki</h3><p>Na drewno, gaz, bio i&nbsp;do ogrodu. Z&nbsp;montażem.</p></div>
+        </article>
+      </div>
+
+      <div class="alert-strip" data-reveal>
+        <p><span class="pulse" aria-hidden="true"></span><span><b style="font-weight:600;display:block;font-size:1.0625rem">Usiądź w&nbsp;saunie, zanim ją kupisz.</b>Showroom: ul. Czarodzieja 2, Warszawa. Pn–pt 9–17, sob. 10–13.</span></p>
+        <a href="tel:+48784874875" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg>Umów wizytę</a>
+      </div>
+
+      <div class="process">
+        <div class="process__head">
+          <p class="eyebrow" data-reveal><span class="dot"></span>Jak działamy</p>
+          <h2 class="h2" data-reveal style="--i:1">Od pomiaru do pierwszego seansu.</h2>
+        </div>
+        <div class="steps" data-reveal-group role="list">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <div role="listitem" class="step" style="--i:0"><span class="step__num">01</span><h3 class="h3">Rozmowa i&nbsp;pomiar</h3><p>W&nbsp;showroomie albo u&nbsp;Ciebie.</p></div>
+          <div role="listitem" class="step" style="--i:1"><span class="step__num">02</span><h3 class="h3">Projekt z&nbsp;wizualizacją</h3><p>Widzisz saunę, zanim powstanie.</p></div>
+          <div role="listitem" class="step" style="--i:2"><span class="step__num">03</span><h3 class="h3">Produkcja</h3><p>Robimy sami, na wymiar.</p></div>
+          <div role="listitem" class="step" style="--i:3"><span class="step__num">04</span><h3 class="h3">Montaż i&nbsp;pierwszy seans</h3><p>Uruchamiamy i&nbsp;pokazujemy, jak dbać.</p></div>
+        </div>
+        <div class="inline-cta" data-reveal>
+          <p>Pierwszy krok to rozmowa.<span>Doradzimy model, drewno i&nbsp;piec.</span></p>
+          <div class="cta-pair">
+            <a href="tel:+48784874875" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń teraz</a>
+            <a href="konfigurator-spa.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Najpierw SPA w 3D</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. Opinie ============ -->
+  <section class="section section--surface" id="opinie" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="reviews-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Opinie</p>
+          <h2 class="h2" id="reviews-title" data-reveal style="--i:1">Najlepsze miejsce<br>w&nbsp;domu.</h2>
+        </div>
+        <div class="score score--badge" data-reveal style="--i:2">
+          <img class="score__badge" src="assets/img/oferteo-najlepsi-2025.png" alt="Oferteo Najlepsi 2025" width="250" height="250" loading="lazy">
+          <div class="score__meta">
+            <b class="score__plus">Wyróżnienie Oferteo</b>
+            <span class="g-line">Najlepsi 2025 · ponad 30 lat w&nbsp;branży</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Opinie przykładowe (wizytówka Google nie dała się wczytać) — do podmiany na prawdziwe. -->
+      <div class="reviews">
+        <figure class="review" data-reveal style="--i:0;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Sauna zrobiona co do centymetra pod nasz skos. Wieczorem z&nbsp;podświetleniem wygląda jak w&nbsp;hotelu.”</blockquote>
+          <footer><span class="avatar">KM</span><div><b>Katarzyna i&nbsp;Marek</b><span>Sauna na poddaszu, Legionowo</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:1;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Sauna ogrodowa stanęła w&nbsp;jeden dzień. Bez betonowania, bez bałaganu w&nbsp;ogrodzie.”</blockquote>
+          <footer><span class="avatar">PW</span><div><b>Paweł W.</b><span>Sauna Kopenhaga, Jabłonna</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:2;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Jacuzzi wpuszczone w&nbsp;taras, z&nbsp;LED-em dookoła. Zimą korzystamy częściej niż latem.”</blockquote>
+          <footer><span class="avatar">AN</span><div><b>Agnieszka N.</b><span>Wanna SPA, Warszawa Wawer</span></div></footer>
+        </figure>
+        <figure class="review" data-reveal style="--i:3;margin:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Saunę dla gości pensjonatu zaprojektowali z&nbsp;wizualizacją. Goście pytają o&nbsp;nią przy rezerwacji.”</blockquote>
+          <footer><span class="avatar">TR</span><div><b>Tomasz R.</b><span>Pensjonat, Mazury</span></div></footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal><span class="dot"></span>FAQ</p>
+        <h2 class="h2" id="faq-title" data-reveal style="--i:1">Krótko<br>i na temat.</h2>
+        <figure class="faq-photo" data-reveal="clip" style="--i:2;margin:0">
+          <img src="assets/img/faq-sauna.webp" alt="Sauna z lewitującymi ławami i podświetleniem pod siedziskami" loading="lazy" width="800" height="1067">
+        </figure>
+        <div class="cta-pair" data-reveal style="--i:3">
+          <a href="tel:+48784874875" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg>Inne pytanie? Zadzwoń</a>
+        </div>
+      </div>
+
+      <div class="faq" id="faq-list">
+        <div class="faq__item" data-reveal style="--i:0">
+          <button class="faq__q" aria-expanded="false">Ile kosztuje sauna na wymiar?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Zależy od wymiaru, drewna i&nbsp;pieca. Po rozmowie przygotujemy projekt z&nbsp;wizualizacją i&nbsp;konkretną wycenę.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:1">
+          <button class="faq__q" aria-expanded="false">Czy sauna ogrodowa potrzebuje fundamentu?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Nie trzeba betonować. Wystarczy równe, utwardzone podłoże. Montaż jest szybki i&nbsp;nie niszczy ogrodu.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:2">
+          <button class="faq__q" aria-expanded="false">Zmieścicie saunę pod skosem?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Jako producent robimy sauny na dowolny wymiar, także na poddasza, do łazienek i&nbsp;piwnic.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:3">
+          <button class="faq__q" aria-expanded="false">Jak montujecie jacuzzi?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>W&nbsp;zagłębieniu, w&nbsp;zabudowie do połowy wysokości albo bezpośrednio na podłożu. W&nbsp;domu i&nbsp;na zewnątrz.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:4">
+          <button class="faq__q" aria-expanded="false">Gdzie mogę zobaczyć sauny na żywo?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>W&nbsp;showroomie przy ul. Czarodzieja 2 w&nbsp;Warszawie. Pn–pt 9–17, sobota 10–13.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:5">
+          <button class="faq__q" aria-expanded="false">Działacie poza Warszawą?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Realizujemy projekty w&nbsp;całej Polsce, dla domów, hoteli i&nbsp;pensjonatów.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Mocne zakończenie ============ -->
+  <section class="section" style="padding-top:0" aria-labelledby="final-title">
+    <div class="container">
+      <div class="final" data-reveal>
+        <img class="final__bg" src="assets/img/cta-bg.webp" alt="" loading="lazy">
+        <p class="eyebrow"><span class="dot"></span>Sauny · jacuzzi · wanny lodowe · kominki</p>
+        <h2 class="h2" id="final-title">Pierwszy seans jeszcze tej zimy.</h2>
+        <div class="final__phone">
+          <a href="tel:+48784874875">784 874 875</a>
+          <button class="copy-btn" id="copy-phone" type="button" aria-label="Kopiuj numer telefonu" data-phone="784 874 875">
+            <svg class="ic-copy"><use href="#i-copy"/></svg>
+            <svg class="ic-check"><use href="#i-check"/></svg>
+          </button>
+        </div>
+        <div class="cta-pair">
+          <a href="tel:+48784874875" class="btn btn--light"><svg><use href="#i-phone"/></svg>Zadzwoń teraz</a>
+          <a href="konfigurator-spa.html" class="btn btn--outline-light"><svg><use href="#i-cube"/></svg>Konfigurator SPA 3D</a>
+        </div>
+        <p class="final__note">Showroom: ul. Czarodzieja 2, Warszawa · pn–pt 9–17, sob. 10–13</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 8. Stopka ============ -->
+<footer class="footer footer--dark" data-header-dark>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <img class="footer__logo" src="assets/img/logo/dorako-light.png" alt="DORAKO Kominki &amp; SPA" width="835" height="230" loading="lazy">
+        <p>Producent saun i&nbsp;przestrzeni SPA. Sauny na wymiar i&nbsp;ogrodowe, jacuzzi, wanny lodowe, kominki. Od ponad 30 lat.</p>
+        <img class="footer__badge" src="assets/img/oferteo-najlepsi-2025.png" alt="Oferteo Najlepsi 2025" width="250" height="250" loading="lazy">
+      </div>
+      <div>
+        <h4>Strona</h4>
+        <ul>
+          <li><a href="realizacje.html">Realizacje</a></li>
+          <li><a href="oferta.html">Oferta</a></li>
+          <li><a href="konfigurator-spa.html">Konfigurator SPA 3D</a></li>
+          <li><a href="o-firmie.html">O firmie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48784874875">784 874 875</a></li>
+          <li><a href="mailto:dorako@dorako.pl">dorako@dorako.pl</a></li>
+          <li><a href="https://wa.me/48784874875" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Showroom</h4>
+        <ul>
+          <li>ul. Czarodzieja 2, lok. 4</li>
+          <li>03-116 Warszawa</li>
+          <li>Pn–pt 9–17, sob. 10–13</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 DORAKO Piotr Koper</span>
+      <span>Wersja demonstracyjna strony</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Pasek CTA na telefonie -->
+<div class="mbar" id="mbar" aria-hidden="true">
+  <a href="tel:+48784874875" class="btn btn--primary" tabindex="-1"><svg><use href="#i-phone"/></svg>Zadzwoń</a>
+  <a href="konfigurator-spa.html" class="btn btn--ghost" tabindex="-1"><svg><use href="#i-cube"/></svg>SPA w 3D</a>
+</div>
+
+<!-- WhatsApp -->
+<div class="wa" id="wa">
+  <div class="wa__bubble" id="wa-bubble" role="status">
+    <b>Myślisz o saunie?</b>
+    <span>Wyślij zdjęcie miejsca na WhatsApp — doradzimy model.</span>
+    <button class="wa__close" id="wa-close" type="button" aria-label="Zamknij"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <a class="wa__btn" href="https://wa.me/48784874875?text=Dzie%C5%84%20dobry%2C%20my%C5%9Bl%C4%99%20o%20saunie%20i%20mam%20pytanie." target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">
+    <svg><use href="#i-wa"/></svg>
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/spa3d.js" defer></script>
+</body>
+</html>
