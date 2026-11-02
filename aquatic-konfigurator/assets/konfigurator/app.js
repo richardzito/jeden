@@ -2720,7 +2720,21 @@ function main() {
       }
     };
     // uchwyt do testów
-    root._aqk = { set, setView, setTime, setTab, state: () => state, frame: () => frame(performance.now()), ready: true };
+    root._aqk = {
+      set, setView, setTime, setTab, state: () => state, frame: () => frame(performance.now()), ready: true,
+      // testy: przebudowa bez renderowania i wstrzymanie pętli
+      rebuild: () => {
+        if (dirty) {
+          rebuild();
+          syncTagEls();
+          ensureSteam();
+        }
+      },
+      pause: (on) => {
+        visible = !on;
+        if (!on) kick();
+      },
+    };
     resize();
     kick();
   }
