@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Luma Sol — ogrody zimowe, zadaszenia tarasów, pergole · konfigurator 3D</title>
+  <meta name="description" content="Ogrody zimowe sezonowe i całoroczne, zadaszenia tarasów, pergole, zabudowy balkonów. Zaprojektuj swoją zabudowę w 3D i wyślij do bezpłatnej wyceny. 10 lat gwarancji. Tel. 668 637 577.">
+  <meta name="theme-color" content="#2c3639">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Tenor+Sans&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+<!-- Ikony -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.6 4.2-2.1 1.4a11 11 0 0 0 6.4 6.4l1.4-2.1L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m-6-6 6 6 6-6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.6 2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8L12 2.6Z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3"/></symbol>
+  <symbol id="i-sunset" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M3 17.5h18M6.5 17.5a5.5 5.5 0 0 1 11 0M12 6v2.2M4.6 10.1l1.6 1.2M19.4 10.1l-1.6 1.2M3 21h18"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M19.5 14.8A8 8 0 0 1 9.2 4.5a8 8 0 1 0 10.3 10.3Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3 5 6v5.5c0 4.4 3 8 7 9.5 4-1.5 7-5.1 7-9.5V6l-7-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4.5h-4.5"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5 21 3Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.3 28.8l6.6-1.7A12.7 12.7 0 1 0 16 3.2Zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.5 10.5 0 1 1 16 26.3Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5 0-.2-.2-.2-.5-.4Z"/></symbol>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a href="index.html" class="brand" aria-label="Luma Sol — strona główna">
+      <img class="brand__img brand__img--color" src="assets/img/logo.png" alt="Luma Sol" width="720" height="308">
+      <img class="brand__img brand__img--light" src="assets/img/logo-light.png" alt="" width="720" height="308" aria-hidden="true">
+    </a>
+    <nav class="nav" aria-label="Główna nawigacja">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#pory-roku">Cztery pory roku</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#faq">FAQ</a>
+      <a href="konfigurator.html" class="is-new">Konfigurator 3D</a>
+    </nav>
+    <div class="header__cta">
+      <a href="#konfigurator" class="btn btn--ghost btn--sm"><svg><use href="#i-cube"/></svg>Zaprojektuj w 3D</a>
+      <a href="tel:+48668637577" class="btn btn--primary btn--sm"><svg><use href="#i-phone"/></svg><span>668 637 577</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#realizacje">Realizacje</a>
+  <a href="#oferta">Oferta i proces</a>
+  <a href="#pory-roku">Cztery pory roku</a>
+  <a href="#opinie">Opinie</a>
+  <a href="#faq">FAQ</a>
+  <a href="o-firmie.html">O firmie</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="konfigurator.html" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Konfigurator 3D</a>
+</div>
+
+<main>
+
+  <!-- ============ 1. Hero — konfigurator 3D na całą szerokość ============ -->
+  <section class="hero" id="konfigurator" data-header-dark aria-labelledby="hero-title">
+    <div class="hero__stage" id="cfg-stage">
+      <img class="hero__fallback" src="assets/img/hero-noc.webp" alt="" aria-hidden="true" fetchpriority="high">
+      <canvas class="hero__canvas" id="cfg-canvas" aria-label="Wizualizacja 3D: dom z tarasem i zaprojektowaną zabudową. Obracasz ją przeciągnięciem."></canvas>
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <span class="dim-tag" id="dim-w" aria-hidden="true"></span>
+      <span class="dim-tag" id="dim-d" aria-hidden="true"></span>
+      <p class="hero__loading" id="cfg-loading">Ładowanie wizualizacji 3D…</p>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--light" data-hero style="--i:0"><span class="dot"></span>Ogrody zimowe · zadaszenia · pergole</p>
+        <h1 class="display" id="hero-title">
+          <span class="line-mask"><span style="--i:0">Taras</span></span>
+          <span class="line-mask"><span style="--i:1">na cały rok.</span></span>
+        </h1>
+        <p class="lead" data-hero style="--i:1">Zaprojektuj swoją zabudowę w&nbsp;3D. Wycenę dostaniesz w&nbsp;24&nbsp;h.</p>
+        <div class="cta-pair" data-hero style="--i:2">
+          <a href="tel:+48668637577" class="btn btn--primary"><svg><use href="#i-phone"/></svg>Zadzwoń: 668 637 577</a>
+          <a href="konfigurator.html" class="btn btn--glass"><svg><use href="#i-cube"/></svg>Pełny konfigurator<svg class="arrow"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Panel konfiguratora -->
+      <aside class="cfg" id="cfg" aria-label="Konfigurator zabudowy" data-hero style="--i:3">
+        <div class="cfg__head">
+          <span class="cfg__kicker"><svg aria-hidden="true"><use href="#i-cube"/></svg>Konfigurator 3D</span>
+          <span class="cfg__area"><b id="cfg-area">17,5</b>&nbsp;m²</span>
+        </div>
+
+        <div class="cfg__group">
+          <span class="cfg__label">Rodzaj</span>
+          <div class="cfg__types" role="radiogroup" aria-label="Rodzaj zabudowy">
+            <button type="button" role="radio" aria-checked="true" data-type="calo"><b>Ogród zimowy</b><small>całoroczny</small></button>
+            <button type="button" role="radio" aria-checked="false" data-type="sezon"><b>Ogród zimowy</b><small>sezonowy</small></button>
+            <button type="button" role="radio" aria-checked="false" data-type="zadaszenie"><b>Zadaszenie</b><small>tarasu</small></button>
+            <button type="button" role="radio" aria-checked="false" data-type="pergola"><b>Pergola</b><small>lamelowa</small></button>
+          </div>
+        </div>
+
+        <div class="cfg__group cfg__dims">
+          <label class="range">
+            <span>Szerokość <output id="out-w">5,0 m</output></span>
+            <input type="range" id="in-w" min="3" max="8" step="0.1" value="5">
+          </label>
+          <label class="range">
+            <span>Głębokość <output id="out-d">3,5 m</output></span>
+            <input type="range" id="in-d" min="2.5" max="5" step="0.1" value="3.5">
+          </label>
+        </div>
+
+        <div class="cfg__group">
+          <span class="cfg__label">Kolor konstrukcji <em id="cfg-color">Antracyt RAL 7016</em></span>
+          <div class="cfg__swatches" role="radiogroup" aria-label="Kolor konstrukcji">
+            <button type="button" role="radio" aria-checked="true" data-color="antracyt" style="--c:#3a4045" aria-label="Antracyt RAL 7016"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="bialy" style="--c:#eeede7" aria-label="Biały RAL 9016"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="czarny" style="--c:#16171a" aria-label="Czarny RAL 9005"></button>
+            <button type="button" role="radio" aria-checked="false" data-color="dab" style="--c:#8a5a33" aria-label="Złoty dąb (okleina)"></button>
+          </div>
+        </div>
+
+        <div class="cfg__group" data-show="glass">
+          <span class="cfg__label">Dach</span>
+          <div class="seg" role="radiogroup" aria-label="Szkło w dachu">
+            <button type="button" role="radio" aria-checked="true" data-glass="clear">Szkło bezbarwne</button>
+            <button type="button" role="radio" aria-checked="false" data-glass="tint">Przeciwsłoneczne</button>
+          </div>
+        </div>
+
+        <div class="cfg__group" data-show="lamella" hidden>
+          <label class="range">
+            <span>Lamele dachu <output id="out-l">zamknięte</output></span>
+            <input type="range" id="in-l" min="0" max="1" step="0.01" value="0.15">
+          </label>
+        </div>
+
+        <div class="cfg__group" data-show="walls-choice" hidden>
+          <span class="cfg__label">Ściany</span>
+          <div class="seg" role="radiogroup" aria-label="Ściany zadaszenia">
+            <button type="button" role="radio" aria-checked="true" data-walls="none">Bez ścian</button>
+            <button type="button" role="radio" aria-checked="false" data-walls="slide">Szklane przesuwne</button>
+          </div>
+        </div>
+
+        <div class="cfg__group" data-show="open">
+          <label class="range">
+            <span>Ściany przesuwne <output id="out-o">zamknięte</output></span>
+            <input type="range" id="in-o" min="0" max="1" step="0.01" value="0">
+          </label>
+        </div>
+
+        <div class="cfg__group">
+          <span class="cfg__label">Dodatki</span>
+          <div class="chips">
+            <button type="button" class="chip" aria-pressed="true" data-extra="led">Oświetlenie LED</button>
+            <button type="button" class="chip" aria-pressed="false" data-extra="awning" data-show-chip="awning">Markiza</button>
+            <button type="button" class="chip" aria-pressed="false" data-extra="heaters" data-show-chip="heaters">Promienniki</button>
+          </div>
+        </div>
+
+        <div class="cfg__foot">
+          <p class="cfg__summary" id="cfg-summary">Ogród zimowy całoroczny · 5,0 × 3,5 m · antracyt</p>
+          <a href="#wycena" class="btn btn--primary cfg__send" id="cfg-send"><svg><use href="#i-send"/></svg>Wyślij do bezpłatnej wyceny</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="container hero__bar" data-hero style="--i:4">
+      <div class="timeseg" role="radiogroup" aria-label="Pora dnia">
+        <button type="button" role="radio" aria-checked="false" data-time="day"><svg aria-hidden="true"><use href="#i-sun"/></svg><span>Dzień</span></button>
+        <button type="button" role="radio" aria-checked="true" data-time="sunset"><svg aria-hidden="true"><use href="#i-sunset"/></svg><span>Zachód</span></button>
+        <button type="button" role="radio" aria-checked="false" data-time="night"><svg aria-hidden="true"><use href="#i-moon"/></svg><span>Noc</span></button>
+      </div>
+      <span class="hero__hint"><svg aria-hidden="true"><use href="#i-rotate"/></svg>Przeciągnij, aby obrócić</span>
+      <span class="hero__badge"><svg aria-hidden="true"><use href="#i-shield"/></svg>10 lat gwarancji</span>
+    </div>
+  </section>
+
+  <!-- ============ Pasek zaufania ============ -->
+  <section class="trust-band" aria-label="W skrócie">
+    <div class="container trust">
+      <div class="trust__item" data-reveal style="--i:0"><strong><span data-count-to="10">10</span> lat</strong><span>gwarancji na realizacje</span></div>
+      <div class="trust__item" data-reveal style="--i:1"><strong><span data-count-to="500">500</span>+</strong><span>zrealizowanych zabudów</span></div>
+      <div class="trust__item" data-reveal style="--i:2"><strong><span data-count-to="25000">25 000</span> m²</strong><span>postawionych konstrukcji</span></div>
+      <div class="trust__item" data-reveal style="--i:3"><strong><span data-count-to="24">24</span> h</strong><span>na bezpłatną wycenę</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Realizacje ============ -->
+  <section class="section" id="realizacje" aria-labelledby="works-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Realizacje</p>
+          <h2 class="h2" id="works-title" data-reveal style="--i:1">Prawdziwe domy.<br>Prawdziwe ogrody.</h2>
+        </div>
+        <a href="realizacje.html" class="link-arrow" data-reveal style="--i:2">Wszystkie realizacje<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="works">
+        <figure class="work work--xl" data-reveal="clip">
+          <img src="assets/img/jablonna.webp" alt="Ogród zimowy sezonowy przy domu w Jabłonnie, z przesuwnymi ścianami i widokiem na ogród" loading="lazy" width="1600" height="1200">
+          <img class="work__alt" src="assets/img/jablonna-wnetrze.webp" alt="" aria-hidden="true" loading="lazy" width="1200" height="900">
+          <figcaption class="work__meta"><span class="work__tag">Ogród sezonowy</span><b>Jabłonna</b><span>60 m², dach TS Aluminium</span></figcaption>
+        </figure>
+        <figure class="work" data-reveal="clip" style="--i:1">
+          <img src="assets/img/marki-jacuzzi.webp" alt="Jacuzzi w ogrodzie zimowym w Markach" loading="lazy" width="1400" height="934">
+          <img class="work__alt" src="assets/img/marki-jacuzzi-zew.webp" alt="" aria-hidden="true" loading="lazy" width="1400" height="1050">
+          <figcaption class="work__meta"><span class="work__tag">Ogród sezonowy</span><b>Marki</b><span>Strefa z jacuzzi</span></figcaption>
+        </figure>
+        <figure class="work" data-reveal="clip" style="--i:2">
+          <img src="assets/img/puszcza.webp" alt="Całoroczny ogród zimowy przy drewnianym domu w Puszczy Białej" loading="lazy" width="1600" height="1067">
+          <img class="work__alt" src="assets/img/puszcza-wnetrze.webp" alt="" aria-hidden="true" loading="lazy" width="1200" height="800">
+          <figcaption class="work__meta"><span class="work__tag">Ogród całoroczny</span><b>Puszcza Biała</b><span>Termoizolacja, salon nad jeziorem</span></figcaption>
+        </figure>
+        <figure class="work" data-reveal="clip" style="--i:1">
+          <img src="assets/img/miedzylesie.webp" alt="Ogród zimowy przy białym domu z basenem w Międzylesiu" loading="lazy" width="1600" height="1067">
+          <img class="work__alt" src="assets/img/miedzylesie-wnetrze.webp" alt="" aria-hidden="true" loading="lazy" width="1200" height="800">
+          <figcaption class="work__meta"><span class="work__tag">Ogród sezonowy</span><b>Międzylesie</b><span>Poranna kawa z widokiem na basen</span></figcaption>
+        </figure>
+        <figure class="work" data-reveal="clip" style="--i:2">
+          <img src="assets/img/marki2-jadalnia.webp" alt="Jadalnia w ogrodzie zimowym w Markach" loading="lazy" width="1200" height="800">
+          <img class="work__alt" src="assets/img/marki2.webp" alt="" aria-hidden="true" loading="lazy" width="1600" height="1066">
+          <figcaption class="work__meta"><span class="work__tag">Ogród sezonowy</span><b>Marki</b><span>32 m², jadalnia na cały rok</span></figcaption>
+        </figure>
+        <figure class="work work--wide" data-reveal="clip" style="--i:3">
+          <img src="assets/img/radosc-noc.webp" alt="Oświetlony nocą ogród zimowy w warszawskiej Radości" loading="lazy" width="1600" height="1067">
+          <img class="work__alt" src="assets/img/radosc-dzien.webp" alt="" aria-hidden="true" loading="lazy" width="1400" height="933">
+          <figcaption class="work__meta"><span class="work__tag">Ogród sezonowy</span><b>Warszawa Radość</b><span>Szyby po 120 kg wniesione dźwigiem nad domem</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Rzeka zdjęć -->
+    <div class="river" aria-hidden="true">
+      <div class="river__track">
+        <ul class="river__list">
+          <li><img src="assets/img/miedzylesie-zmierzch.webp" alt="" loading="lazy" width="1600" height="1067"></li>
+          <li><img src="assets/img/marki-szklo.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/jablonna-dab.webp" alt="" loading="lazy" width="1200" height="900"></li>
+          <li><img src="assets/img/puszcza-bok.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/radosc-wnetrze.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/marki2-bok.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/miedzylesie-salon.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/jablonna-bok.webp" alt="" loading="lazy" width="1200" height="900"></li>
+          <li><img src="assets/img/marki-bok.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/radosc-ogrod.webp" alt="" loading="lazy" width="1200" height="800"></li>
+        </ul>
+        <ul class="river__list" aria-hidden="true">
+          <li><img src="assets/img/miedzylesie-zmierzch.webp" alt="" loading="lazy" width="1600" height="1067"></li>
+          <li><img src="assets/img/marki-szklo.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/jablonna-dab.webp" alt="" loading="lazy" width="1200" height="900"></li>
+          <li><img src="assets/img/puszcza-bok.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/radosc-wnetrze.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/marki2-bok.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/miedzylesie-salon.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/jablonna-bok.webp" alt="" loading="lazy" width="1200" height="900"></li>
+          <li><img src="assets/img/marki-bok.webp" alt="" loading="lazy" width="1200" height="800"></li>
+          <li><img src="assets/img/radosc-ogrod.webp" alt="" loading="lazy" width="1200" height="800"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="inline-cta" data-reveal>
+        <p>Taras stoi pusty od października?<span>Wyślij zdjęcie, wycena w&nbsp;24&nbsp;h bez zobowiązań.</span></p>
+        <div class="cta-pair">
+          <a href="tel:+48668637577" class="btn btn--primary"><svg><use href="#i-phone"/></svg>668 637 577</a>
+          <a href="#konfigurator" class="btn btn--ghost"><svg><use href="#i-cube"/></svg>Zaprojektuj w 3D</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Efekt WOW — „Cztery pory roku” ============ -->
+  <section class="seasons" id="pory-roku" aria-labelledby="wow-title">
+    <div class="container seasons__intro">
+      <div>
+        <p class="eyebrow" data-reveal><span class="dot"></span>Nowość · Cały rok w 3D</p>
+        <h2 class="h2" id="wow-title" data-reveal style="--i:1">Jeden taras.<br>Cztery pory roku.</h2>
+      </div>
+      <p class="lead" data-reveal style="--i:2">Przewiń rok w&nbsp;kilka sekund. Zobacz, co robi szkło, kiedy pada deszcz, sypie śnieg i&nbsp;grzeje słońce.</p>
+    </div>
+
+    <div class="sn-track" id="sn-track">
+      <div class="sn-sticky" data-header-dark>
+        <div class="sn-stage" id="sn-stage">
+          <img class="sn-fallback" src="assets/img/miedzylesie-zmierzch.webp" alt="" aria-hidden="true">
+          <canvas class="sn-canvas" id="sn-canvas" aria-label="Ogród zimowy całoroczny w czterech porach roku: latem ściany są rozsunięte, jesienią pada deszcz, zimą na dachu leży śnieg, a w środku jest ciepło, wiosną kwitną drzewa"></canvas>
+          <div class="sn-scrim" aria-hidden="true"></div>
+
+          <div class="sn-hud" aria-hidden="true">
+            <div class="sn-dial">
+              <svg viewBox="0 0 120 120"><circle class="sn-dial__bg" cx="60" cy="60" r="52"/><circle class="sn-dial__fg" id="sn-dial" cx="60" cy="60" r="52"/></svg>
+              <span class="sn-dial__month" id="sn-month">Lipiec</span>
+            </div>
+            <div class="sn-temps">
+              <span class="sn-temp"><small>Na zewnątrz</small><b id="sn-out">28°</b></span>
+              <span class="sn-temp sn-temp--in"><small>W środku</small><b id="sn-in">25°</b></span>
+            </div>
+          </div>
+
+          <ol class="sn-cards" id="sn-cards">
+            <li class="sn-card is-active"><span class="sn-card__num"><svg><use href="#i-sun"/></svg>Lato</span><h3>Ściany na bok.</h3><p>Rozsuwasz szkło i&nbsp;masz zwykły taras, tylko z&nbsp;dachem nad głową.</p></li>
+            <li class="sn-card"><span class="sn-card__num"><svg><use href="#i-down"/></svg>Jesień</span><h3>Deszcz zostaje za szybą.</h3><p>Dach ze szkła hartowanego. W&nbsp;środku sucho, kanapa zostaje na miejscu.</p></li>
+            <li class="sn-card"><span class="sn-card__num"><svg><use href="#i-moon"/></svg>Zima</span><h3>Śnieg na dachu, 21° w&nbsp;środku.</h3><p>Ogród całoroczny z&nbsp;termoizolacją i&nbsp;ogrzewaniem. Szyba w&nbsp;dachu trzyma min. 100&nbsp;kg.</p></li>
+            <li class="sn-card"><span class="sn-card__num"><svg><use href="#i-sun"/></svg>Wiosna</span><h3>Kawa na tarasie w&nbsp;marcu.</h3><p>Nie czekasz na czerwiec. Otwierasz tyle ścian, ile chcesz.</p></li>
+          </ol>
+          <p class="sn-note">Ilustracja poglądowa · temperatury przykładowe</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container seasons__outro">
+      <p data-reveal>Ogród całoroczny to drugi salon. Sezonowy daje taras od wiosny do jesieni.</p>
+      <div class="cta-pair" data-reveal style="--i:1">
+        <a href="#konfigurator" class="btn btn--primary"><svg><use href="#i-cube"/></svg>Zaprojektuj swój w 3D</a>
+        <a href="tel:+48668637577" class="btn btn--ghost"><svg><use href="#i-phone"/></svg>668 637 577</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. Oferta + proces ============ -->
+  <section class="section" id="oferta" aria-labelledby="offer-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Oferta</p>
+          <h2 class="h2" id="offer-title" data-reveal style="--i:1">Szkło i&nbsp;aluminium.<br>Na wymiar.</h2>
+        </div>
+        <a href="oferta.html" class="link-arrow" data-reveal style="--i:2">Pełna oferta<svg><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="offer">
+        <a href="oferta.html" class="offer__item offer__item--big" data-reveal="clip">
+          <img src="assets/img/puszcza-wnetrze.webp" alt="Wnętrze całorocznego ogrodu zimowego z roślinami" loading="lazy" width="1200" height="800">
+          <span class="offer__meta"><b>Ogrody zimowe całoroczne</b><small>Z termoizolacją. Drugi salon na cały rok.</small></span>
+        </a>
+        <a href="oferta.html" class="offer__item offer__item--big" data-reveal="clip" style="--i:1">
+          <img src="assets/img/radosc-dzien.webp" alt="Sezonowy ogród zimowy z przesuwnymi ścianami" loading="lazy" width="1400" height="933">
+          <span class="offer__meta"><b>Ogrody zimowe sezonowe</b><small>Przesuwne ściany. Od wiosny do jesieni.</small></span>
+        </a>
+        <a href="oferta.html" class="offer__item" data-reveal="clip" style="--i:0">
+          <img src="assets/img/usl-zadaszenie.webp" alt="Zadaszenie tarasu ze szklanym dachem" loading="lazy" width="1000" height="667">
+          <span class="offer__meta"><b>Zadaszenia tarasów</b></span>
+        </a>
+        <a href="oferta.html" class="offer__item" data-reveal="clip" style="--i:1">
+          <img src="assets/img/usl-pergola.webp" alt="Pergola ogrodowa" loading="lazy" width="1000" height="667">
+          <span class="offer__meta"><b>Pergole</b></span>
+        </a>
+        <a href="oferta.html" class="offer__item" data-reveal="clip" style="--i:2">
+          <img src="assets/img/usl-balkon.webp" alt="Zabudowa balkonu szkłem" loading="lazy" width="1000" height="667">
+          <span class="offer__meta"><b>Zabudowy balkonów</b></span>
+        </a>
+        <a href="oferta.html" class="offer__item" data-reveal="clip" style="--i:3">
+          <img src="assets/img/usl-wiata.webp" alt="Wiata garażowa z aluminium" loading="lazy" width="1000" height="667">
+          <span class="offer__meta"><b>Wiaty garażowe</b></span>
+        </a>
+        <a href="oferta.html" class="offer__item" data-reveal="clip" style="--i:4">
+          <img src="assets/img/usl-okna.webp" alt="Aluminiowe okno tarasowe" loading="lazy" width="1000" height="1000">
+          <span class="offer__meta"><b>Okna aluminiowe</b></span>
+        </a>
+      </div>
+
+      <div class="process">
+        <div class="process__head">
+          <p class="eyebrow" data-reveal><span class="dot"></span>Jak pracujemy</p>
+          <h2 class="h2" data-reveal style="--i:1">Od rozmowy do&nbsp;klucza.</h2>
+        </div>
+        <div class="steps" data-reveal-group role="list">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <div role="listitem" class="step" style="--i:0"><span class="step__num">01</span><h3 class="h3">Rozmowa</h3><p>Mówisz, jak chcesz korzystać z&nbsp;tarasu.</p></div>
+          <div role="listitem" class="step" style="--i:1"><span class="step__num">02</span><h3 class="h3">Bezpłatna wycena</h3><p>Ekspert przyjeżdża i&nbsp;mierzy. Wycena bez zobowiązań.</p></div>
+          <div role="listitem" class="step" style="--i:2"><span class="step__num">03</span><h3 class="h3">Projekt</h3><p>Dostajesz finalny projekt do akceptacji.</p></div>
+          <div role="listitem" class="step" style="--i:3"><span class="step__num">04</span><h3 class="h3">Realizacja od A do Z</h3><p>Montaż i&nbsp;wykończenie w&nbsp;dogodnym terminie.</p></div>
+          <div role="listitem" class="step" style="--i:4"><span class="step__num">05</span><h3 class="h3">10 lat gwarancji</h3><p>Spokój na lata. Wsparcie po montażu.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. Opinie ============ -->
+  <section class="section section--surface" id="opinie" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="reviews-head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="dot"></span>Opinie</p>
+          <h2 class="h2" id="reviews-title" data-reveal style="--i:1">„Jakbyśmy zyskali<br>dodatkowy salon.”</h2>
+        </div>
+        <div class="score" data-reveal style="--i:2">
+          <span class="score__num"><span data-count-to="500">500</span>+</span>
+          <div class="score__meta">
+            <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <span>realizacji w&nbsp;Warszawie i&nbsp;okolicach</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews">
+        <figure class="review" data-reveal style="--i:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Zdecydowaliśmy się na oranżerię i&nbsp;to była najlepsza decyzja. To tak, jakbyśmy zyskali dodatkowy salon za rozsądne pieniądze.”</blockquote>
+          <figcaption><span class="avatar">KP</span><span><b>Katarzyna i Piotr</b><small>Oranżeria</small></span></figcaption>
+        </figure>
+        <figure class="review" data-reveal style="--i:1">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Przepiękny ogród zimowy, który stał się centralnym miejscem naszego domu. Ekipa profesjonalna i&nbsp;terminowa.”</blockquote>
+          <figcaption><span class="avatar">AK</span><span><b>Anna K.</b><small>Ogród zimowy</small></span></figcaption>
+        </figure>
+        <figure class="review" data-reveal style="--i:2">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Zabudowa tarasu wygląda nowocześnie i&nbsp;elegancko. Mamy dodatkową przestrzeń, którą wykorzystujemy przez cały rok.”</blockquote>
+          <figcaption><span class="avatar">AR</span><span><b>Adam R.</b><small>Zabudowa tarasu</small></span></figcaption>
+        </figure>
+        <figure class="review" data-reveal style="--i:0">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Od projektu oranżerii aż po realizację: pełen profesjonalizm i&nbsp;indywidualne podejście.”</blockquote>
+          <figcaption><span class="avatar">SK</span><span><b>Sławomir K.</b><small>Oranżeria</small></span></figcaption>
+        </figure>
+        <figure class="review" data-reveal style="--i:1">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Marzyliśmy o&nbsp;tarasie niezależnym od pogody. Spełnili oczekiwania w&nbsp;100%. Szybka realizacja i&nbsp;piękny efekt.”</blockquote>
+          <figcaption><span class="avatar">TL</span><span><b>Tomasz L.</b><small>Zabudowa tarasu</small></span></figcaption>
+        </figure>
+        <figure class="review" data-reveal style="--i:2">
+          <span class="stars" aria-label="5 na 5"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <blockquote>„Projekt zrealizowany dokładnie tak, jak sobie wyobrażałam. To teraz moje ulubione miejsce w&nbsp;domu!”</blockquote>
+          <figcaption><span class="avatar">MB</span><span><b>Maria B.</b><small>Ogród zimowy</small></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. FAQ ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container faq-wrap">
+      <div class="faq-side">
+        <p class="eyebrow" data-reveal><span class="dot"></span>FAQ</p>
+        <h2 class="h2" id="faq-title" data-reveal style="--i:1">Krótko<br>i na temat.</h2>
+        <div class="faq-photo" data-reveal="clip" style="--i:2"><img src="assets/img/marki-szklo.webp" alt="Szklane ściany ogrodu zimowego z widokiem na las" loading="lazy" width="1200" height="800"></div>
+        <a href="tel:+48668637577" class="btn btn--primary btn--sm" data-reveal style="--i:3"><svg><use href="#i-phone"/></svg>Inne pytanie? Zadzwoń</a>
+      </div>
+
+      <div class="faq" id="faq-list">
+        <div class="faq__item" data-reveal style="--i:0">
+          <button class="faq__q" aria-expanded="false">Czym różni się ogród sezonowy od całorocznego?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Sezonowy nie ma termoizolacji ani ogrzewania. Służy od wiosny do jesieni i&nbsp;jest tańszy. Całoroczny ma ocieplone profile i&nbsp;szkło zespolone, więc korzystasz z&nbsp;niego także zimą.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:1">
+          <button class="faq__q" aria-expanded="false">Czy potrzebne jest pozwolenie na budowę?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Często nie, ale zależy to od lokalnych przepisów i&nbsp;wielkości konstrukcji. Przed startem sprawdzamy to razem z&nbsp;Tobą.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:2">
+          <button class="faq__q" aria-expanded="false">Czy szyba w dachu wytrzyma śnieg i grad?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak. Szyba w&nbsp;dachu wytrzymuje obciążenie min. 100&nbsp;kg. Szkło hartowane jest odporne na grad i&nbsp;zalegający śnieg.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:3">
+          <button class="faq__q" aria-expanded="false">Czy można zamontować ogrzewanie?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Tak: ogrzewanie podłogowe, grzejniki albo promienniki. Dobierzemy je do tego, jak chcesz korzystać z&nbsp;ogrodu.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:4">
+          <button class="faq__q" aria-expanded="false">Ile to kosztuje?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>Zależy od wielkości, rodzaju i&nbsp;wybranych materiałów. Bezpłatną wycenę przygotujemy w&nbsp;24&nbsp;h od zgłoszenia.</p></div></div>
+        </div>
+        <div class="faq__item" data-reveal style="--i:5">
+          <button class="faq__q" aria-expanded="false">Jaka jest gwarancja?<span class="faq__icon" aria-hidden="true"></span></button>
+          <div class="faq__a"><div><p>10 lat na nasze realizacje. Używamy aluminium najwyższej klasy i&nbsp;szkła hartowanego.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. Wycena — mocne CTA z formularzem ============ -->
+  <section class="quote" id="wycena" data-header-dark aria-labelledby="quote-title">
+    <img class="quote__bg" src="assets/img/radosc-noc.webp" alt="" aria-hidden="true" loading="lazy">
+    <div class="container quote__inner">
+      <div class="quote__copy">
+        <p class="eyebrow eyebrow--light" data-reveal><span class="dot"></span>Bezpłatna wycena w 24 h</p>
+        <h2 class="h2" id="quote-title" data-reveal style="--i:1">Twój taras.<br>Nasz projekt.</h2>
+        <div class="quote__phone" data-reveal style="--i:2">
+          <a href="tel:+48668637577">668 637 577</a>
+          <button class="copy-btn" id="copy-phone" type="button" aria-label="Kopiuj numer telefonu" data-phone="668 637 577">
+            <svg class="ic-copy"><use href="#i-copy"/></svg>
+            <svg class="ic-check"><use href="#i-check"/></svg>
+          </button>
+        </div>
+        <p class="quote__mail" data-reveal style="--i:3"><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:kontakt@lumasol.pl">kontakt@lumasol.pl</a></p>
+      </div>
+
+      <form class="qform" id="qform" data-reveal style="--i:2" novalidate>
+        <div class="qform__project" id="q-project">
+          <div class="qform__thumb" id="q-thumb"><img src="assets/img/jablonna.webp" alt="" id="q-thumb-img"></div>
+          <div class="qform__proj-txt">
+            <span class="qform__proj-kicker" id="q-proj-kicker">Twój projekt</span>
+            <b id="q-proj-title">Zaprojektuj zabudowę w&nbsp;konfiguratorze</b>
+            <a href="#konfigurator" class="link-arrow link-arrow--light" id="q-proj-link">Otwórz konfigurator 3D<svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="qform__grid">
+          <label class="field"><span>Imię</span><input type="text" name="imie" autocomplete="given-name" required></label>
+          <label class="field"><span>Telefon</span><input type="tel" name="tel" autocomplete="tel" inputmode="tel" required></label>
+          <label class="field"><span>E-mail</span><input type="email" name="email" autocomplete="email"></label>
+          <label class="field"><span>Kod pocztowy</span><input type="text" name="kod" autocomplete="postal-code" inputmode="numeric" placeholder="00-000"></label>
+          <label class="field"><span>Rodzaj zabudowy</span>
+            <select name="rodzaj" id="q-type">
+              <option>Ogród zimowy całoroczny</option>
+              <option>Ogród zimowy sezonowy</option>
+              <option>Zadaszenie tarasu</option>
+              <option>Pergola ogrodowa</option>
+              <option>Wiata garażowa</option>
+              <option>Zabudowa balkonu</option>
+              <option>Okna</option>
+            </select>
+          </label>
+          <label class="field"><span>Powierzchnia</span><input type="text" name="m2" id="q-area" placeholder="np. 17,5 m²"></label>
+          <label class="field"><span>Usytuowanie</span>
+            <select name="gdzie"><option>Na tarasie</option><option>Na balkonie</option><option>Na gruncie</option></select>
+          </label>
+          <label class="field"><span>Termin</span>
+            <select name="termin"><option>W ciągu 1 miesiąca</option><option selected>W ciągu 2–3 miesięcy</option><option>Później niż 3 miesiące</option></select>
+          </label>
+        </div>
+        <label class="consent"><input type="checkbox" required><span>Zgadzam się na kontakt w&nbsp;sprawie wyceny.</span></label>
+        <button class="btn btn--primary qform__submit" type="submit"><svg><use href="#i-send"/></svg>Wyślij do bezpłatnej wyceny</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 8. Stopka ============ -->
+<footer class="footer" data-header-dark>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <img src="assets/img/logo-light.png" alt="Luma Sol" width="720" height="308" class="footer__logo" loading="lazy">
+        <p>Ogrody zimowe, zadaszenia tarasów, pergole i&nbsp;zabudowy balkonów. Premium, kompleksowo, z&nbsp;10-letnią gwarancją.</p>
+      </div>
+      <div>
+        <h4>Strona</h4>
+        <ul>
+          <li><a href="realizacje.html">Realizacje</a></li>
+          <li><a href="oferta.html">Oferta</a></li>
+          <li><a href="konfigurator.html">Konfigurator 3D</a></li>
+          <li><a href="o-firmie.html">O firmie</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48668637577">668 637 577</a></li>
+          <li><a href="mailto:kontakt@lumasol.pl">kontakt@lumasol.pl</a></li>
+          <li><a href="https://wa.me/48668637577" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Firma</h4>
+        <ul>
+          <li>Luma Sol</li>
+          <li>NIP 521-053-40-87</li>
+          <li>Warszawa i okolice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Luma Sol</span>
+      <span>Wersja demonstracyjna strony</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Pasek CTA na telefonie -->
+<div class="mbar" id="mbar" aria-hidden="true">
+  <a href="tel:+48668637577" class="btn btn--primary" tabindex="-1"><svg><use href="#i-phone"/></svg>Zadzwoń</a>
+  <a href="#konfigurator" class="btn btn--ghost" tabindex="-1"><svg><use href="#i-cube"/></svg>Zaprojektuj</a>
+</div>
+
+<!-- WhatsApp -->
+<div class="wa" id="wa">
+  <div class="wa__bubble" id="wa-bubble" role="status">
+    <b>Masz zdjęcie tarasu?</b>
+    <span>Wyślij je na WhatsApp — podpowiemy, co się zmieści.</span>
+    <button class="wa__close" id="wa-close" type="button" aria-label="Zamknij"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <a class="wa__btn" href="https://wa.me/48668637577?text=Dzie%C5%84%20dobry%2C%20interesuje%20mnie%20zabudowa%20tarasu." target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">
+    <svg><use href="#i-wa"/></svg>
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/luma3d.js" defer></script>
+<script src="assets/js/konfigurator.js" defer></script>
+</body>
+</html>
