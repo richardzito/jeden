@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Tiger Tools — narzędzia dekarskie i blacharskie</title>
-  <meta name="description" content="Zaginadła do rąbka Tiger Tools w 3D, przymiary dekarskie i zestawy do blachy na rąbek. Stubai, Sorex, Rau i inne marki. Konto firmowe −20%.">
+  <title>Tiger Tools — narzędzia dla dekarza i blacharza</title>
+  <meta name="description" content="Zaginadła BDZ w konfiguratorze 3D, kleszcze, cęgi i rysiki Tiger Tools oraz zgrzewarki TITAN. Zestawy narzędziowe i konto firmowe −20%.">
   <meta name="theme-color" content="#121212">
+  <link rel="icon" href="assets/img/logo-tt.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/products/zaginadlo-46.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/p/bdz-2.webp">
   <link rel="stylesheet" href="assets/css/shop.css">
   <script>document.documentElement.classList.add('js')</script>
   <script type="importmap">
@@ -53,13 +54,19 @@
   <symbol id="c-bend" viewBox="0 0 32 32"><path d="M4 24h10l4-14h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 28h10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".4"/></symbol>
   <symbol id="c-rivet" viewBox="0 0 32 32"><path d="M6 8h12l4 4-4 4H6zM12 16l-3 11h5l1-11" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M22 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="c-helmet" viewBox="0 0 32 32"><path d="M5 22a11 11 0 0 1 22 0M3 22h26v3H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 11.5V8h6v3.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6.2 0-3.3 2.4-5.4 3.6-7.7.5 1.8 1.6 2.8 2.6 3.3.1-2.9 1.7-5.3 3.8-6.9-.2 2.7.9 4.4 2.2 6 1.2 1.5 2.3 3.1 2.3 5.3C19.5 18.4 16.4 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V4.5h4V7M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 <div class="topbar">
   <div class="container topbar__inner">
-    <div class="topbar__msgs" data-f="4">
+    <div class="topbar__msgs">
       <span><svg class="ic" style="width:16px;height:16px"><use href="#i-truck"/></svg>Darmowa dostawa <b>InPost</b> od 299 zł</span>
-      <span>Konto firmowe: <b>−20%</b> na cały asortyment</span>
-      <span>Wysyłka w 24 h</span>
+      <span>Polska marka · wysyłka w 24 h</span>
+      <span>Konto firmowe: <b>−20%</b></span>
     </div>
     <div class="topbar__right">
       <a href="tel:+48690566720">690 566 720</a>
@@ -71,111 +78,118 @@
 
 <header class="header" id="top">
   <div class="container header__main">
-    <a href="index.html" class="logo" aria-label="Tiger Tools — strona główna"><img src="assets/img/logo-tigertools.png" alt="" width="311" height="334"><span>Tiger Tools<small>narzędzia dekarskie</small></span></a>
-    <form class="search" role="search" action="kategoria.html">
+    <a href="index.html" class="logo logo--tt" aria-label="Tiger Tools — strona główna" data-f="1"><img src="assets/img/logo-tt.png" alt="Tiger Tools" width="640" height="426"></a>
+    <form class="search" role="search" action="kategoria.html" data-f="2">
       <svg><use href="#i-search"/></svg>
-      <input type="search" name="q" placeholder="Szukaj: zaginadło, przymiar, zestaw na rąbek…" aria-label="Szukaj produktów" autocomplete="off">
+      <input type="search" name="q" placeholder="Szukaj: zaginadło, kleszcze, zgrzewarka…" aria-label="Szukaj produktów" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="suggest" aria-expanded="false">
       <kbd>/</kbd>
+      <div class="suggest" id="suggest" role="listbox" aria-label="Podpowiedzi"></div>
     </form>
     <div class="actions">
-      <button type="button" class="action action--callback js-callback" data-f="8"><svg><use href="#i-callback"/></svg><span class="action__label"><span class="action__small">Zostaw numer</span>Oddzwonimy</span></button>
-      <button type="button" class="action js-login" data-f="5" aria-pressed="false"><svg><use href="#i-user"/></svg><span class="action__label"><span class="action__small js-login-small">Zaloguj się</span><span>Konto <span class="b2b-pill">B2B −20%</span></span></span></button>
-      <a href="koszyk.html" class="action" data-f="2"><svg><use href="#i-cart"/></svg><span class="cart-badge" id="cart-badge">2</span><span class="action__label"><span class="action__small">Koszyk</span><span id="cart-total-h">459,00 zł</span></span></a>
+      <button type="button" class="action action--callback js-callback"><svg><use href="#i-callback"/></svg><span class="action__label"><span class="action__small">Zostaw numer</span>Oddzwonimy</span></button>
+      <button type="button" class="action js-login" aria-pressed="false"><svg><use href="#i-user"/></svg><span class="action__label"><span class="action__small js-login-small">Zaloguj się</span><span>Konto <span class="b2b-pill">B2B −20%</span></span></span></button>
+      <a href="koszyk.html" class="action" data-f="7"><svg><use href="#i-cart"/></svg><span class="cart-badge" id="cart-badge">0</span><span class="action__label"><span class="action__small">Koszyk</span><span id="cart-total-h">0,00 zł</span></span></a>
     </div>
   </div>
-  <nav class="catnav" aria-label="Kategorie">
+  <nav class="catnav" aria-label="Kategorie" data-f="3">
     <div class="container catnav__inner">
-      <a href="kategoria.html" class="is-hot">Zaginadła</a>
-      <a href="kategoria.html">Narzędzia do rąbka</a>
-      <a href="kategoria.html">Cęgi i szczypce</a>
-      <a href="kategoria.html">Przymiary i rysiki</a>
-      <a href="kategoria.html">Kantowniki</a>
-      <a href="kategoria.html">Młotki</a>
-      <a href="kategoria.html">Gwoździarki</a>
-      <a href="kategoria.html">Papa i palniki</a>
-      <a href="#dach-3d" class="is-3d">Dach w 3D</a>
+      <a href="kategoria.html?cat=zaginadla" class="is-hot">Zaginadła</a>
+      <a href="kategoria.html?cat=cegi-i-kleszcze">Cęgi i kleszcze</a>
+      <a href="kategoria.html?cat=szczypce">Szczypce</a>
+      <a href="kategoria.html?cat=trasowanie">Rysiki i przymiary</a>
+      <a href="kategoria.html?cat=mlotki">Młotki</a>
+      <a href="kategoria.html?cat=papa">Papa</a>
+      <a href="kategoria.html?cat=zgrzewanie" class="is-titan">Zgrzewanie TITAN</a>
+      <a href="zestawy.html" class="is-sets">Zestawy</a>
+      <a href="index.html#dach-3d" class="is-3d">Dach w 3D</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <!-- Hero: zaginadło Tiger Tools w 3D -->
+  <!-- Hero: konfigurator zaginadła BDZ w 3D -->
   <section class="hero hero--3d">
     <div class="container">
-      <div class="hero3" data-f="1">
+      <div class="hero3">
         <div class="hero__stripes" aria-hidden="true"></div>
+        <img class="hero3__claws" src="assets/img/claws.png" alt="" aria-hidden="true" width="480" height="480">
         <div class="hero3__copy">
-          <p class="eyebrow" data-hero style="--i:0">Oryginalne narzędzia Tiger Tools</p>
-          <h1 class="h1" data-hero style="--i:1">Narzędzia<br>z pazurem.</h1>
-          <p class="hero3__lead" data-hero style="--i:2">Zaginadło do rąbka w 3D. Wybierz długość, obróć je i zobacz, jak zagina blachę.</p>
-          <div class="variant-pick" role="group" aria-label="Długość zaginadła" data-hero style="--i:3">
-            <span class="variant-pick__thumb" aria-hidden="true"></span>
-            <button type="button" class="js-v3d" data-v="31" aria-pressed="false">31 cm</button>
-            <button type="button" class="js-v3d" data-v="46" aria-pressed="true">46 cm</button>
-            <button type="button" class="js-v3d" data-v="61" aria-pressed="false">61 cm<i>−9%</i></button>
-          </div>
+          <p class="eyebrow" data-hero style="--i:0">Polska marka · konfigurator 3D</p>
+          <h1 class="h1" data-hero style="--i:1">Drapieżna<br>precyzja.</h1>
+          <p class="hero3__lead" data-hero style="--i:2">Zaginadło do rąbka BDZ. Ustaw długość, głębokość gięcia i rękojeść – model zmienia się na żywo.</p>
+          <div data-hero style="--i:3"><div class="bdz-config js-bdz-config" data-f="4">
+  <div class="cfg-row"><span class="cfg-label">Długość</span><div class="seg" role="group" aria-label="Długość zaginadła"><button type="button" class="js-bdz-len" data-v="31" aria-pressed="false">31 cm</button><button type="button" class="js-bdz-len" data-v="46" aria-pressed="true">46 cm</button><button type="button" class="js-bdz-len" data-v="61" aria-pressed="false">61 cm</button><button type="button" class="js-bdz-len" data-v="81" aria-pressed="false">81 cm</button></div></div>
+  <div class="cfg-row"><span class="cfg-label">Głębokość gięcia</span><div class="seg" role="group" aria-label="Głębokość gięcia"><button type="button" class="js-bdz-depth" data-v="20/40" aria-pressed="true">20 / 40 mm</button><button type="button" class="js-bdz-depth" data-v="15/30" aria-pressed="false">15 / 30 mm</button></div></div>
+  <div class="cfg-row"><span class="cfg-label">Rękojeść</span><div class="seg" role="group" aria-label="Rękojeść"><button type="button" class="js-bdz-handle" data-v="0" aria-pressed="true">Bez rękojeści</button><button type="button" class="js-bdz-handle" data-v="1" aria-pressed="false">Z rękojeścią <small class="js-bdz-hlen">24 cm</small></button></div></div>
+  <p class="cfg-note js-bdz-note" aria-live="polite"></p>
+</div></div>
           <div class="hero3__buy" data-hero style="--i:4">
-            <div class="hero3__price"><span class="price__old js-price js-h-old" data-price="285" hidden></span><b class="js-price js-h-price" data-price="220"></b><small>Konto firmowe: −20%</small></div>
-            <button type="button" class="btn btn--accent js-add js-h-add" data-id="z46" data-price="220" aria-label="Dodaj do koszyka: Zaginadło do rąbka 46 cm BDZ 20/40/460"><svg><use href="#i-cart"/></svg>Do koszyka</button>
+            <div class="hero3__price"><b class="js-price js-bdz-price" data-price="220"></b><small><span class="js-bdz-sym">BDZ 20/40/460</span> · <span class="js-bdz-stock" data-f="9">Na stanie: 23 szt.</span></small></div>
+            <button type="button" class="btn btn--accent js-bdz-add"><svg><use href="#i-cart"/></svg>Do koszyka</button>
           </div>
           <div class="hero3__more" data-hero style="--i:5">
             <button type="button" class="btn btn--ghost-light js-play"><svg><use href="#i-play"/></svg>Zobacz w akcji</button>
-            <a href="produkt.html?v=46" class="link link--light js-h-link">Karta produktu<svg><use href="#i-arrow"/></svg></a>
+            <a href="produkt.html?id=bdz" class="link link--light js-bdz-link">Karta produktu<svg><use href="#i-arrow"/></svg></a>
           </div>
         </div>
-        <div class="hero3d" id="hero3d" data-tool3d data-variant="46">
-          <img class="hero3d__fallback" src="assets/img/products/zaginadlo-46.webp" alt="Zaginadło do rąbka Tiger Tools 46 cm" width="900" height="900">
-          <canvas class="hero3d__canvas" aria-label="Model 3D zaginadła Tiger Tools. Przeciągnij, aby obrócić."></canvas>
+        <div class="hero3d" id="hero3d" data-tool3d>
+          <img class="hero3d__fallback" src="assets/img/p/bdz-2.webp" alt="Zaginadło do rąbka Tiger Tools BDZ" width="720" height="720">
+          <canvas class="hero3d__canvas" aria-label="Model 3D zaginadła BDZ Tiger Tools. Przeciągnij, aby obrócić."></canvas>
           <div class="tool-tags" aria-hidden="true">
-            <span class="tool-tag" data-tag="slot"><b>Szczelina na blachę</b><small>rąbek 20 / 40 mm</small></span>
-            <span class="tool-tag" data-tag="handle"><b>Rura Ø 30 mm</b><small>lakier proszkowy</small></span>
+            <span class="tool-tag" data-tag="edgeA"><b class="js-bdz-ea">Krawędź 20 mm</b><small>szczelina robocza</small></span>
+            <span class="tool-tag" data-tag="edgeB"><b class="js-bdz-eb">Krawędź 40 mm</b><small>druga strona</small></span>
+            <span class="tool-tag" data-tag="handle"><b class="js-bdz-ht">Rękojeść 24 cm</b><small>BDZR</small></span>
             <span class="tool-tag tool-tag--dim" data-tag="dim"><b class="js-dim">46 cm</b></span>
           </div>
           <span class="tool-step" aria-live="polite"><b class="js-step"></b></span>
           <p class="hero3d__hint"><svg><use href="#i-rotate"/></svg>Przeciągnij, aby obrócić</p>
-          <img class="hero3d__badge" src="assets/img/logo-tigertools.png" alt="" width="311" height="334">
+          <img class="hero3d__badge" src="assets/img/logo-tt-dark.png" alt="" width="720" height="322">
         </div>
       </div>
 
       <div class="hero-tiles">
-        <a href="produkt.html" class="htile" data-reveal style="--i:0">
+        <a href="produkt.html?id=przymiar-gb500tt" class="htile" data-reveal style="--i:0">
           <div><small>Tiger Tools</small><h3>Przymiar<br>GB&#8209;500TT</h3><span class="link">Rozmierz łaty szybciej<svg><use href="#i-arrow"/></svg></span></div>
-          <img src="assets/img/shop/tt-przymiar-gb500tt.webp" alt="" width="720" height="720" loading="lazy">
+          <img src="assets/img/p/przymiar-gb500tt.webp" alt="" width="720" height="720" loading="lazy">
         </a>
         <a href="#dach-3d" class="htile htile--roof" data-reveal style="--i:1">
           <div><small>Nowość</small><h3>Dach w 3D</h3><span class="link">Kup narzędzia prosto z dachu<svg><use href="#i-arrow"/></svg></span></div>
           <svg class="htile__roof" viewBox="0 0 220 140" aria-hidden="true"><path d="M20 80 110 20l90 60" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M42 66v58h136V66" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><g class="htile__dots"><circle cx="70" cy="52" r="9"/><circle cx="134" cy="36" r="9"/><circle cx="168" cy="72" r="9"/></g></svg>
         </a>
-        <a href="produkt.html" class="htile" data-reveal style="--i:2">
-          <div><small>Zestaw</small><h3>„Tygrys”</h3><span class="link">Komplet do blachy na rąbek<svg><use href="#i-arrow"/></svg></span></div>
-          <img src="assets/img/products/zestaw-tygrys.webp" alt="" width="900" height="900" loading="lazy">
+        <a href="zestawy.html#tygrys" class="htile" data-reveal style="--i:2" data-f="5">
+          <div><small>Zestawy</small><h3>„Tygrys”</h3><span class="link">Zestawy, które kupujecie razem<svg><use href="#i-arrow"/></svg></span></div>
+          <img src="assets/img/zestawy/tygrys.webp" alt="" width="900" height="900" loading="lazy">
         </a>
       </div>
     </div>
     <div class="container usp">
-      <div class="usp__item" data-reveal style="--i:0" data-f="13"><svg><use href="#i-truck"/></svg><div><b>Wysyłka w 24 h</b><span>Paczkomaty i kurier InPost</span></div></div>
-      <div class="usp__item" data-reveal style="--i:1" data-f="12"><svg><use href="#i-shield"/></svg><div><b>Bezpieczne płatności</b><span>Przelewy24, BLIK, PayPal</span></div></div>
-      <div class="usp__item" data-reveal style="--i:2"><svg><use href="#i-flag"/></svg><div><b>Polska marka</b><span>I sprawdzone marki z Europy</span></div></div>
-      <div class="usp__item" data-reveal style="--i:3" data-f="5"><svg><use href="#i-percent"/></svg><div><b>Konto firmowe</b><span>Rabat od pierwszego zakupu</span></div></div>
+      <div class="usp__item" data-reveal style="--i:0"><svg><use href="#i-truck"/></svg><div><b>Wysyłka w 24 h</b><span>Paczkomaty i kurier InPost</span></div></div>
+      <div class="usp__item" data-reveal style="--i:1"><svg><use href="#i-shield"/></svg><div><b>Bezpieczne płatności</b><span>BLIK, Przelewy24, PayPal</span></div></div>
+      <div class="usp__item" data-reveal style="--i:2"><svg><use href="#i-flag"/></svg><div><b>Polska marka</b><span>Tiger Tools i TITAN</span></div></div>
+      <div class="usp__item" data-reveal style="--i:3"><svg><use href="#i-percent"/></svg><div><b>Konto firmowe</b><span>Rabat od pierwszego zakupu</span></div></div>
     </div>
   </section>
 
-  <!-- Kategorie -->
-  <section class="section section--tight">
+  <!-- Kategorie obrazkowe -->
+  <section class="section section--tight" id="kategorie">
     <div class="container">
       <div class="section-head">
         <div><p class="eyebrow">Kategorie</p><h2 class="h2">Czego dziś szukasz?</h2></div>
-        <a href="kategoria.html" class="link">Wszystkie kategorie<svg><use href="#i-arrow"/></svg></a>
+        <a href="kategoria.html" class="link">Wszystkie produkty<svg><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="cats cats--photo" data-f="3">
-<a href="kategoria.html" class="pcat" data-reveal style="--i:0"><img src="assets/img/shop/tt-zaginadlo-komin.webp" alt="" width="720" height="720" loading="lazy"><span>Zaginadła<small>12 produktów</small></span></a>
-<a href="kategoria.html" class="pcat" data-reveal style="--i:1"><img src="assets/img/shop/rau-zamykacz-111.webp" alt="" width="720" height="720" loading="lazy"><span>Do rąbka<small>18 produktów</small></span></a>
-<a href="kategoria.html" class="pcat" data-reveal style="--i:2"><img src="assets/img/shop/stubai-cegi-282601.webp" alt="" width="720" height="720" loading="lazy"><span>Cęgi i szczypce<small>14 produktów</small></span></a>
-<a href="kategoria.html" class="pcat" data-reveal style="--i:3"><img src="assets/img/shop/tt-przymiar-gb500tt.webp" alt="" width="720" height="720" loading="lazy"><span>Przymiary i rysiki<small>9 produktów</small></span></a>
-<a href="kategoria.html" class="pcat" data-reveal style="--i:4"><img src="assets/img/shop/rau-kantownik-tk.webp" alt="" width="720" height="720" loading="lazy"><span>Kantowniki i okap<small>6 produktów</small></span></a>
-<a href="kategoria.html" class="pcat" data-reveal style="--i:5"><img src="assets/img/shop/jouanel-mlotek-lupek.webp" alt="" width="720" height="720" loading="lazy"><span>Młotki<small>7 produktów</small></span></a>
-<a href="kategoria.html" class="pcat" data-reveal style="--i:6"><img src="assets/img/shop/tjep-gwozdziarka.webp" alt="" width="720" height="720" loading="lazy"><span>Gwoździarki<small>5 produktów</small></span></a>
-<a href="kategoria.html" class="pcat" data-reveal style="--i:7"><img src="assets/img/shop/grun-kociol.webp" alt="" width="720" height="720" loading="lazy"><span>Papa i palniki<small>8 produktów</small></span></a>
+      <div class="cats cats--photo cats--12" data-f="11">
+<a href="kategoria.html?cat=zaginadla" class="pcat" data-reveal style="--i:0"><img src="assets/img/p/bdz.webp" alt="" width="720" height="720" loading="lazy"><span>Zaginadła<small>4 produktów</small></span></a>
+<a href="kategoria.html?cat=cegi-i-kleszcze" class="pcat" data-reveal style="--i:1"><img src="assets/img/p/kleszcze-proste-60.webp" alt="" width="720" height="720" loading="lazy"><span>Cęgi i kleszcze<small>7 produktów</small></span></a>
+<a href="kategoria.html?cat=szczypce" class="pcat" data-reveal style="--i:2"><img src="assets/img/p/piccolo-proste.webp" alt="" width="720" height="720" loading="lazy"><span>Szczypce<small>2 produktów</small></span></a>
+<a href="kategoria.html?cat=trasowanie" class="pcat" data-reveal style="--i:3"><img src="assets/img/p/falzmaker.webp" alt="" width="720" height="720" loading="lazy"><span>Rysiki i przymiary<small>7 produktów</small></span></a>
+<a href="kategoria.html?cat=mlotki" class="pcat" data-reveal style="--i:4"><img src="assets/img/p/mlotek-bezodrzutowy.webp" alt="" width="720" height="720" loading="lazy"><span>Młotki<small>1 produktów</small></span></a>
+<a href="kategoria.html?cat=nozyce" class="pcat" data-reveal style="--i:5"><img src="assets/img/p/wycinak-reczny.webp" alt="" width="720" height="720" loading="lazy"><span>Nożyce i wycinaki<small>1 produktów</small></span></a>
+<a href="kategoria.html?cat=papa" class="pcat" data-reveal style="--i:6"><img src="assets/img/p/walek-rdtt6.webp" alt="" width="720" height="720" loading="lazy"><span>Narzędzia do papy<small>3 produktów</small></span></a>
+<a href="kategoria.html?cat=zgrzewarki" class="pcat pcat--white" data-reveal style="--i:7"><img src="assets/img/p/zeus-2000-membrany.webp" alt="" width="720" height="720" loading="lazy"><span>Zgrzewarki TITAN<small>9 produktów</small></span></a>
+<a href="kategoria.html?cat=walki" class="pcat pcat--white" data-reveal style="--i:8"><img src="assets/img/p/walek-ts45.webp" alt="" width="720" height="720" loading="lazy"><span>Wałki dociskowe<small>7 produktów</small></span></a>
+<a href="kategoria.html?cat=dysze" class="pcat pcat--white" data-reveal style="--i:9"><img src="assets/img/p/dysza-40.webp" alt="" width="720" height="720" loading="lazy"><span>Dysze<small>6 produktów</small></span></a>
+<a href="kategoria.html?cat=kielnie" class="pcat pcat--white" data-reveal style="--i:10"><img src="assets/img/p/kielnia-jezyk-kota.webp" alt="" width="720" height="720" loading="lazy"><span>Kielnie<small>4 produktów</small></span></a>
+<a href="zestawy.html" class="pcat" data-reveal style="--i:11"><img src="assets/img/zestawy/tygrys.webp" alt="" width="720" height="720" loading="lazy"><span>Zestawy<small>8 zestawów</small></span></a>
       </div>
     </div>
   </section>
@@ -184,140 +198,154 @@
   <section class="section section--tight" id="produkty">
     <div class="container">
       <div class="section-head">
-        <div><p class="eyebrow">Bestsellery</p><h2 class="h2">Najczęściej wybierane.</h2></div>
-        <div class="price-mode" role="group" aria-label="Rodzaj ceny" data-f="5">
+        <div><p class="eyebrow">Najczęściej oglądane</p><h2 class="h2">Bestsellery.</h2></div>
+        <div class="price-mode" role="group" aria-label="Rodzaj ceny">
           <span class="price-mode__thumb" aria-hidden="true"></span>
           <button type="button" class="js-mode" data-mode="retail" aria-pressed="true">Cena detaliczna</button>
           <button type="button" class="js-mode" data-mode="b2b" aria-pressed="false">Firmowa <b>−20%</b></button>
         </div>
       </div>
       <div class="products">
-        <article class="card" data-reveal>
-          <a href="produkt.html?v=46" class="card__media" aria-label="Zaginadło do rąbka 46 cm BDZ 20/40/460">
-            <img src="assets/img/products/zaginadlo-46.webp" alt="" loading="lazy" width="900" height="900">
-            <div class="badges"><span class="badge badge--dark">Bestseller</span><span class="badge badge--3d">3D</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html?v=46" class="card__name">Zaginadło do rąbka 46 cm BDZ 20/40/460</a>
-            <div class="card__meta" data-f="6"><span class="stock">14 szt.</span><span class="idx">BDZ-20-40-460</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__now js-price" data-price="220"></span><span class="price__b2b">Cena firmowa −20%</span></div>
-              <button type="button" class="add js-add" data-id="z46" data-price="220" aria-label="Dodaj do koszyka: Zaginadło do rąbka 46 cm BDZ 20/40/460"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <a href="produkt.html?v=61" class="card__media" aria-label="Zaginadło do rąbka 61 cm BDZ 20/40/610">
-            <img src="assets/img/products/zaginadlo-61.webp" alt="" loading="lazy" width="900" height="900">
-            <div class="badges"><span class="badge badge--promo">−9%</span><span class="badge badge--3d">3D</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html?v=61" class="card__name">Zaginadło do rąbka 61 cm BDZ 20/40/610</a>
-            <div class="card__meta" data-f="6"><span class="stock">6 szt.</span><span class="idx">BDZ-20-40-610</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__old js-price" data-price="285"></span><span class="price__now js-price" data-price="259"></span><span class="price__b2b">Cena firmowa −20%</span><span class="omnibus" data-f="9">Najniższa cena z 30 dni przed obniżką: <span class="js-price" data-price="279" data-raw="1"></span></span></div>
-              <button type="button" class="add js-add" data-id="z61" data-price="259" aria-label="Dodaj do koszyka: Zaginadło do rąbka 61 cm BDZ 20/40/610"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <a href="produkt.html" class="card__media" aria-label="Przymiar dekarski GB-500TT do łat">
-            <img src="assets/img/shop/tt-przymiar-gb500tt.webp" alt="" loading="lazy" width="720" height="720">
-            <div class="badges"><span class="badge">Tiger Tools</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html" class="card__name">Przymiar dekarski GB-500TT do łat</a>
-            <div class="card__meta" data-f="6"><span class="stock">21 szt.</span><span class="idx">GB-500TT</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__now js-price" data-price="239"></span><span class="price__b2b">Cena firmowa −20%</span></div>
-              <button type="button" class="add js-add" data-id="gb" data-price="239" aria-label="Dodaj do koszyka: Przymiar dekarski GB-500TT do łat"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <a href="produkt.html" class="card__media" aria-label="Zaginadło do obróbki komina i ogniomurów">
-            <img src="assets/img/shop/tt-zaginadlo-komin.webp" alt="" loading="lazy" width="720" height="720">
-            <div class="badges"><span class="badge">Tiger Tools</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html" class="card__name">Zaginadło do obróbki komina i ogniomurów</a>
-            <div class="card__meta" data-f="6"><span class="stock">17 szt.</span><span class="idx">TT-ZK-250</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__now js-price" data-price="86.90"></span><span class="price__b2b">Cena firmowa −20%</span></div>
-              <button type="button" class="add js-add" data-id="zk" data-price="86.9" aria-label="Dodaj do koszyka: Zaginadło do obróbki komina i ogniomurów"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <a href="produkt.html" class="card__media" aria-label="Zestaw narzędzi dekarskich „Tygrys” — blacha na rąbek">
-            <img src="assets/img/products/zestaw-tygrys.webp" alt="" loading="lazy" width="900" height="900">
-            <div class="badges"><span class="badge badge--dark">Nowość</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html" class="card__name">Zestaw narzędzi dekarskich „Tygrys” — blacha na rąbek</a>
-            <div class="card__meta" data-f="6"><span class="stock stock--low">4 szt.</span><span class="idx">ZN-RAB-TYG</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__now js-price" data-price="2619"></span><span class="price__b2b">Cena firmowa −20%</span></div>
-              <button type="button" class="add js-add" data-id="zt" data-price="2619" aria-label="Dodaj do koszyka: Zestaw narzędzi dekarskich „Tygrys” — blacha na rąbek"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <a href="produkt.html" class="card__media" aria-label="Rau FalzPro 111 WFSCH — zamykacz rąbka kątowego">
-            <img src="assets/img/shop/rau-zamykacz-111.webp" alt="" loading="lazy" width="720" height="720">
-            <div class="badges"><span class="badge">Rau</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html" class="card__name">Rau FalzPro 111 WFSCH — zamykacz rąbka kątowego</a>
-            <div class="card__meta" data-f="6"><span class="stock stock--low">3 szt.</span><span class="idx">RAU-111-WFSCH</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__now js-price" data-price="1290"></span><span class="price__b2b">Cena firmowa −20%</span></div>
-              <button type="button" class="add js-add" data-id="rau111" data-price="1290" aria-label="Dodaj do koszyka: Rau FalzPro 111 WFSCH — zamykacz rąbka kątowego"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <a href="produkt.html" class="card__media" aria-label="Stubai 282601 — cęgi do zamykania rąbka 50 mm">
-            <img src="assets/img/shop/stubai-cegi-282601.webp" alt="" loading="lazy" width="720" height="720">
-            <div class="badges"><span class="badge badge--promo">−8%</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html" class="card__name">Stubai 282601 — cęgi do zamykania rąbka 50 mm</a>
-            <div class="card__meta" data-f="6"><span class="stock">9 szt.</span><span class="idx">STB-282601</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__old js-price" data-price="315"></span><span class="price__now js-price" data-price="289"></span><span class="price__b2b">Cena firmowa −20%</span><span class="omnibus" data-f="9">Najniższa cena z 30 dni przed obniżką: <span class="js-price" data-price="309" data-raw="1"></span></span></div>
-              <button type="button" class="add js-add" data-id="stb" data-price="289" aria-label="Dodaj do koszyka: Stubai 282601 — cęgi do zamykania rąbka 50 mm"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
-        <article class="card" data-reveal>
-          <a href="produkt.html" class="card__media" aria-label="Sorex Technic RTR-2 — rysik do rąbka">
-            <img src="assets/img/shop/sorex-rysik-rtr2.webp" alt="" loading="lazy" width="720" height="720">
-            <div class="badges"><span class="badge">Sorex</span></div>
-          </a>
-          <div class="card__body">
-            <a href="produkt.html" class="card__name">Sorex Technic RTR-2 — rysik do rąbka</a>
-            <div class="card__meta" data-f="6"><span class="stock">26 szt.</span><span class="idx">SRX-RTR-2</span></div>
-            <div class="card__foot">
-              <div class="price"><span class="price__now js-price" data-price="79"></span><span class="price__b2b">Cena firmowa −20%</span></div>
-              <button type="button" class="add js-add" data-id="rtr2" data-price="79" aria-label="Dodaj do koszyka: Sorex Technic RTR-2 — rysik do rąbka"><svg><use href="#i-plus"/></svg></button>
-            </div>
-          </div>
-        </article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=bdz" class="card__media" aria-label="Zaginadło do rąbka blachy BDZ – konfigurator"><img src="assets/img/p/bdz.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"><span class="badge badge--3d">3D</span></div></a>
+  <div class="card__body">
+    <span class="card__brand">Tiger Tools</span>
+    <a href="produkt.html?id=bdz" class="card__name">Zaginadło do rąbka blachy BDZ – konfigurator</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 23 szt.</span><span class="idx">BDZ 20/40/460</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__from">od</span><span class="price__now js-price" data-price="220"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="bdz" aria-label="Dodaj do koszyka: Zaginadło do rąbka blachy BDZ – konfigurator"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=zeus-2000-membrany" class="card__media card__media--white" aria-label="Zgrzewarka do membran dachowych TITAN ZEUS 2000 W – profesjonalny zestaw z dyszami"><img src="assets/img/p/zeus-2000-membrany.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"><span class="badge badge--titan">TITAN</span></div></a>
+  <div class="card__body">
+    <span class="card__brand">TITAN</span>
+    <a href="produkt.html?id=zeus-2000-membrany" class="card__name">Zgrzewarka do membran dachowych TITAN ZEUS 2000 W – profesjonalny zestaw z dyszami</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 8 szt.</span><span class="idx">ZEUS 2000</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__now js-price" data-price="1549"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="zeus-2000-membrany" aria-label="Dodaj do koszyka: Zgrzewarka do membran dachowych TITAN ZEUS 2000 W – profesjonalny zestaw z dyszami"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=kleszcze-proste-60" class="card__media" aria-label="Kleszcze blacharskie proste 60 mm"><img src="assets/img/p/kleszcze-proste-60.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"><span class="badge badge--promo">−6%</span></div></a>
+  <div class="card__body">
+    <span class="card__brand">Tiger Tools</span>
+    <a href="produkt.html?id=kleszcze-proste-60" class="card__name">Kleszcze blacharskie proste 60 mm</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 34 szt.</span><span class="idx">201001</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__old js-price" data-price="159"></span><span class="price__now js-price" data-price="149"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="kleszcze-proste-60" aria-label="Dodaj do koszyka: Kleszcze blacharskie proste 60 mm"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=zestaw-kleszczy" class="card__media" aria-label="Zestaw 3 szt. kleszczy blacharskich TIGER TOOLS 60 mm – proste + 45° + 90°"><img src="assets/img/p/zestaw-kleszczy.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"><span class="badge badge--promo">−18%</span></div></a>
+  <div class="card__body">
+    <span class="card__brand">Tiger Tools</span>
+    <a href="produkt.html?id=zestaw-kleszczy" class="card__name">Zestaw 3 szt. kleszczy blacharskich TIGER TOOLS 60 mm – proste + 45° + 90°</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 10 szt.</span><span class="idx">ZK-60-3</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__old js-price" data-price="487"></span><span class="price__now js-price" data-price="399"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="zestaw-kleszczy" aria-label="Dodaj do koszyka: Zestaw 3 szt. kleszczy blacharskich TIGER TOOLS 60 mm – proste + 45° + 90°"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=przymiar-gb500tt" class="card__media" aria-label="Przymiar do łat stalowy GB-500TT"><img src="assets/img/p/przymiar-gb500tt.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"></div></a>
+  <div class="card__body">
+    <span class="card__brand">Tiger Tools</span>
+    <a href="produkt.html?id=przymiar-gb500tt" class="card__name">Przymiar do łat stalowy GB-500TT</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 17 szt.</span><span class="idx">GB-500TT</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__now js-price" data-price="239"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="przymiar-gb500tt" aria-label="Dodaj do koszyka: Przymiar do łat stalowy GB-500TT"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=kleszcze-45-60" class="card__media" aria-label="Kleszcze blacharskie zagięte 45° – 60 mm"><img src="assets/img/p/kleszcze-45-60.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"></div></a>
+  <div class="card__body">
+    <span class="card__brand">Tiger Tools</span>
+    <a href="produkt.html?id=kleszcze-45-60" class="card__name">Kleszcze blacharskie zagięte 45° – 60 mm</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 18 szt.</span><span class="idx">201002</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__now js-price" data-price="169"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="kleszcze-45-60" aria-label="Dodaj do koszyka: Kleszcze blacharskie zagięte 45° – 60 mm"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=kleszcze-90-60" class="card__media" aria-label="Kleszcze blacharskie zagięte 90°, 60 mm"><img src="assets/img/p/kleszcze-90-60.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"></div></a>
+  <div class="card__body">
+    <span class="card__brand">Tiger Tools</span>
+    <a href="produkt.html?id=kleszcze-90-60" class="card__name">Kleszcze blacharskie zagięte 90°, 60 mm</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 15 szt.</span><span class="idx">201003</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__now js-price" data-price="159"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="kleszcze-90-60" aria-label="Dodaj do koszyka: Kleszcze blacharskie zagięte 90°, 60 mm"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="card" data-reveal>
+  <a href="produkt.html?id=falzmaker" class="card__media" aria-label="FalzMaker 2-in-1 – przymiar do rąbka stojącego z rysikiem (2 szt.)"><img src="assets/img/p/falzmaker.webp" alt="" loading="lazy" width="720" height="720"><div class="badges"></div></a>
+  <div class="card__body">
+    <span class="card__brand">Tiger Tools</span>
+    <a href="produkt.html?id=falzmaker" class="card__name">FalzMaker 2-in-1 – przymiar do rąbka stojącego z rysikiem (2 szt.)</a>
+    <div class="card__meta" data-f="9"><span class="stock">Na stanie: 13 szt.</span><span class="idx">FM1 SET</span></div>
+    <div class="card__foot">
+      <div class="price"><span class="price__now js-price" data-price="329"></span><span class="price__b2b">Cena firmowa −20%</span></div>
+      <button type="button" class="add js-add" data-id="falzmaker" aria-label="Dodaj do koszyka: FalzMaker 2-in-1 – przymiar do rąbka stojącego z rysikiem (2 szt.)"><svg><use href="#i-plus"/></svg></button>
+    </div>
+  </div>
+</article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zestawy -->
+  <section class="section section--tight" id="zestawy">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">Zestawy narzędziowe</p><h2 class="h2">Kupujecie je razem.<br>Złożyliśmy je w zestawy.</h2></div>
+        <a href="zestawy.html" class="link">Wszystkie zestawy<svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="setcards" data-f="5">
+<a href="zestawy.html#tygrys" class="setcard" data-reveal style="--i:0">
+  <img src="assets/img/zestawy/tygrys.webp" alt="" width="900" height="900" loading="lazy">
+  <div><small>214 zamówień z tym kompletem</small><h3>Zestaw „Tygrys” – blacha na rąbek</h3><span class="setcard__price"><s>1 664,00 zł</s> <b>1 499,00 zł</b></span></div>
+</a>
+<a href="zestawy.html#kleszcze-3" class="setcard" data-reveal style="--i:1">
+  <img src="assets/img/zestawy/kleszcze-3.webp" alt="" width="900" height="900" loading="lazy">
+  <div><small>187 zamówień z tym kompletem</small><h3>Zestaw 3 kleszczy 60 mm</h3><span class="setcard__price"><s>477,00 zł</s> <b>399,00 zł</b></span></div>
+</a>
+<a href="zestawy.html#trasowanie" class="setcard" data-reveal style="--i:2">
+  <img src="assets/img/zestawy/trasowanie.webp" alt="" width="900" height="900" loading="lazy">
+  <div><small>96 zamówień z tym kompletem</small><h3>Zestaw „Trasowanie”</h3><span class="setcard__price"><s>403,00 zł</s> <b>359,00 zł</b></span></div>
+</a>
       </div>
     </div>
   </section>
 
   <!-- Marki -->
-  <section class="brands-strip" aria-label="Marki w sklepie">
-    <div class="container brands-strip__head"><p class="eyebrow">W sklepie także</p></div>
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Tiger Tools</span><span>Stubai</span><span>Sorex Technic</span><span>Rau</span><span>Haidl</span><span>Jouanel</span><span>Tjep</span><span>Yato</span><span>Freund</span><span>Rawlplug</span><span>Grün</span>
-        <span>Tiger Tools</span><span>Stubai</span><span>Sorex Technic</span><span>Rau</span><span>Haidl</span><span>Jouanel</span><span>Tjep</span><span>Yato</span><span>Freund</span><span>Rawlplug</span><span>Grün</span>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="brands2">
+        <a href="kategoria.html?brand=tiger-tools" class="brand2 brand2--tt" data-reveal style="--i:0">
+          <img src="assets/img/logo-tt-dark.png" alt="Tiger Tools" width="720" height="322">
+          <p>Narzędzia dla dekarza i blacharza: kleszcze, cęgi, zaginadła BDZ, rysiki, przymiary.</p>
+          <span class="link link--light">28 produktów<svg><use href="#i-arrow"/></svg></span>
+        </a>
+        <a href="kategoria.html?brand=titan" class="brand2 brand2--titan" data-reveal style="--i:1" data-f="10">
+          <span class="brand2__word">TITAN</span>
+          <p>Polskie zgrzewarki na gorące powietrze do membran dachowych, dysze, wałki i akcesoria.</p>
+          <span class="link">31 produktów<svg><use href="#i-arrow"/></svg></span>
+        </a>
       </div>
     </div>
-    <p class="sr-only">Marki w sklepie: Tiger Tools, Stubai, Sorex Technic, Rau, Haidl, Jouanel, Tjep, Yato, Freund, Rawlplug, Grün.</p>
   </section>
 
   <!-- Dach w 3D: zakupy według miejsca na dachu -->
@@ -337,7 +365,7 @@
       </div>
       <div class="roof">
         <div class="roof__stage" id="roof-stage">
-          <img class="roof__fallback" src="assets/img/products/zestaw-tygrys.webp" alt="" aria-hidden="true">
+          <img class="roof__fallback" src="assets/img/zestawy/tygrys.webp" alt="" aria-hidden="true">
           <canvas aria-label="Model 3D domu z dachem z blachy na rąbek. Kliknij punkt na dachu, aby zobaczyć narzędzia."></canvas>
           <button type="button" class="roof-hot" aria-label="Rąbek stojący — pokaż narzędzia"><span>1</span><b>Rąbek</b></button>
           <button type="button" class="roof-hot" aria-label="Okap — pokaż narzędzia"><span>2</span><b>Okap</b></button>
@@ -361,7 +389,7 @@
   <!-- Konto firmowe -->
   <section class="section section--tight" id="b2b">
     <div class="container">
-      <div class="b2b" data-reveal data-f="5">
+      <div class="b2b" data-reveal>
         <div>
           <p class="eyebrow">Konto firmowe</p>
           <h2 class="h2">Kupujesz dla firmy?<br>Płać mniej od razu.</h2>
@@ -396,7 +424,7 @@
   <!-- Newsletter -->
   <section class="section section--tight" id="newsletter">
     <div class="container">
-      <div class="newsletter" data-reveal data-f="10">
+      <div class="newsletter" data-reveal>
         <div>
           <h2 class="h2">Promocje najpierw dla Ciebie.</h2>
           <p>Nowości i rabaty Tiger Tools. Raz w miesiącu, bez spamu.</p>
@@ -410,22 +438,21 @@
     </div>
   </section>
 </main>
-
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__about">
-        <span class="logo logo--light"><img src="assets/img/logo-tigertools.png" alt="" width="311" height="334"><span>Tiger Tools<small>narzędzia dekarskie</small></span></span>
-        <p>Tiger Tools. Polska marka narzędzi dekarskich i blacharskich.</p>
+        <img class="footer__logo" src="assets/img/logo-tt-dark.png" alt="Tiger Tools" width="720" height="322">
+        <p>Polska marka narzędzi dla dekarza i blacharza. Drapieżna precyzja bez przepłacania. Zgrzewarki i akcesoria TITAN.</p>
       </div>
       <div>
         <h4>Sklep</h4>
         <ul>
           <li><a href="kategoria.html">Wszystkie produkty</a></li>
-          <li><a href="kategoria.html">Promocje</a></li>
+          <li><a href="kategoria.html?brand=tiger-tools">Tiger Tools</a></li>
+          <li><a href="kategoria.html?brand=titan">TITAN</a></li>
+          <li><a href="zestawy.html">Zestawy narzędziowe</a></li>
           <li><a href="dla-firm.html">Konto firmowe</a></li>
-          <li><a href="konto.html">Moje konto</a></li>
-          <li><a href="koszyk.html">Koszyk</a></li>
         </ul>
       </div>
       <div>
@@ -447,12 +474,12 @@
         </ul>
       </div>
     </div>
-    <div class="paylogos" data-f="12">
-      <span>Przelewy24</span><span>BLIK</span><span>PayPal</span><span>Przelew</span><span data-f="13">InPost Paczkomat®</span><span>Kurier InPost</span>
+    <div class="paylogos">
+      <span>Przelewy24</span><span>BLIK</span><span>PayPal</span><span>Przelew</span><span>InPost Paczkomat®</span><span>Kurier InPost</span>
     </div>
     <div class="footer__bottom">
-      <span>© 2026 Tiger Tools · sklep na PrestaShop</span>
-      <span data-f="14">Wersja demonstracyjna sklepu</span>
+      <span>© 2026 Tiger Tools · TITAN</span>
+      <span>Wersja demonstracyjna sklepu</span>
     </div>
   </div>
 </footer>
@@ -489,7 +516,7 @@
 
 <!-- Cookies (podgląd modułu seigi Consent Mode v2) -->
 <div class="cookie" id="cookies" role="dialog" aria-labelledby="ck-title">
-  <h3 id="ck-title" data-f="11">Szanujemy Twoją prywatność</h3>
+  <h3 id="ck-title">Szanujemy Twoją prywatność</h3>
   <p>Używamy cookies do działania sklepu, statystyk i reklam. Wybierz, na co się zgadzasz.</p>
   <div class="cookie__opts">
     <label class="switch">Niezbędne<input type="checkbox" checked disabled></label>
@@ -503,46 +530,45 @@
   </div>
 </div>
 
-<!-- Tryb prezentacji: zakres wdrożenia -->
-<button type="button" class="present-btn" id="present-btn" aria-expanded="false" aria-controls="scope-drawer">Funkcje wdrożenia <i>16</i></button>
-<aside class="drawer" id="scope-drawer" aria-label="Zakres wdrożenia">
+<!-- Tryb prezentacji: zakres po spotkaniu -->
+<button type="button" class="present-btn" id="present-btn" aria-expanded="false" aria-controls="scope-drawer">Zakres po spotkaniu <i>12</i></button>
+<aside class="drawer" id="scope-drawer" aria-label="Zakres po spotkaniu">
   <div class="drawer__head">
     <div>
-      <h2 class="h3">Zakres wdrożenia</h2>
-      <p>Pomarańczowe numery na stronie pokazują, gdzie działa dana funkcja.</p>
+      <h2 class="h3">Zakres po spotkaniu</h2>
+      <p>Pomarańczowe numery na stronie pokazują, gdzie działa dany punkt.</p>
     </div>
     <button type="button" class="modal__close js-drawer-close" aria-label="Zamknij"><svg><use href="#i-close"/></svg></button>
   </div>
   <ol class="scope">
-<li><i>1</i><div><b>Szablon Gardenia</b><span>Zakup po stronie klienta, dostosowanie graficzne (7 h) wg materiałów klienta.</span> <a href="index.html">Zobacz</a></div></li>
-<li><i>2</i><div><b>One page checkout</b><span>Dane, dostawa i płatność na jednym ekranie.</span> <a href="koszyk.html">Zobacz</a></div></li>
-<li><i>3</i><div><b>Import produktów i kategorii</b><span>Z pliku CSV dostarczonego przez klienta.</span> <a href="kategoria.html">Zobacz</a></div></li>
-<li><i>4</i><div><b>Konfiguracja sklepu</b><span>Progi dostawy, komunikaty, ustawienia wg dalszych ustaleń.</span> <a href="index.html">Zobacz</a></div></li>
-<li><i>5</i><div><b>Grupa klientów B2B</b><span>Po zalogowaniu −20% na wszystko, potem kolejne poziomy i rabaty na kategorie.</span> <a href="index.html#b2b">Zobacz</a></div></li>
-<li><i>6</i><div><b>Integracja z WAPRO</b><span>Ceny, promocje i stany z CSV po indeksie. Raporty: produkty bez indeksu i indeksy bez produktu.</span> <a href="produkt.html">Zobacz</a></div></li>
-<li><i>7</i><div><b>PDF produktu i koszyka</b><span>Jednym kliknięciem z karty produktu i z koszyka.</span> <a href="produkt.html">Zobacz</a></div></li>
-<li><i>8</i><div><b>Zostaw telefon, oddzwonimy</b><span>Formularz na karcie produktu. Zgłoszenie trafia do panelu ze statusem i notatką.</span> <a href="produkt.html">Zobacz</a></div></li>
-<li><i>9</i><div><b>Najniższa cena z 30 dni</b><span>Moduł x13 — historia cen w bazie, informacja przy promocji.</span> <a href="produkt.html?v=61">Zobacz</a></div></li>
-<li><i>10</i><div><b>Newsletter</b><span>Pasek na stronie głównej i checkbox w zamówieniu.</span> <a href="index.html#newsletter">Zobacz</a></div></li>
-<li><i>11</i><div><b>Cookies — Consent Mode v2</b><span>Moduł seigi: zgody i Google Consent Mode v2.</span> <a href="#cookies">Zobacz</a></div></li>
-<li><i>12</i><div><b>Płatności</b><span>Przelewy24 (z BLIK) i PayPal na darmowych modułach operatorów.</span> <a href="koszyk.html">Zobacz</a></div></li>
-<li><i>13</i><div><b>Kurier InPost</b><span>Paczkomaty i kurier na darmowym module InPost.</span> <a href="koszyk.html">Zobacz</a></div></li>
-<li><i>14</i><div><b>Instalacja na serwerze</b><span>Serwer i SSL klienta — hosting PrestaShop 30 GB (cyber_Folks).</span></div></li>
-<li><i>15</i><div><b>Wersja developerska</b><span>Kopia sklepu do dalszych prac rozwojowych.</span></div></li>
-<li><i>16</i><div><b>Szkolenie i wsparcie</b><span>Obsługa sklepu, zamówień, promocji i grup klientów.</span></div></li>
+<li><i>1</i><div><b>Logo Tiger Tools</b><span>Nowe logo w nagłówku, wersja jasna na ciemne tła w stopce i w 3D.</span> <a href="index.html">Zobacz</a></div></li>
+<li><i>2</i><div><b>Wyszukiwarka z podpowiedziami</b><span>Podpowiedzi od pierwszej litery; kolejność według liczby wejść na produkt.</span> <a href="index.html#top">Zobacz</a></div></li>
+<li><i>3</i><div><b>Kategorie jak w dekarski-sklep.pl</b><span>Próbne drzewo kategorii i podkategorii z przypisaniem produktów.</span> <a href="kategoria.html">Zobacz</a></div></li>
+<li><i>4</i><div><b>Baner 3D – konfigurator BDZ</b><span>Długość 31/46/61/81 cm, głębokość 20/40 lub 15/30 mm, z rękojeścią lub bez. Cena i stan na żywo.</span> <a href="index.html">Zobacz</a></div></li>
+<li><i>5</i><div><b>Zestawy narzędziowe</b><span>Kafel „Zestaw Tygrys” prowadzi na podstronę z zestawami, które firma składa z najczęściej kupowanych razem narzędzi.</span> <a href="zestawy.html">Zobacz</a></div></li>
+<li><i>6</i><div><b>Lista produktów bez stron</b><span>Przewijanie bez końca: kolejne produkty dochodzą same.</span> <a href="kategoria.html">Zobacz</a></div></li>
+<li><i>7</i><div><b>Koszyk w jednym kroku</b><span>Dane, dostawa, płatność i „Zamawiam i płacę” na jednym ekranie.</span> <a href="koszyk.html">Zobacz</a></div></li>
+<li><i>8</i><div><b>Podobne produkty</b><span>Pod opisem karty produktu: produkty z tej samej kategorii, 5 w rzędzie, przewijane w lewo i w prawo.</span> <a href="produkt.html?id=kleszcze-proste-60#podobne">Zobacz</a></div></li>
+<li><i>9</i><div><b>Stan magazynowy w sztukach</b><span>Liczba sztuk na kartach produktów, w karcie produktu i w konfiguratorze.</span> <a href="produkt.html?id=kleszcze-proste-60">Zobacz</a></div></li>
+<li><i>10</i><div><b>Produkty TITAN</b><span>Zgrzewarki, dysze, wałki i akcesoria – nazwy, zdjęcia i opisy ze strony titan-zgrzewarki.pl.</span> <a href="kategoria.html?brand=titan">Zobacz</a></div></li>
+<li><i>11</i><div><b>Kategorie obrazkowe</b><span>Kafle kategorii ze zdjęciami na stronie głównej i na liście produktów.</span> <a href="index.html#kategorie">Zobacz</a></div></li>
+<li><i>12</i><div><b>Opisy produktów</b><span>Opisy w demo pochodzą z katalogu i ze strony TITAN; docelowe opisy z dekarski-sklep.pl poprawi osoba od SEO.</span> <a href="produkt.html?id=bdz#opis">Zobacz</a></div></li>
   </ol>
-  <p class="scope-extra">Propozycje ponad zakres (wycena osobno)</p>
+  <p class="scope-extra">Zostaje z poprzedniej wersji</p>
   <ol class="scope scope--extra">
-<li><i>+</i><div><b>Zaginadło w 3D</b><span>Model produktu z wyborem długości, pokazem zaginania i dodawaniem do koszyka.</span> <a href="index.html">Zobacz</a></div></li>
-<li><i>+</i><div><b>Dach w 3D</b><span>Zakupy według miejsca na dachu i zestaw z rabatem −10%.</span> <a href="index.html#dach-3d">Zobacz</a></div></li>
+<li><i>+</i><div><b>Dach w 3D</b><span>Zakupy według miejsca na dachu, zestaw z rabatem −10%.</span></div></li>
+<li><i>+</i><div><b>Konto firmowe −20%</b><span>Przełącznik cen i rabat w koszyku.</span></div></li>
+<li><i>+</i><div><b>Oddzwonimy, PDF, newsletter, cookies</b><span>Bez zmian z poprzedniego zakresu.</span></div></li>
   </ol>
 </aside>
 
 <a class="wa" href="https://wa.me/48690566720?text=Dzie%C5%84%20dobry%2C%20pytanie%20o%20narz%C4%99dzia%20Tiger%20Tools." target="_blank" rel="noopener" aria-label="Napisz na WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/data.js" defer></script>
 <script src="assets/js/shop.js" defer></script>
 <script src="assets/js/tool3d.js" defer></script>
+<script src="assets/js/catalog.js" defer></script>
 <script src="assets/js/roof3d.js" defer></script>
 </body>
 </html>

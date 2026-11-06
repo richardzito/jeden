@@ -14,32 +14,18 @@
   const lerp = (a, b, t) => a + (b - a) * t;
 
   // ---------- Dane: narzędzia ze sklepu ----------
-  const P = {
-    z46: { brand: 'Tiger Tools', name: 'Zaginadło do rąbka 46 cm BDZ 20/40/460', img: 'products/zaginadlo-46.webp', price: 220, tt: true },
-    rauZam: { brand: 'Rau', name: 'Zamykacz rąbka kątowego FalzPro 111 WFSCH', img: 'shop/rau-zamykacz-111.webp', price: 1290 },
-    stubaiCegi: { brand: 'Stubai', name: 'Cęgi do zamykania rąbka 50 mm 282601', img: 'shop/stubai-cegi-282601.webp', price: 289 },
-    sorexKsc: { brand: 'Sorex Technic', name: 'Cęgi do kształtowania blachy na rąbek KSC-1', img: 'shop/sorex-cegi-ksc1.webp', price: 199 },
-    rauTk: { brand: 'Rau', name: 'Kantownik okapu TK', img: 'shop/rau-kantownik-tk.webp', price: 1190 },
-    rauTsch: { brand: 'Rau', name: 'Zaciskacz okapu TSCH', img: 'shop/rau-zaciskacz-tsch.webp', price: 1090 },
-    yato280: { brand: 'Yato', name: 'Kleszcze do gięcia blachy 280 mm, 90°', img: 'shop/yato-kleszcze-280.webp', price: 69 },
-    ttKomin: { brand: 'Tiger Tools', name: 'Zaginadło do obróbki komina i ogniomurów', img: 'shop/tt-zaginadlo-komin.webp', price: 86.9, tt: true },
-    stubaiSz: { brand: 'Stubai', name: 'Szczypce okrągłe do zaginania 18 mm 282501', img: 'shop/stubai-szczypce-282501.webp', price: 259 },
-    jouanelTri: { brand: 'Jouanel', name: 'Szczypce trójkątne 100 mm PBTRI100', img: 'shop/jouanel-szczypce-tri.webp', price: 229 },
-    gb500: { brand: 'Tiger Tools', name: 'Przymiar dekarski GB-500TT do łat', img: 'shop/tt-przymiar-gb500tt.webp', price: 239, tt: true },
-    wr165: { brand: 'Sorex Technic', name: 'Wyrywacz do łat WR-165', img: 'shop/sorex-wyrywacz-wr165.webp', price: 149 },
-    zagn: { brand: 'Sorex Technic', name: 'Rolkowa zagniatarka do falcu z regulacją', img: 'shop/sorex-zagniatarka.webp', price: 449 },
-    pek: { brand: 'Rau', name: 'Kantownik-falcownik PEK 250 mm', img: 'shop/rau-pek-250.webp', price: 399 },
-    rtr2: { brand: 'Sorex Technic', name: 'Rysik do rąbka RTR-2', img: 'shop/sorex-rysik-rtr2.webp', price: 79 },
-    rt200: { brand: 'Sorex Technic', name: 'Szablon-rysik traserski RT-200', img: 'shop/sorex-szablon-rt200.webp', price: 119 },
-    rayza: { brand: 'Rayza', name: 'Zestaw mierniczy: rysiki „choinka” i cyrkiel', img: 'shop/rayza-zestaw-mierniczy.webp', price: 189 },
-  };
+  // Narzędzia Tiger Tools i TITAN z danych sklepu (assets/js/data.js)
+  const DATA = window.TT_DATA || { products: [] };
+  const P = {};
+  DATA.products.forEach((p) => (P[p.id] = { brand: p.brand, name: p.name, img: p.imgs[0], price: p.price, tt: p.brand !== 'TITAN', id: p.id }));
+  if (P.bdz) P.bdz = { ...P.bdz, name: 'Zaginadło do rąbka 46 cm BDZ 20/40/460', price: 220 };
   const ZONES = [
-    { id: 'seam', title: 'Rąbek stojący', tip: 'Zaginanie i zamykanie rąbka na połaci.', items: ['z46', 'rauZam', 'stubaiCegi', 'sorexKsc'] },
-    { id: 'eave', title: 'Okap', tip: 'Pas nadrynnowy i zawinięcie blachy na okapie.', items: ['rauTk', 'rauTsch', 'yato280'] },
-    { id: 'chimney', title: 'Komin', tip: 'Obróbka komina i ogniomurów bez pęknięć lakieru.', items: ['ttKomin', 'stubaiSz', 'jouanelTri'] },
-    { id: 'battens', title: 'Łaty', tip: 'Równy rozstaw łat i szybki demontaż starych.', items: ['gb500', 'wr165'] },
-    { id: 'ridge', title: 'Kalenica', tip: 'Doginanie falcu i obróbka kalenicy.', items: ['zagn', 'pek'] },
-    { id: 'marking', title: 'Trasowanie', tip: 'Wymiar i linia cięcia na arkuszu, zanim wejdziesz na dach.', items: ['rtr2', 'rt200', 'rayza'] },
+    { id: 'seam', title: 'Rąbek stojący', tip: 'Zaginanie i zamykanie rąbka na połaci.', items: ['bdz', 'cegi-podwojny-rabek', 'falzmaker', 'kleszcze-90-60'] },
+    { id: 'eave', title: 'Okap', tip: 'Pas nadrynnowy, okap i haki rynnowe.', items: ['gietarka-gdp700', 'zaciskacz-rynnowy', 'kleszcze-45-60'] },
+    { id: 'chimney', title: 'Komin', tip: 'Obróbka komina: wąskie szczypce i młotek, który nie niszczy powłoki.', items: ['piccolo-wygiete', 'piccolo-proste', 'mlotek-bezodrzutowy'] },
+    { id: 'battens', title: 'Łaty', tip: 'Równy rozstaw łat i szybka rozbiórka starego deskowania.', items: ['przymiar-gb500tt', 'wd750', 'drabina-sznurowa'] },
+    { id: 'ridge', title: 'Kalenica', tip: 'Doginanie i zamykanie przy kalenicy.', items: ['cegi-trojkatne-80', 'cegi-panienki', 'faldownik-bocian'] },
+    { id: 'marking', title: 'Trasowanie', tip: 'Wymiar i linia gięcia na arkuszu, zanim wejdziesz na dach.', items: ['rysik-rabek', 'rysik-5-100', 'rysik-5-34', 'wycinak-reczny'] },
   ];
   // ścieżka zdjęcia (wersja jednoplikowa podstawia tu obrazy wbudowane w stronę)
   const imgSrc = (p) => (window.TT_IMG && window.TT_IMG[p]) || `assets/img/${p}`;
@@ -151,7 +137,7 @@
       if (!items.length) return;
       const off = items.length >= SET_MIN ? SET_OFF : 0;
       const total = items.reduce((s, it) => s + it.price, 0) * (1 - off); // cena bazowa; rabat firmowy liczy koszyk
-      if (window.TT) window.TT.addToCart({ price: total, qty: items.length, name: `Zestaw z dachu (${items.length} narz.)`, from: setAdd });
+      if (window.TT) window.TT.addToCart({ id: null, key: `roof-${[...picked].sort().join('-')}`, name: `Zestaw z dachu (${items.length} narz.)`, sym: items.map((it) => it.name.split(' ')[0]).join(', '), price: total, img: items[0].img, qty: 1, from: setAdd });
       picked = new Set();
       renderSet();
       renderPanel();

@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Logowanie i konto klienta — Tiger Tools</title>
-  <meta name="description" content="Zamówienia, adresy, faktury i zgody.">
+  <title>Moje konto — Tiger Tools</title>
+  <meta name="description" content="Moje konto — Tiger Tools">
   <meta name="theme-color" content="#121212">
+  <link rel="icon" href="assets/img/logo-tt.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/shop.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -32,6 +33,9 @@
   <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm-8 4.5 8 4.5 8-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 4.5-9 4.5-9-4.5L12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m3 12 9 4.5 9-4.5M3 16.5 12 21l9-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.3 28.8l6.6-1.7A12.7 12.7 0 1 0 16 3.2Zm0 23.1c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.5 10.5 0 1 1 16 26.3Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5.1 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5 0-.2-.2-.2-.5-.4Z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.2v13.6a.8.8 0 0 0 1.2.7l10.6-6.8a.8.8 0 0 0 0-1.4L9.2 4.5A.8.8 0 0 0 8 5.2Z"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4.5h-4.5"/></symbol>
+  <symbol id="i-roof" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M2.5 12 12 4l9.5 8M5.5 10v9.5h13V10M9 7.5v12M12 5v14.5M15 7.5v12"/></symbol>
   <!-- kategorie -->
   <symbol id="c-seam" viewBox="0 0 32 32"><path d="M15 15 29 9M15 17l14 0M15 15 4 7.5M15 17 4 24.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15" cy="16" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="c-shears" viewBox="0 0 32 32"><circle cx="8" cy="24" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="26" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 21.5 26 5M14.5 22.8 24 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -41,13 +45,19 @@
   <symbol id="c-bend" viewBox="0 0 32 32"><path d="M4 24h10l4-14h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 28h10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".4"/></symbol>
   <symbol id="c-rivet" viewBox="0 0 32 32"><path d="M6 8h12l4 4-4 4H6zM12 16l-3 11h5l1-11" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M22 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="c-helmet" viewBox="0 0 32 32"><path d="M5 22a11 11 0 0 1 22 0M3 22h26v3H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 11.5V8h6v3.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 21c-3.9 0-6.5-2.6-6.5-6.2 0-3.3 2.4-5.4 3.6-7.7.5 1.8 1.6 2.8 2.6 3.3.1-2.9 1.7-5.3 3.8-6.9-.2 2.7.9 4.4 2.2 6 1.2 1.5 2.3 3.1 2.3 5.3C19.5 18.4 16.4 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V4.5h4V7M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 <div class="topbar">
   <div class="container topbar__inner">
-    <div class="topbar__msgs" data-f="4">
+    <div class="topbar__msgs">
       <span><svg class="ic" style="width:16px;height:16px"><use href="#i-truck"/></svg>Darmowa dostawa <b>InPost</b> od 299 zł</span>
-      <span>Konto firmowe: <b>−20%</b> na cały asortyment</span>
-      <span>Wysyłka w 24 h</span>
+      <span>Polska marka · wysyłka w 24 h</span>
+      <span>Konto firmowe: <b>−20%</b></span>
     </div>
     <div class="topbar__right">
       <a href="tel:+48690566720">690 566 720</a>
@@ -59,28 +69,29 @@
 
 <header class="header" id="top">
   <div class="container header__main">
-    <a href="index.html" class="logo" aria-label="Tiger Tools — strona główna"><img src="assets/img/logo-tigertools.png" alt="" width="311" height="334"><span>Tiger Tools<small>narzędzia dekarskie</small></span></a>
-    <form class="search" role="search" action="kategoria.html">
+    <a href="index.html" class="logo logo--tt" aria-label="Tiger Tools — strona główna" data-f="1"><img src="assets/img/logo-tt.png" alt="Tiger Tools" width="640" height="426"></a>
+    <form class="search" role="search" action="kategoria.html" data-f="2">
       <svg><use href="#i-search"/></svg>
-      <input type="search" name="q" placeholder="Szukaj: zaginadło, przymiar, zestaw na rąbek…" aria-label="Szukaj produktów" autocomplete="off">
+      <input type="search" name="q" placeholder="Szukaj: zaginadło, kleszcze, zgrzewarka…" aria-label="Szukaj produktów" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="suggest" aria-expanded="false">
       <kbd>/</kbd>
+      <div class="suggest" id="suggest" role="listbox" aria-label="Podpowiedzi"></div>
     </form>
     <div class="actions">
-      <button type="button" class="action action--callback js-callback" data-f="8"><svg><use href="#i-callback"/></svg><span class="action__label"><span class="action__small">Zostaw numer</span>Oddzwonimy</span></button>
-      <button type="button" class="action js-login" data-f="5" aria-pressed="false"><svg><use href="#i-user"/></svg><span class="action__label"><span class="action__small js-login-small">Zaloguj się</span><span>Konto <span class="b2b-pill">B2B −20%</span></span></span></button>
-      <a href="koszyk.html" class="action" data-f="2"><svg><use href="#i-cart"/></svg><span class="cart-badge" id="cart-badge">2</span><span class="action__label"><span class="action__small">Koszyk</span><span id="cart-total-h">459,00 zł</span></span></a>
+      <button type="button" class="action action--callback js-callback"><svg><use href="#i-callback"/></svg><span class="action__label"><span class="action__small">Zostaw numer</span>Oddzwonimy</span></button>
+      <button type="button" class="action js-login" aria-pressed="false"><svg><use href="#i-user"/></svg><span class="action__label"><span class="action__small js-login-small">Zaloguj się</span><span>Konto <span class="b2b-pill">B2B −20%</span></span></span></button>
+      <a href="koszyk.html" class="action" data-f="7"><svg><use href="#i-cart"/></svg><span class="cart-badge" id="cart-badge">0</span><span class="action__label"><span class="action__small">Koszyk</span><span id="cart-total-h">0,00 zł</span></span></a>
     </div>
   </div>
-  <nav class="catnav" aria-label="Kategorie">
+  <nav class="catnav" aria-label="Kategorie" data-f="3">
     <div class="container catnav__inner">
-      <a href="kategoria.html" class="is-hot">Zaginadła</a>
-      <a href="kategoria.html">Narzędzia do rąbka</a>
-      <a href="kategoria.html">Cęgi i szczypce</a>
-      <a href="kategoria.html">Przymiary i rysiki</a>
-      <a href="kategoria.html">Kantowniki</a>
-      <a href="kategoria.html">Młotki</a>
-      <a href="kategoria.html">Gwoździarki</a>
-      <a href="kategoria.html">Papa i palniki</a>
+      <a href="kategoria.html?cat=zaginadla" class="is-hot">Zaginadła</a>
+      <a href="kategoria.html?cat=cegi-i-kleszcze">Cęgi i kleszcze</a>
+      <a href="kategoria.html?cat=szczypce">Szczypce</a>
+      <a href="kategoria.html?cat=trasowanie">Rysiki i przymiary</a>
+      <a href="kategoria.html?cat=mlotki">Młotki</a>
+      <a href="kategoria.html?cat=papa">Papa</a>
+      <a href="kategoria.html?cat=zgrzewanie" class="is-titan">Zgrzewanie TITAN</a>
+      <a href="zestawy.html" class="is-sets">Zestawy</a>
       <a href="index.html#dach-3d" class="is-3d">Dach w 3D</a>
     </div>
   </nav>
@@ -99,26 +110,25 @@
     </div>
   </div>
   <div class="hero__cta" style="margin-top:28px">
-    <a href="produkt.html" class="btn btn--accent">Zobacz kartę produktu<svg><use href="#i-arrow"/></svg></a>
+    <a href="produkt.html?id=bdz" class="btn btn--accent">Zobacz kartę produktu<svg><use href="#i-arrow"/></svg></a>
     <a href="koszyk.html" class="btn btn--ghost"><svg><use href="#i-cart"/></svg>Zobacz checkout</a>
   </div>
 </main>
-
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__about">
-        <span class="logo logo--light"><img src="assets/img/logo-tigertools.png" alt="" width="311" height="334"><span>Tiger Tools<small>narzędzia dekarskie</small></span></span>
-        <p>Tiger Tools. Polska marka narzędzi dekarskich i blacharskich.</p>
+        <img class="footer__logo" src="assets/img/logo-tt-dark.png" alt="Tiger Tools" width="720" height="322">
+        <p>Polska marka narzędzi dla dekarza i blacharza. Drapieżna precyzja bez przepłacania. Zgrzewarki i akcesoria TITAN.</p>
       </div>
       <div>
         <h4>Sklep</h4>
         <ul>
           <li><a href="kategoria.html">Wszystkie produkty</a></li>
-          <li><a href="kategoria.html">Promocje</a></li>
+          <li><a href="kategoria.html?brand=tiger-tools">Tiger Tools</a></li>
+          <li><a href="kategoria.html?brand=titan">TITAN</a></li>
+          <li><a href="zestawy.html">Zestawy narzędziowe</a></li>
           <li><a href="dla-firm.html">Konto firmowe</a></li>
-          <li><a href="konto.html">Moje konto</a></li>
-          <li><a href="koszyk.html">Koszyk</a></li>
         </ul>
       </div>
       <div>
@@ -140,12 +150,12 @@
         </ul>
       </div>
     </div>
-    <div class="paylogos" data-f="12">
-      <span>Przelewy24</span><span>BLIK</span><span>PayPal</span><span>Przelew</span><span data-f="13">InPost Paczkomat®</span><span>Kurier InPost</span>
+    <div class="paylogos">
+      <span>Przelewy24</span><span>BLIK</span><span>PayPal</span><span>Przelew</span><span>InPost Paczkomat®</span><span>Kurier InPost</span>
     </div>
     <div class="footer__bottom">
-      <span>© 2026 Tiger Tools · sklep na PrestaShop</span>
-      <span data-f="14">Wersja demonstracyjna sklepu</span>
+      <span>© 2026 Tiger Tools · TITAN</span>
+      <span>Wersja demonstracyjna sklepu</span>
     </div>
   </div>
 </footer>
@@ -182,7 +192,7 @@
 
 <!-- Cookies (podgląd modułu seigi Consent Mode v2) -->
 <div class="cookie" id="cookies" role="dialog" aria-labelledby="ck-title">
-  <h3 id="ck-title" data-f="11">Szanujemy Twoją prywatność</h3>
+  <h3 id="ck-title">Szanujemy Twoją prywatność</h3>
   <p>Używamy cookies do działania sklepu, statystyk i reklam. Wybierz, na co się zgadzasz.</p>
   <div class="cookie__opts">
     <label class="switch">Niezbędne<input type="checkbox" checked disabled></label>
@@ -196,39 +206,43 @@
   </div>
 </div>
 
-<!-- Tryb prezentacji: zakres wdrożenia -->
-<button type="button" class="present-btn" id="present-btn" aria-expanded="false" aria-controls="scope-drawer">Funkcje wdrożenia <i>16</i></button>
-<aside class="drawer" id="scope-drawer" aria-label="Zakres wdrożenia">
+<!-- Tryb prezentacji: zakres po spotkaniu -->
+<button type="button" class="present-btn" id="present-btn" aria-expanded="false" aria-controls="scope-drawer">Zakres po spotkaniu <i>12</i></button>
+<aside class="drawer" id="scope-drawer" aria-label="Zakres po spotkaniu">
   <div class="drawer__head">
     <div>
-      <h2 class="h3">Zakres wdrożenia</h2>
-      <p>Pomarańczowe numery na stronie pokazują, gdzie działa dana funkcja.</p>
+      <h2 class="h3">Zakres po spotkaniu</h2>
+      <p>Pomarańczowe numery na stronie pokazują, gdzie działa dany punkt.</p>
     </div>
     <button type="button" class="modal__close js-drawer-close" aria-label="Zamknij"><svg><use href="#i-close"/></svg></button>
   </div>
   <ol class="scope">
-<li><i>1</i><div><b>Szablon Gardenia</b><span>Zakup po stronie klienta, dostosowanie graficzne (7 h) wg materiałów klienta.</span> <a href="index.html">Zobacz</a></div></li>
-<li><i>2</i><div><b>One page checkout</b><span>Dane, dostawa i płatność na jednym ekranie.</span> <a href="koszyk.html">Zobacz</a></div></li>
-<li><i>3</i><div><b>Import produktów i kategorii</b><span>Z pliku CSV dostarczonego przez klienta.</span> <a href="kategoria.html">Zobacz</a></div></li>
-<li><i>4</i><div><b>Konfiguracja sklepu</b><span>Progi dostawy, komunikaty, ustawienia wg dalszych ustaleń.</span> <a href="index.html">Zobacz</a></div></li>
-<li><i>5</i><div><b>Grupa klientów B2B</b><span>Po zalogowaniu −20% na wszystko, potem kolejne poziomy i rabaty na kategorie.</span> <a href="index.html#b2b">Zobacz</a></div></li>
-<li><i>6</i><div><b>Integracja z WAPRO</b><span>Ceny, promocje i stany z CSV po indeksie. Raporty: produkty bez indeksu i indeksy bez produktu.</span> <a href="produkt.html">Zobacz</a></div></li>
-<li><i>7</i><div><b>PDF produktu i koszyka</b><span>Jednym kliknięciem z karty produktu i z koszyka.</span> <a href="produkt.html">Zobacz</a></div></li>
-<li><i>8</i><div><b>Zostaw telefon, oddzwonimy</b><span>Formularz na karcie produktu. Zgłoszenie trafia do panelu ze statusem i notatką.</span> <a href="produkt.html">Zobacz</a></div></li>
-<li><i>9</i><div><b>Najniższa cena z 30 dni</b><span>Moduł x13 — historia cen w bazie, informacja przy promocji.</span> <a href="produkt.html?v=61">Zobacz</a></div></li>
-<li><i>10</i><div><b>Newsletter</b><span>Pasek na stronie głównej i checkbox w zamówieniu.</span> <a href="index.html#newsletter">Zobacz</a></div></li>
-<li><i>11</i><div><b>Cookies — Consent Mode v2</b><span>Moduł seigi: zgody i Google Consent Mode v2.</span> <a href="#cookies">Zobacz</a></div></li>
-<li><i>12</i><div><b>Płatności</b><span>Przelewy24 (z BLIK) i PayPal na darmowych modułach operatorów.</span> <a href="koszyk.html">Zobacz</a></div></li>
-<li><i>13</i><div><b>Kurier InPost</b><span>Paczkomaty i kurier na darmowym module InPost.</span> <a href="koszyk.html">Zobacz</a></div></li>
-<li><i>14</i><div><b>Instalacja na serwerze</b><span>Serwer i SSL klienta — hosting PrestaShop 30 GB (cyber_Folks).</span></div></li>
-<li><i>15</i><div><b>Wersja developerska</b><span>Kopia sklepu do dalszych prac rozwojowych.</span></div></li>
-<li><i>16</i><div><b>Szkolenie i wsparcie</b><span>Obsługa sklepu, zamówień, promocji i grup klientów.</span></div></li>
+<li><i>1</i><div><b>Logo Tiger Tools</b><span>Nowe logo w nagłówku, wersja jasna na ciemne tła w stopce i w 3D.</span> <a href="index.html">Zobacz</a></div></li>
+<li><i>2</i><div><b>Wyszukiwarka z podpowiedziami</b><span>Podpowiedzi od pierwszej litery; kolejność według liczby wejść na produkt.</span> <a href="index.html#top">Zobacz</a></div></li>
+<li><i>3</i><div><b>Kategorie jak w dekarski-sklep.pl</b><span>Próbne drzewo kategorii i podkategorii z przypisaniem produktów.</span> <a href="kategoria.html">Zobacz</a></div></li>
+<li><i>4</i><div><b>Baner 3D – konfigurator BDZ</b><span>Długość 31/46/61/81 cm, głębokość 20/40 lub 15/30 mm, z rękojeścią lub bez. Cena i stan na żywo.</span> <a href="index.html">Zobacz</a></div></li>
+<li><i>5</i><div><b>Zestawy narzędziowe</b><span>Kafel „Zestaw Tygrys” prowadzi na podstronę z zestawami, które firma składa z najczęściej kupowanych razem narzędzi.</span> <a href="zestawy.html">Zobacz</a></div></li>
+<li><i>6</i><div><b>Lista produktów bez stron</b><span>Przewijanie bez końca: kolejne produkty dochodzą same.</span> <a href="kategoria.html">Zobacz</a></div></li>
+<li><i>7</i><div><b>Koszyk w jednym kroku</b><span>Dane, dostawa, płatność i „Zamawiam i płacę” na jednym ekranie.</span> <a href="koszyk.html">Zobacz</a></div></li>
+<li><i>8</i><div><b>Podobne produkty</b><span>Pod opisem karty produktu: produkty z tej samej kategorii, 5 w rzędzie, przewijane w lewo i w prawo.</span> <a href="produkt.html?id=kleszcze-proste-60#podobne">Zobacz</a></div></li>
+<li><i>9</i><div><b>Stan magazynowy w sztukach</b><span>Liczba sztuk na kartach produktów, w karcie produktu i w konfiguratorze.</span> <a href="produkt.html?id=kleszcze-proste-60">Zobacz</a></div></li>
+<li><i>10</i><div><b>Produkty TITAN</b><span>Zgrzewarki, dysze, wałki i akcesoria – nazwy, zdjęcia i opisy ze strony titan-zgrzewarki.pl.</span> <a href="kategoria.html?brand=titan">Zobacz</a></div></li>
+<li><i>11</i><div><b>Kategorie obrazkowe</b><span>Kafle kategorii ze zdjęciami na stronie głównej i na liście produktów.</span> <a href="index.html#kategorie">Zobacz</a></div></li>
+<li><i>12</i><div><b>Opisy produktów</b><span>Opisy w demo pochodzą z katalogu i ze strony TITAN; docelowe opisy z dekarski-sklep.pl poprawi osoba od SEO.</span> <a href="produkt.html?id=bdz#opis">Zobacz</a></div></li>
+  </ol>
+  <p class="scope-extra">Zostaje z poprzedniej wersji</p>
+  <ol class="scope scope--extra">
+<li><i>+</i><div><b>Dach w 3D</b><span>Zakupy według miejsca na dachu, zestaw z rabatem −10%.</span></div></li>
+<li><i>+</i><div><b>Konto firmowe −20%</b><span>Przełącznik cen i rabat w koszyku.</span></div></li>
+<li><i>+</i><div><b>Oddzwonimy, PDF, newsletter, cookies</b><span>Bez zmian z poprzedniego zakresu.</span></div></li>
   </ol>
 </aside>
 
 <a class="wa" href="https://wa.me/48690566720?text=Dzie%C5%84%20dobry%2C%20pytanie%20o%20narz%C4%99dzia%20Tiger%20Tools." target="_blank" rel="noopener" aria-label="Napisz na WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/data.js" defer></script>
 <script src="assets/js/shop.js" defer></script>
+<script src="assets/js/catalog.js" defer></script>
 </body>
 </html>
