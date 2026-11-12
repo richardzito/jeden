@@ -47,13 +47,40 @@ Na telefonie na dole jest stały pasek: „Zadzwoń” i „Umów oglądanie”.
 
 ## Spacer 3D i konfigurator
 
-Model mieszkania jest zbudowany według rzutu z ogłoszenia (106 px rzutu ≈ 1 m, wysokość 2,80 m). Zawiera:
+Model mieszkania jest zbudowany według rzutu z ogłoszenia (106 px rzutu ≈ 1 m, wysokość 2,80 m), a wnętrza, materiały i kolory odtworzone według 13 zdjęć oferty (kolory próbkowane bezpośrednio ze zdjęć).
 
-- ściany, okna i drzwi tarasowe z zasłonami, drzwi wewnętrzne;
-- zabudowy na wymiar, kuchnię z czarnymi frontami i dębowymi szafkami, łazienki z wanną i prysznicem, pralnię;
-- meble jak na zdjęciach;
-- taras i loggię z balustradami;
-- budynek, osiedle i miasto dookoła.
+**Co odwzorowuje zdjęcia:**
+
+- **Salon:**
+  - narożnik ze skóry z szezlongiem i puf, złoty stolik-taca;
+  - dębowy stół na czarnej nodze „pająk”, krzesła kubełkowe, lampa z 5 żarówkami;
+  - okrągłe lustro, czarny grzejnik pionowy z klimatyzatorem;
+  - ściana RTV: tapeta, czarny panel, telewizor, wisząca szafka z kominkiem-nawilżaczem, lampy-klatki;
+  - grafitowe zasłony i firana.
+- **Kuchnia:**
+  - czarne matowe fronty, blat z czarnego granitu, betonowe płytki;
+  - szafki z szarego dębu z LED, słupek AGD z czarnego szkła (lodówka side by side, 2 piekarniki).
+- **Sypialnia:**
+  - tapicerowane wezgłowie z przeszyciami, pościel i pled jak na zdjęciu;
+  - latarnie przy łóżku, żyrandol, duży zegar;
+  - fotel „butterfly”, szafy z szarego dębu.
+- **Pokój:** tapeta „układ okresowy”, betonowe szafy z falistymi uchwytami, wiszące biurko, lampa „pająk”.
+- **Gabinet:** orzechowa szafa, biurko z czarnym stelażem, skórzany fotel, przeszklona szafka, mosiężne kinkiety, roleta rzymska.
+- **Łazienka:** szary kamień 60 × 120, szafka z szarego dębu, okrągłe lustro na pasku, wanna w zabudowie.
+- **Taras:** granitowe płyty, szklana balustrada z szarymi słupkami, skrzynia z modrzewia, donice.
+- **Wszędzie:**
+  - podłoga z gresu drewnopodobnego (deski 20 × 120 cm);
+  - okna w ciemnobrązowych ramach z czarnymi parapetami;
+  - białe drzwi i listwy, czarne reflektory sufitowe.
+
+**Realistyczne światło:**
+
+- słońce wpada przez okna i zostawia plamy na podłodze, a cienie są miękkie;
+- światło z okien oświetla wnętrze;
+- odbicia i światło odbite są „zdjęte” z wnętrza modelu;
+- na komputerze są też cienie kontaktowe (GTAO);
+- za oknami jest prawdziwy widok z 11. piętra: panorama wycięta ze zdjęcia z tarasu (balustradę usunięto, niebo zmienia się z porą dnia);
+- makieta stoi na neutralnym tle z miękkim cieniem.
 
 **Tryby widoku:**
 
@@ -97,7 +124,8 @@ Okolica i odległości: OpenStreetMap (Nominatim), odległości w linii prostej 
   - powierzchnia podłogi do wymiany: 86 m².
 - **Kalkulator:** domyślne oprocentowanie 7,0%, wkład 20%, 30 lat. PCC 2% liczony od ceny razem z miejscami.
 - **Model 3D:**
-  - wymiary są orientacyjne, rozmieszczenie mebli i widok z okien są poglądowe;
+  - wymiary są orientacyjne, rozmieszczenie mebli według zdjęć, ale poglądowe;
+  - widok za oknami to jedno zdjęcie z tarasu powtórzone dookoła (lustrzanie);
   - kierunki świata odczytane z róży wiatrów na rzucie.
 - **Terminy oglądania:** godziny (pn–pt 9–19, sb 10–14) są przykładowe. Formularz w demo niczego nie wysyła.
 - Zdjęcie opiekuna zastąpione inicjałami.
@@ -109,7 +137,8 @@ Okolica i odległości: OpenStreetMap (Nominatim), odległości w linii prostej 
 | `index.html` | Cała strona oferty |
 | `assets/css/style.css` | Wygląd, wersja na telefon, druk/PDF, ograniczenie ruchu |
 | `assets/js/data.js` | Dane: pomieszczenia (z współrzędnymi z rzutu), zdjęcia, okolica, opcje i stawki konfiguratora |
-| `assets/js/tour3d.js` | Spacer 3D: model z rzutu, tryby widoku, pora dnia, minimapa, konfiguracja wnętrza, API `window.TOUR` |
+| `assets/js/tour3d.js` | Spacer 3D: model z rzutu i zdjęć, światło (słońce, okna, odbicia, GTAO), tryby widoku, pora dnia, minimapa, konfiguracja wnętrza, API `window.TOUR` |
+| `assets/js/tour-pano.js` | Panorama z tarasu (ze zdjęcia oferty) do widoku za oknami |
 | `assets/js/main.js` | Strona: nagłówek, konfigurator i koszty, galeria, rzut, okolica, kalkulator, formularz, udostępnianie |
 | `assets/img/` | Zdjęcia (pełne i `-m` dla telefonów), rzut, logo w dwóch wersjach, ikona |
 
